@@ -1,24 +1,9 @@
 import os
-from pprint import pprint
 import requests
 import pandas as pd
 import numpy as np
-import time
 import csv, json
 
-your_email = "xiaozhou.li@tuni.fi"
-github_personal_token_input="the token"
-personal_token = github_personal_token_input
-token = os.getenv('GITHUB_TOKEN', personal_token)
-headers = {'Authorization': f'token {token}'}
-
-desired_width=640
-pd.set_option('display.width', desired_width)
-np.set_printoptions(linewidth=desired_width)
-pd.set_option('display.max_columns',25)
-
-with open('ts.txt', 'r') as txtfile:
-    tslist = [x.strip('\n').split()[2].split('/')[1] for x in txtfile.readlines()]
 
 def getIssueTablebyProject(projectfullname, updateissuetablename): #, updatelabeltablename):
     theIssueQuery = f"https://api.github.com/repos/{projectfullname}/issues"
@@ -214,10 +199,6 @@ def getFileChanges(projectfullname, thecommitcsv, newcsv):
                 writer = csv.writer(csvfile, delimiter=',')
                 writer.writerow(thecommit+list(file))
 
-#getFileChanges('FudanSELab/train-ticket', 'commits.csv', 'testing.csv')
-def getThems(thestring):
-    return thestring.split('/')[0]
-
 def makeEdgetable(newcsv):
     committer_ms_feature = ['msin', 'msout', '#committer']
     with open(newcsv, 'a', encoding='utf-8') as csvfile:
@@ -268,8 +249,13 @@ def readProphetJson(jsonfile):
                     writer = csv.writer(csvfile, delimiter=',')
                     writer.writerow([targetkey, sourcekey, theVerb])
 
-#readProphetJson('train_ticket.json')
-df = pd.read_csv('prophetedges.csv')
-df_groupby = df.groupby(['Source','Target']).count()
-df_groupby.reset_index(inplace=True)
-df_groupby.to_csv('pedges.csv', encoding='utf-8', index=False)
+
+if __name__ == '__main__':
+    token = os.getenv('GITHUB_TOKEN')
+    headers = {'Authorization': f'token {token}'}
+
+    desired_width=640
+    pd.set_option('display.width', desired_width)
+    np.set_printoptions(linewidth=desired_width)
+    pd.set_option('display.max_columns', 25)
+
