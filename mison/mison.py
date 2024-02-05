@@ -1,19 +1,28 @@
 import datetime
 import argparse
 import os
+import importlib.util
+import sys
 
 from pydriller import Repository, Commit, ModifiedFile
 import pandas as pd
 
 
-def trainticket_mappiing(filename):
+def import_microservice_mapping(filename):
+
     if filename is None:
         return None
-    service = str(filename).split(os.sep)[0]
-    if service.startswith('ts-') and "service" in service:
-        return service
-    else:
-        return None
+
+    # Add the directory of the file to sys.path
+    dir_name = os.path.dirname(filename)
+    if dir_name not in sys.path:
+        sys.path.append(dir_name)
+
+    # Import the module
+    spec = importlib.util.spec_from_file_location('microservice_mapping', filename)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.microservice_mapping
 
 
 def mine_commits(repo, branch, output=None, mapping=None):
@@ -44,7 +53,9 @@ if __name__ == '__main__':
     parser.add_argument('--branch', type=str, required=True, help='Name of the branch to mine')
     parser.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
     parser.add_argument('--commit_table', type=str, required=False, help='Output path for the csv table of mined commits')
+    parser.add_argument('--import_mapping', type=str, required=False, help='Python file to import a microservice_mapping function from')
 
     # Parse the arguments
     args = parser.parse_args()
-    mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=trainticket_mappiing)
+    microservice_mapping = import_microservice_mapping(args.import_mapping)
+    mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=microservice_mapping)
