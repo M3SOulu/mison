@@ -45,6 +45,8 @@ def construct_network(filename, output=None):
 
     filecounts.to_csv(output, index=False)
 
+    return filecounts
+
 def mine_commits(repo, branch, output=None, mapping=None):
     if output is None:
         output = f"mison_commits_mined_{datetime.datetime.now().isoformat()}.csv"
@@ -64,6 +66,8 @@ def mine_commits(repo, branch, output=None, mapping=None):
         data['microservice'] = data['filename'].map(mapping)
 
     data.to_csv(output, index=False)
+
+    return data
 
 
 if __name__ == '__main__':
