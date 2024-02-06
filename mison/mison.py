@@ -27,8 +27,6 @@ def import_microservice_mapping(filename):
 
 
 def construct_network(filename, output=None):
-    if output is None:
-        output = f"mison_developer_network_{datetime.datetime.now().isoformat()}.csv"
 
     devs = {}
     data = pd.read_csv(filename, index_col=False)
@@ -43,13 +41,14 @@ def construct_network(filename, output=None):
     filecounts = [(dev_a, dev_b, len(devs[dev_a] & devs[dev_b])) for dev_a, dev_b in unordered_pairs]
     filecounts = pd.DataFrame(filecounts, columns=['developer_a', 'developer_b', 'weight'])
 
-    filecounts.to_csv(output, index=False)
+    if output is not None:
+        if output == 'default':
+            output = f"mison_developer_network_{datetime.datetime.now().isoformat()}.csv"
+        filecounts.to_csv(output, index=False)
 
     return filecounts
 
 def mine_commits(repo, branch, output=None, mapping=None):
-    if output is None:
-        output = f"mison_commits_mined_{datetime.datetime.now().isoformat()}.csv"
 
     data = []
 
@@ -65,7 +64,10 @@ def mine_commits(repo, branch, output=None, mapping=None):
     if mapping is not None:
         data['microservice'] = data['filename'].map(mapping)
 
-    data.to_csv(output, index=False)
+    if output is not None:
+        if output == 'default':
+            output = f"mison_commits_mined_{datetime.datetime.now().isoformat()}.csv"
+        data.to_csv(output, index=False)
 
     return data
 
@@ -83,4 +85,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     #microservice_mapping = import_microservice_mapping(args.import_mapping)
     #mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=microservice_mapping)
-    construct_network('2024.csv')
+    construct_network('2024.csv', output='default')
