@@ -25,6 +25,21 @@ def import_microservice_mapping(filename):
     return module.microservice_mapping
 
 
+def construct_network(filename, output=None):
+    if output is None:
+        output = f"mison_developer_network_{datetime.datetime.now().isoformat()}.csv"
+
+    devs = {}
+    data = pd.read_csv(filename, index_col=False)
+    for row in data.itertuples(index=False):
+        dev = devs.setdefault(row.author_name, set())
+        print(row.author_name, row.filename)
+        if pd.notna(row.filename):
+            dev.add(row.filename)
+    print(devs)
+
+
+
 def mine_commits(repo, branch, output=None, mapping=None):
     if output is None:
         output = f"mison_commits_mined_{datetime.datetime.now().isoformat()}.csv"
@@ -57,5 +72,6 @@ if __name__ == '__main__':
 
     # Parse the arguments
     args = parser.parse_args()
-    microservice_mapping = import_microservice_mapping(args.import_mapping)
-    mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=microservice_mapping)
+    #microservice_mapping = import_microservice_mapping(args.import_mapping)
+    #mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=microservice_mapping)
+    construct_network('2024.csv')
