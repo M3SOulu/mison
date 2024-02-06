@@ -3,6 +3,7 @@ import argparse
 import os
 import importlib.util
 import sys
+import itertools
 
 from pydriller import Repository, Commit, ModifiedFile
 import pandas as pd
@@ -33,12 +34,16 @@ def construct_network(filename, output=None):
     data = pd.read_csv(filename, index_col=False)
     for row in data.itertuples(index=False):
         dev = devs.setdefault(row.author_name, set())
-        print(row.author_name, row.filename)
         if pd.notna(row.filename):
             dev.add(row.filename)
-    print(devs)
 
+    ordered_pairs = itertools.product(devs.keys(), repeat=2)
+    unordered_pairs = {(a,b) for (a,b) in ordered_pairs if a < b}
 
+    filecounts = [(dev_a, dev_b, len(devs[dev_a] & devs[dev_b])) for dev_a, dev_b in unordered_pairs]
+    filecounts = pd.DataFrame(filecounts, columns=['developer_a', 'developer_b', 'weight'])
+
+    filecounts.to_csv(output, index=False)
 
 def mine_commits(repo, branch, output=None, mapping=None):
     if output is None:
