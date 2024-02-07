@@ -77,12 +77,14 @@ def mine_commits(repo, branch, output=None, mapping=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='MiSON - MicroService Organisational Network miner')
+    subparsers = parser.add_subparsers()
 
-    # Add the positional arguments
-    parser.add_argument('--branch', type=str, required=True, help='Name of the branch to mine')
-    parser.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
-    parser.add_argument('--commit_table', type=str, required=False, help='Output path for the csv table of mined commits')
-    parser.add_argument('--import_mapping', type=str, required=False, help='Python file to import a microservice_mapping function from')
+    # Commit table parse
+    commit = subparsers.add_parser('commit', help='Mine commits of a repository with PyDriller')
+    commit.add_argument('--branch', type=str, required=True, help='Name of the branch to mine')
+    commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
+    commit.add_argument('--commit_table', type=str, required=False, help='Output path for the csv table of mined commits')
+    commit.add_argument('--import_mapping', type=str, required=False, help='Python file to import a microservice_mapping function from')
 
     # Parse the arguments
     args = parser.parse_args()
