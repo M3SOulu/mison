@@ -5,6 +5,7 @@ import importlib.util
 import sys
 import itertools
 
+import pandas
 from pydriller import Repository, Commit, ModifiedFile
 import pandas as pd
 
@@ -76,19 +77,54 @@ def mine_commits(repo, branch, output=None, mapping=None):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='MiSON - MicroService Organisational Network miner')
-    subparsers = parser.add_subparsers()
 
-    # Commit table parse
-    commit = subparsers.add_parser('commit', help='Mine commits of a repository with PyDriller')
+    def main_commit(args):
+        microservice_mapping = import_microservice_mapping(args.import_mapping)
+        data = mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=microservice_mapping)
+        return data
+
+    def main_network(args):
+        data = pandas.read_csv(args.commit_table)
+        construct_network(data, args.field, output=args.network_output)
+
+    def main_all(args):
+        data = main_commit(args)
+        construct_network(data, args.field, output=args.network_output)
+
+
+    # Main parser
+    parser = argparse.ArgumentParser(description='MiSON - MicroService Organisational Network miner')
+
+    # Common commit parameters
+    commit = argparse.ArgumentParser(description='Mine commits of a repository with PyDriller', add_help=False)
     commit.add_argument('--branch', type=str, required=True, help='Name of the branch to mine')
     commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
-    commit.add_argument('--commit_table', type=str, required=False, help='Output path for the csv table of mined commits')
     commit.add_argument('--import_mapping', type=str, required=False, help='Python file to import a microservice_mapping function from')
+
+    # Common network parameters
+    network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
+    network.add_argument('--field', choices=['file', 'service'], required=True, help='Which field to use for network weight')
+    network.add_argument('--network_output', type=str, required=False, help='Output path for network')
+
+    # Sub-commands for main
+    subparsers = parser.add_subparsers(required=True)
+
+    # Commit command
+    commit_sub = subparsers.add_parser('commit', parents=[commit], help='Mine commits of a repository with PyDriller', conflict_handler='resolve')
+    commit_sub.add_argument('--commit_table', type=str, required=True, help='Output path for the csv table of mined commits')
+    commit_sub.set_defaults(func=main_commit)
+
+    # Network command
+    network_sub = subparsers.add_parser('network', parents=[network], help='Construct a developer network from a commit table', conflict_handler='resolve')
+    # Network only needs input file if called separately
+    network_sub.add_argument('--commit_table', type=str, required=True, help='Input path of the csv table of mined commits')
+    network_sub.set_defaults(func=main_network)
+
+    # End-to-end command
+    end_to_end = subparsers.add_parser('all', parents=[commit, network], help='End-to-end network generation from the repository', conflict_handler='resolve')
+    end_to_end.add_argument('--commit_table', type=str, required=False, help='Output path for the csv table of mined commits')
+    end_to_end.set_defaults(func=main_all)
 
     # Parse the arguments
     args = parser.parse_args()
-    microservice_mapping = import_microservice_mapping(args.import_mapping)
-    data = mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=microservice_mapping)
-    construct_network(data, field='file', output='default')
-    construct_network(data, field='service', output='default')
+    args.func(args)
