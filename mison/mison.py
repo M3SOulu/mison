@@ -26,14 +26,16 @@ def import_microservice_mapping(filename):
     return module.microservice_mapping
 
 
-def construct_network(filename, output=None):
+def construct_network(commit_table, field='file', output=None):
+
+    assert field in ('file', 'service')
 
     devs = {}
-    data = pd.read_csv(filename, index_col=False)
-    for row in data.itertuples(index=False):
+    for row in commit_table.itertuples(index=False):
         dev = devs.setdefault(row.author_name, set())
-        if pd.notna(row.filename):
-            dev.add(row.filename)
+        f = row.filename if field == 'file' else row.microservice
+        if pd.notna(f):
+            dev.add(f)
 
     ordered_pairs = itertools.product(devs.keys(), repeat=2)
     unordered_pairs = {(a,b) for (a,b) in ordered_pairs if a < b}
@@ -43,10 +45,11 @@ def construct_network(filename, output=None):
 
     if output is not None:
         if output == 'default':
-            output = f"mison_developer_network_{datetime.datetime.now().isoformat()}.csv"
+            output = f"mison_developer_network_{field}_{datetime.datetime.now().isoformat()}.csv"
         filecounts.to_csv(output, index=False)
 
     return filecounts
+
 
 def mine_commits(repo, branch, output=None, mapping=None):
 
@@ -66,7 +69,7 @@ def mine_commits(repo, branch, output=None, mapping=None):
 
     if output is not None:
         if output == 'default':
-            output = f"mison_commits_mined_{datetime.datetime.now().isoformat()}.csv"
+            output = f"mison_commit_table_{datetime.datetime.now().isoformat()}.csv"
         data.to_csv(output, index=False)
 
     return data
@@ -83,6 +86,7 @@ if __name__ == '__main__':
 
     # Parse the arguments
     args = parser.parse_args()
-    #microservice_mapping = import_microservice_mapping(args.import_mapping)
-    #mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=microservice_mapping)
-    construct_network('2024.csv', output='default')
+    microservice_mapping = import_microservice_mapping(args.import_mapping)
+    data = mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=microservice_mapping)
+    construct_network(data, field='file', output='default')
+    construct_network(data, field='service', output='default')
