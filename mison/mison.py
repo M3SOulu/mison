@@ -101,6 +101,28 @@ if __name__ == '__main__':
     commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
     commit.add_argument('--import_mapping', type=str, required=False, help='Python file to import a microservice_mapping function from')
 
+    # Filters for PyDriller
+    filters = commit.add_argument_group('Filters', 'PyDriller filters for Repository class')
+    # FROM filters
+    from_f = filters.add_mutually_exclusive_group(required=False)
+    from_f.add_argument('--since', required=False, type=datetime.datetime.fromisoformat, help='Only commits after this date will be analyzed (converted to datetime object)')
+    from_f.add_argument('--from_commit', required=False, type=str, help='Only commits after this commit hash will be analyzed')
+    from_f.add_argument('--from_tag', required=False, type=str, help='Only commits after this commit tag will be analyzed')
+    # TO filters
+    to_f = filters.add_mutually_exclusive_group(required=False)
+    to_f.add_argument('--to', required=False, type=datetime.datetime.fromisoformat, help='Only commits up to this date will be analyzed (converted to datetime object)')
+    to_f.add_argument('--to_commit', required=False, type=str, help='Only commits up to this commit hash will be analyzed')
+    to_f.add_argument('--to_tag', required=False, type=str, help='Only commits up to this commit tag will be analyzed')
+    filters.add_argument('--order', required=False, choices=['date-order', 'author-date-order', 'topo-order', 'reverse'])
+    filters.add_argument('--only_in_branch', required=False, type=str, help='Only analyses commits that belong to this branch')
+    filters.add_argument('--only_no_merge', required=False, action='store_true', help='Only analyses commits that are not merge commits')
+    filters.add_argument('--only_authors', required=False, nargs='*', help='Only analyses commits that are made by these authors')
+    filters.add_argument('--only_commits', required=False, nargs='*', help='Only these commits will be analyzed')
+    filters.add_argument('--only_releases', required=False, action='store_true', help='Only commits that are tagged (“release” is a term of GitHub, does not actually exist in Git)')
+    filters.add_argument('--filepath', required=False, type=str, help='Only commits that modified this file will be analyzed')
+    filters.add_argument('--only_modifications_with_file_types', required=False, nargs='*', help='Only analyses commits in which at least one modification was done in that file type')
+
+
     # Common network parameters
     network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
     network.add_argument('--field', choices=['file', 'service'], required=True, help='Which field to use for network weight')
