@@ -59,8 +59,8 @@ def mine_commits(repo, output=None, mapping=None, **kwargs):
 
     for commit in Repository(repo, **pydriller_kwargs).traverse_commits():
         for file in commit.modified_files:
-            data.append([commit.hash, commit.author.name, commit.author.email, commit.committer.name,
-                         commit.committer.email, commit.committer_date, file.added_lines, file.deleted_lines,
+            data.append([commit.hash, commit.author.name, commit.author.email.lower(), commit.committer.name,
+                         commit.committer.email.lower(), commit.committer_date, file.added_lines, file.deleted_lines,
                          file.new_path])
 
     data = pd.DataFrame(data, columns=['commit_hash', 'author_name', 'author_email', 'committer_name', 'committer_email',
