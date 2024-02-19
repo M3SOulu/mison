@@ -33,7 +33,7 @@ def construct_network(commit_table, field='file', output=None):
 
     devs = {}
     for row in commit_table.itertuples(index=False):
-        dev = devs.setdefault(row.author_name, set())
+        dev = devs.setdefault(row.author_email, set())
         f = row.filename if field == 'file' else row.microservice
         if pd.notna(f):
             dev.add(f)
