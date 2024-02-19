@@ -4,4 +4,11 @@ import os
 def microservice_mapping(filename):
     if filename is None:
         return None
-    return str(filename).split(os.sep)[2]
+
+    try:
+        paths = str(filename).split(os.sep)
+        if paths[1] == 'Services' or paths[1] == 'Microservices':
+            return paths[2]
+        return None
+    except IndexError:
+        return None
