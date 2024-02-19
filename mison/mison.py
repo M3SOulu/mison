@@ -52,11 +52,12 @@ def construct_network(commit_table, field='file', output=None):
     return filecounts
 
 
-def mine_commits(repo, branch, output=None, mapping=None):
+def mine_commits(repo, output=None, mapping=None, **kwargs):
 
+    pydriller_kwargs = {k: v for k, v in kwargs.items() if v is not None}
     data = []
 
-    for commit in Repository(repo, only_in_branch=branch).traverse_commits():
+    for commit in Repository(repo, **pydriller_kwargs).traverse_commits():
         for file in commit.modified_files:
             data.append([commit.hash, commit.author.name, commit.author.email, commit.committer.name,
                          commit.committer.email, commit.committer_date, file.added_lines, file.deleted_lines,
@@ -80,7 +81,22 @@ if __name__ == '__main__':
 
     def main_commit(args):
         microservice_mapping = import_microservice_mapping(args.import_mapping)
-        data = mine_commits(repo=args.repo, branch=args.branch, output=args.commit_table, mapping=microservice_mapping)
+        pydriller_kwargs = {'since': args.since,
+                            'from_commit': args.from_commit,
+                            'from_tag': args.from_tag,
+                            'to': args.to,
+                            'to_commit': args.to_commit,
+                            'to_tag': args.to_tag,
+                            'order': args.order,
+                            'only_in_branch': args.only_in_branch,
+                            'only_no_merge': args.only_no_merge,
+                            'only_authors': args.only_authors,
+                            'only_commits': args.only_commits,
+                            'only_releases': args.only_releases,
+                            'filepath': args.filepath,
+                            'only_modifications_with_file_types': args.only_modifications_with_file_types
+                            }
+        data = mine_commits(repo=args.repo, output=args.commit_table, mapping=microservice_mapping, **pydriller_kwargs)
         return data
 
     def main_network(args):
@@ -121,7 +137,6 @@ if __name__ == '__main__':
     filters.add_argument('--only_releases', required=False, action='store_true', help='Only commits that are tagged (“release” is a term of GitHub, does not actually exist in Git)')
     filters.add_argument('--filepath', required=False, type=str, help='Only commits that modified this file will be analyzed')
     filters.add_argument('--only_modifications_with_file_types', required=False, nargs='*', help='Only analyses commits in which at least one modification was done in that file type')
-
 
     # Common network parameters
     network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
