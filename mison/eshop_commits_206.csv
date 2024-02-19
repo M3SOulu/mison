@@ -1,0 +1,5 @@
+commit_hash,author_name,author_email,committer_name,committer_email,commit_date,additions,deletions,filename,microservice
+4cb3498939e770b73b0b996dfc7b2a36f1b34fd5,Cesar De la Torre,cesardl@microsoft.com,GitHub,noreply@github.com,2018-04-05 10:41:09-07:00,7,2,README.md,
+5288e9a1e441b78b79e9209557f1414993a90fa2,Cesar De la Torre,cesardl@microsoft.com,GitHub,noreply@github.com,2018-04-05 10:41:38-07:00,3,0,README.md,
+a5f66e68e9b634878fbe06bfcbb76c73d7b79850,Cesar De la Torre,cesardl@microsoft.com,Cesar De la Torre,cesardl@microsoft.com,2018-04-10 19:05:53-07:00,0,0,docs/Azure Dev eBook_Booklet.pdf,
+a5f66e68e9b634878fbe06bfcbb76c73d7b79850,Cesar De la Torre,cesardl@microsoft.com,Cesar De la Torre,cesardl@microsoft.com,2018-04-10 19:05:53-07:00,0,0,docs/MicrosoftAzure_StartGuide_Developers.pdf,
