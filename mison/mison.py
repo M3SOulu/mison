@@ -113,7 +113,6 @@ if __name__ == '__main__':
 
     # Common commit parameters
     commit = argparse.ArgumentParser(description='Mine commits of a repository with PyDriller', add_help=False)
-    commit.add_argument('--branch', type=str, required=True, help='Name of the branch to mine')
     commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
     commit.add_argument('--import_mapping', type=str, required=False, help='Python file to import a microservice_mapping function from')
 
