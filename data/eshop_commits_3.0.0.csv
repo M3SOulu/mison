@@ -1,0 +1,899 @@
+commit_hash,author_name,author_email,committer_name,committer_email,commit_date,additions,deletions,filename,microservice
+0dcc46caf4ad351834a90ed3aa91078385129166,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 10:06:03+01:00,3,1,elk/Readme.md,
+a327fac58619476cd09fd744c8cd8b7bbf3b247d,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 10:17:35+01:00,1,1,src/Services/Catalog/Catalog.API/azds.yaml,Catalog
+3d0aae896189d5b53e897b9da8a8529eb53a565b,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 11:12:07+01:00,12,4,src/Web/WebhookClient/Pages/Index.cshtml,
+3d0aae896189d5b53e897b9da8a8529eb53a565b,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 11:12:07+01:00,4,3,src/Web/WebhookClient/Pages/RegisterWebhook.cshtml,
+3d0aae896189d5b53e897b9da8a8529eb53a565b,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 11:12:07+01:00,3,1,src/Web/WebhookClient/Pages/RegisterWebhook.cshtml.cs,
+3d0aae896189d5b53e897b9da8a8529eb53a565b,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 11:12:07+01:00,3,3,src/Web/WebhookClient/Pages/Shared/_Layout.cshtml,
+3d0aae896189d5b53e897b9da8a8529eb53a565b,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 11:12:07+01:00,12,0,src/Web/WebhookClient/wwwroot/css/site.css,
+3d0aae896189d5b53e897b9da8a8529eb53a565b,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 11:12:07+01:00,0,0,src/Web/WebhookClient/wwwroot/images/brand.png,
+3d0aae896189d5b53e897b9da8a8529eb53a565b,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 11:12:07+01:00,0,0,src/Web/WebhookClient/wwwroot/images/main_banner.png,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,15,0,build/azure-devops/apigws/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/basket-api/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/catalog-api/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/identity-api/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/location-api/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/marketing-api/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,9,0,build/azure-devops/mobile-shopping-agg/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,12,0,build/azure-devops/ordering-api/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/payment-api/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,9,0,build/azure-devops/web-shopping-agg/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/webhooks-api/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/webhooks-client/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/webmvc/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/webspa/azure-pipelines.yml,
+713eb276881c2a85e634db99957e7e1332be0079,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-21 12:16:09+01:00,10,0,build/azure-devops/webstatus/azure-pipelines.yml,
+a1909521fde9089c1a65c5e875b99aa6e6b0b618,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 15:24:51+01:00,3,3,src/Web/WebSPA/Client/modules/basket/basket.service.ts,
+a1909521fde9089c1a65c5e875b99aa6e6b0b618,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 15:24:51+01:00,2,2,src/Web/WebSPA/Client/modules/campaigns/campaigns.service.ts,
+a1909521fde9089c1a65c5e875b99aa6e6b0b618,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 15:24:51+01:00,1,1,src/Web/WebSPA/Client/modules/catalog/catalog.component.html,
+a1909521fde9089c1a65c5e875b99aa6e6b0b618,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 15:24:51+01:00,2,2,src/Web/WebSPA/Client/modules/catalog/catalog.module.ts,
+a1909521fde9089c1a65c5e875b99aa6e6b0b618,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 15:24:51+01:00,3,3,src/Web/WebSPA/Client/modules/catalog/catalog.service.ts,
+a1909521fde9089c1a65c5e875b99aa6e6b0b618,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 15:24:51+01:00,2,2,src/Web/WebSPA/Client/modules/orders/orders.service.ts,
+a1909521fde9089c1a65c5e875b99aa6e6b0b618,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 15:24:51+01:00,3735,2110,src/Web/WebSPA/package-lock.json,
+a1909521fde9089c1a65c5e875b99aa6e6b0b618,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 15:24:51+01:00,35,23,src/Web/WebSPA/package.json,
+a1909521fde9089c1a65c5e875b99aa6e6b0b618,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 15:24:51+01:00,4,1,src/Web/WebSPA/tsconfig.json,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/ApiGateways/ApiGw-Base/Dockerfile,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/ApiGateways/ApiGw-Base/OcelotApiGw.csproj,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Dockerfile,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Mobile.Shopping.HttpAggregator.csproj,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/ApiGateways/Web.Bff.Shopping/aggregator/Dockerfile,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/ApiGateways/Web.Bff.Shopping/aggregator/Web.Shopping.HttpAggregator.csproj,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Basket/Basket.API/Basket.API.csproj,Basket
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Basket/Basket.API/Dockerfile,Basket
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Catalog/Catalog.API/Catalog.API.csproj,Catalog
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Catalog/Catalog.API/Dockerfile,Catalog
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Identity/Identity.API/Dockerfile,Identity
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Identity/Identity.API/Identity.API.csproj,Identity
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Location/Locations.API/Dockerfile,Location
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Location/Locations.API/Locations.API.csproj,Location
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Marketing/Marketing.API/Dockerfile,Marketing
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Marketing/Marketing.API/Marketing.API.csproj,Marketing
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Ordering/Ordering.API/Dockerfile,Ordering
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Ordering/Ordering.API/Ordering.API.csproj,Ordering
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Ordering/Ordering.BackgroundTasks/Dockerfile,Ordering
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Ordering/Ordering.BackgroundTasks/Ordering.BackgroundTasks.csproj,Ordering
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Ordering/Ordering.SignalrHub/Dockerfile,Ordering
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Ordering/Ordering.SignalrHub/Ordering.SignalrHub.csproj,Ordering
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Payment/Payment.API/Dockerfile,Payment
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Payment/Payment.API/Payment.API.csproj,Payment
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Services/Webhooks/Webhooks.API/Dockerfile,Webhooks
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,1,1,src/Services/Webhooks/Webhooks.API/Webhooks.API.csproj,Webhooks
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Web/WebMVC/Dockerfile,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,3,3,src/Web/WebMVC/WebMVC.csproj,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,4,4,src/Web/WebMVC/libman.json,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Web/WebSPA/Dockerfile,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Web/WebSPA/WebSPA.csproj,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Web/WebStatus/Dockerfile,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,2,2,src/Web/WebhookClient/Dockerfile,
+65b7b31d8ddf1788675bef1d097cb6649962c4ba,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-21 16:38:01+01:00,0,5,,
+68b815934255fe462fbf2db3c79a8d7fee9f8ce7,Savorboard,yangxiaodong1214@126.com,Savorboard,yangxiaodong1214@126.com,2019-03-22 14:55:10+08:00,6,0,README.md,
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,15,3,elk/Readme.md,
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,0,0,img/elk/azure-nsg-inboundportsConfig.png,
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,0,0,img/elk/bitnami_splash.png,
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,0,0,img/elk/create-vm-elk-azure-last-step.png,
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,0,0,img/elk/create-vm-elk-azure-summary.png,
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,0,0,img/elk/create-vm-elk-azure.png,
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,0,0,img/elk/discover-kibana.png,
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Services/Basket/Basket.API/appsettings.json,Basket
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Services/Catalog/Catalog.API/appsettings.json,Catalog
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Services/Identity/Identity.API/appsettings.json,Identity
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Services/Location/Locations.API/appsettings.json,Location
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Services/Marketing/Marketing.API/appsettings.json,Marketing
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Services/Ordering/Ordering.API/appsettings.json,Ordering
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Services/Ordering/Ordering.BackgroundTasks/appsettings.json,Ordering
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Services/Ordering/Ordering.SignalrHub/appsettings.json,Ordering
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Services/Payment/Payment.API/appsettings.json,Payment
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Web/WebMVC/appsettings.json,
+905f8552d977b3a1faa5c6818d51a5029ead15fb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:45:02+01:00,1,1,src/Web/WebStatus/appsettings.json,
+b449dd20120347a30be679015ada4084ecf12b4c,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-22 13:46:27+01:00,48,2,elk/Readme.md,
+a28ec949fca8e9b1a180ca6586dc2c496bdb18e2,Savorboard,yangxiaodong1214@126.com,GitHub,noreply@github.com,2019-03-26 09:07:44+08:00,1,1,README.md,
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Services/Basket/Basket.API/appsettings.json,Basket
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Services/Catalog/Catalog.API/appsettings.json,Catalog
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Services/Identity/Identity.API/appsettings.json,Identity
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Services/Location/Locations.API/appsettings.json,Location
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Services/Marketing/Marketing.API/appsettings.json,Marketing
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Services/Ordering/Ordering.API/appsettings.json,Ordering
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Services/Ordering/Ordering.BackgroundTasks/appsettings.json,Ordering
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Services/Ordering/Ordering.SignalrHub/appsettings.json,Ordering
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Services/Payment/Payment.API/appsettings.json,Payment
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Web/WebMVC/appsettings.json,
+0706c724ad1990d1b8d59c18a1ef1ad618ec4010,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 15:58:57+01:00,1,1,src/Web/WebStatus/appsettings.json,
+1255e5f6044168f55c94e7c224c3f11ad192c0bb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 16:08:27+01:00,3,3,src/Web/WebSPA/package-lock.json,
+1255e5f6044168f55c94e7c224c3f11ad192c0bb,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 16:08:27+01:00,1,1,src/Web/WebSPA/package.json,
+9192046f71b3fc48ae57cea835d70175b7af178b,jmanuelcorral,jcorral@plainconcepts.com,jmanuelcorral,jcorral@plainconcepts.com,2019-03-27 16:50:49+01:00,3,3,src/Web/WebSPA/package-lock.json,
+e5630a322ab6fc15b5d557556cd7dd0fa1f25ded,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 10:11:53+01:00,25,0,build/azure-devops/infrastructure/azure-pipelines.yml,
+a7c76f97a250f4fe54febbb8bac4ddc7c893aa16,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-03-28 16:43:59+00:00,3,21,src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/CardType.cs,Ordering
+a7c76f97a250f4fe54febbb8bac4ddc7c893aa16,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-03-28 16:43:59+00:00,0,4,src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/OrderStatus.cs,Ordering
+a7c76f97a250f4fe54febbb8bac4ddc7c893aa16,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-03-28 16:43:59+00:00,0,3,src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs,Ordering
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,2,1,k8s/helm/ordering-backgroundtasks/templates/configmap.yaml,
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,2,2,k8s/helm/ordering-backgroundtasks/templates/deployment.yaml,
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,1,src/ApiGateways/Mobile.Bff.Marketing/apigw/azds.yaml,
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,1,src/ApiGateways/Mobile.Bff.Shopping/aggregator/azds.yaml,
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,1,src/ApiGateways/Mobile.Bff.Shopping/apigw/azds.yaml,
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,1,src/ApiGateways/Web.Bff.Marketing/apigw/azds.yaml,
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,1,src/ApiGateways/Web.Bff.Shopping/aggregator/azds.yaml,
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/ApiGateways/Web.Bff.Shopping/apigw/azds.yaml,
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/Services/Basket/Basket.API/azds.yaml,Basket
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,9,0,src/Services/Catalog/Catalog.API/Controllers/CatalogController.cs,Catalog
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/Services/Catalog/Catalog.API/azds.yaml,Catalog
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,1,1,src/Services/Identity/Identity.API/Startup.cs,Identity
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/Services/Identity/Identity.API/azds.yaml,Identity
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/Services/Location/Locations.API/azds.yaml,Location
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/Services/Marketing/Marketing.API/azds.yaml,Marketing
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/Services/Ordering/Ordering.API/azds.yaml,Ordering
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,18,0,src/Services/Ordering/Ordering.BackgroundTasks/Dockerfile.develop,Ordering
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,56,0,src/Services/Ordering/Ordering.BackgroundTasks/azds.yaml,Ordering
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,18,0,src/Services/Ordering/Ordering.SignalrHub/Dockerfile.develop,Ordering
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,56,0,src/Services/Ordering/Ordering.SignalrHub/azds.yaml,Ordering
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/Services/Payment/Payment.API/azds.yaml,Payment
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/Services/Webhooks/Webhooks.API/azds.yaml,Webhooks
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,4,2,src/Web/WebMVC/azds.yaml,
+e809029e2cf4347142e36a95f9c13dd0f2e64997,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-28 18:59:45+01:00,6,0,src/prepare-devspaces.ps1,
+468f117df53f849dafebf513d94b7486e8905293,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-03-28 18:22:15+00:00,0,86,,
+468f117df53f849dafebf513d94b7486e8905293,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-03-28 18:22:15+00:00,0,1,src/Services/Ordering/Ordering.UnitTests/Ordering.UnitTests.csproj,Ordering
+a962ac4c224cbaa899d0e61a6d975c91d984f354,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-29 10:58:13+01:00,0,8,,
+a962ac4c224cbaa899d0e61a6d975c91d984f354,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-29 10:58:13+01:00,0,4,,
+7166773a7e3e962a22f97275a9b7c9c30bd567e8,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-29 12:26:54+01:00,20,20,docker-compose.yml,
+8ef234a9608c0d93f51e468af52a6aa2a9f34139,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-03-29 13:54:20+01:00,26,0,build/multiarch-manifests/create-manifests.ps1,
+dea042b3da2de661f00ec3abc71408e22d35da65,Ratan Sunder Parai,ratanparai@gmail.com,Ratan Sunder Parai,ratanparai@gmail.com,2019-04-01 22:13:45+06:00,2,2,src/Services/Identity/Identity.API/README.md,Identity
+a10d9fb663606336962d0e48871ebd194f9394d8,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 15:57:04+06:00,1,1,src/Services/Catalog/Catalog.API/Model/CatalogItem.cs,Catalog
+12017dd8b752c845fed2d9673b5cee62c23e6b08,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 15:58:58+06:00,3,0,.gitignore,
+641982a5ab5ad2d8c228d7865ec6af6a15257413,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 17:54:43+06:00,1,1,src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs,Ordering
+c48962202965a72c5f2372410914adf96d2ff0dc,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 18:47:47+06:00,0,1,src/Services/Identity/Identity.API/Identity.API.csproj,Identity
+c48962202965a72c5f2372410914adf96d2ff0dc,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 18:47:47+06:00,1,2,src/Web/WebMVC/WebMVC.csproj,
+c48962202965a72c5f2372410914adf96d2ff0dc,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 18:47:47+06:00,0,1,src/Web/WebStatus/WebStatus.csproj,
+8dc243accc2ec008692fa2fd9cdce6497b030629,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 19:09:13+06:00,3,3,src/Services/Identity/Identity.API/Views/Consent/Index.cshtml,Identity
+8dc243accc2ec008692fa2fd9cdce6497b030629,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 19:09:13+06:00,4,3,src/Web/WebMVC/Views/Campaigns/Details.cshtml,
+8dc243accc2ec008692fa2fd9cdce6497b030629,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 19:09:13+06:00,6,5,src/Web/WebMVC/Views/Campaigns/Index.cshtml,
+8dc243accc2ec008692fa2fd9cdce6497b030629,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 19:09:13+06:00,4,3,src/Web/WebMVC/Views/Cart/Index.cshtml,
+8dc243accc2ec008692fa2fd9cdce6497b030629,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 19:09:13+06:00,3,3,src/Web/WebMVC/Views/Catalog/Index.cshtml,
+8dc243accc2ec008692fa2fd9cdce6497b030629,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 19:09:13+06:00,4,3,src/Web/WebMVC/Views/Order/Create.cshtml,
+8dc243accc2ec008692fa2fd9cdce6497b030629,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 19:09:13+06:00,4,3,src/Web/WebMVC/Views/Order/Detail.cshtml,
+8dc243accc2ec008692fa2fd9cdce6497b030629,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 19:09:13+06:00,6,5,src/Web/WebMVC/Views/Order/Index.cshtml,
+8dc243accc2ec008692fa2fd9cdce6497b030629,rafsanulhasan,rafsanulhasan@rhpc-msi,rafsanulhasan,rafsanulhasan@rhpc-msi,2019-04-02 19:09:13+06:00,4,3,src/Web/WebMVC/Views/OrderManagement/Index.cshtml,
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,33,14,src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs,
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,2,1,src/Services/Basket/Basket.API/Startup.cs,Basket
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,2,1,src/Services/Catalog/Catalog.API/Startup.cs,Catalog
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,2,1,src/Services/Location/Locations.API/Startup.cs,Location
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,2,1,src/Services/Marketing/Marketing.API/Startup.cs,Marketing
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,2,1,src/Services/Ordering/Ordering.API/Startup.cs,Ordering
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,2,1,src/Services/Ordering/Ordering.BackgroundTasks/Startup.cs,Ordering
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,2,1,src/Services/Ordering/Ordering.SignalrHub/Startup.cs,Ordering
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,2,1,src/Services/Payment/Payment.API/Startup.cs,Payment
+396d33fe7b95de424b7cb88c344851d44db3f746,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-02 15:36:20+01:00,2,1,src/Services/Webhooks/Webhooks.API/Startup.cs,Webhooks
+6277c0481acfa19099ad4ced6707b25d31a81ea9,Nish Anil,nnish@live.com,GitHub,noreply@github.com,2019-04-02 20:21:49+05:30,15,56,README.md,
+3f7307ace72c9f395f71af9ed32e793b552caca9,Nish Anil,nnish@live.com,GitHub,noreply@github.com,2019-04-02 20:28:03+05:30,5,9,README.md,
+835c3a8639178b53db73c49eda2530f5409e34e2,Rafsanul Hasan,rafsanulhasan@outlook.com,GitHub,noreply@github.com,2019-04-02 21:15:11+06:00,1,4,.gitignore,
+20297fc6b54d7d0bbbf5afbe80336dbd7ad4598c,Darius Tehrani,darius.tehrani@microsoft.com,Darius Tehrani,darius.tehrani@microsoft.com,2019-04-03 08:23:19+00:00,2,2,k8s/helm/deploy-all.ps1,
+a793608b39b23d1108784e857ffc1203466c98b7,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-04-03 17:45:01+02:00,63,33,build/azure-devops/apigws/azure-pipelines.yml,
+e536cbd5900a3bec9ce1cb60f207aced5a179e02,Rafsanul Hasan,rafsanulhasan@outlook.com,Rafsanul Hasan,rafsanulhasan@outlook.com,2019-04-04 14:10:01+06:00,1,0,src/Services/Identity/Identity.API/Identity.API.csproj,Identity
+e536cbd5900a3bec9ce1cb60f207aced5a179e02,Rafsanul Hasan,rafsanulhasan@outlook.com,Rafsanul Hasan,rafsanulhasan@outlook.com,2019-04-04 14:10:01+06:00,1,0,src/Web/WebMVC/WebMVC.csproj,
+e536cbd5900a3bec9ce1cb60f207aced5a179e02,Rafsanul Hasan,rafsanulhasan@outlook.com,Rafsanul Hasan,rafsanulhasan@outlook.com,2019-04-04 14:10:01+06:00,1,0,src/Web/WebStatus/WebStatus.csproj,
+089f858ead3a4d33b93aecc88317909a6bc57a1b,Rafsanul Hasan,rafsanulhasan@outlook.com,Rafsanul Hasan,rafsanulhasan@outlook.com,2019-04-05 01:01:37+06:00,1,1,src/Web/WebMVC/WebMVC.csproj,
+aa7614be5adf76980f0638cff0c997ec5bbe998f,Nish Anil,nnish@live.com,GitHub,noreply@github.com,2019-04-05 14:21:10+05:30,3,3,README.md,
+e987dcfb7d60912ee245cf0ede93b1649d0459b4,Lee Dumond,leedumond@gmail.com,Lee Dumond,leedumond@gmail.com,2019-04-08 19:25:28-05:00,2,0,src/Services/Basket/Basket.FunctionalTests/Basket.FunctionalTests.csproj,Basket
+e987dcfb7d60912ee245cf0ede93b1649d0459b4,Lee Dumond,leedumond@gmail.com,Lee Dumond,leedumond@gmail.com,2019-04-08 19:25:28-05:00,2,0,src/Services/Catalog/Catalog.FunctionalTests/Catalog.FunctionalTests.csproj,Catalog
+e987dcfb7d60912ee245cf0ede93b1649d0459b4,Lee Dumond,leedumond@gmail.com,Lee Dumond,leedumond@gmail.com,2019-04-08 19:25:28-05:00,2,0,src/Services/Location/Locations.FunctionalTests/Locations.FunctionalTests.csproj,Location
+9dd7ed117ed150ab760286bb65bb7922b5778705,Lee Dumond,leedumond@gmail.com,Lee Dumond,leedumond@gmail.com,2019-04-08 19:38:49-05:00,1,1,src/Services/Identity/Identity.API/Views/Shared/_LoginPartial.cshtml,Identity
+f6c2f5672a59a78a6ec8220b169ca021285ae20a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-10 13:54:06+01:00,8,2,.dockerignore,
+f6c2f5672a59a78a6ec8220b169ca021285ae20a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-10 13:54:06+01:00,3,0,.gitignore,
+f6c2f5672a59a78a6ec8220b169ca021285ae20a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-10 13:54:06+01:00,3,0,Dockerfile-scripts/restore-packages,
+f6c2f5672a59a78a6ec8220b169ca021285ae20a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-10 13:54:06+01:00,1,0,restore-packages.cmd,
+f6c2f5672a59a78a6ec8220b169ca021285ae20a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-10 13:54:06+01:00,17,14,src/Services/Ordering/Ordering.API/Dockerfile,Ordering
+493df257c80554ed4f2daebd8cbfacd8b09eb020,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-11 20:12:58+01:00,2,2,src/Services/Basket/Basket.API/Controllers/BasketController.cs,Basket
+493df257c80554ed4f2daebd8cbfacd8b09eb020,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-11 20:12:58+01:00,2,2,src/Services/Basket/Basket.UnitTests/Application/BasketWebApiTest.cs,Basket
+493df257c80554ed4f2daebd8cbfacd8b09eb020,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-11 20:12:58+01:00,2,0,src/Services/Basket/Basket.UnitTests/Basket.UnitTests.csproj,Basket
+493df257c80554ed4f2daebd8cbfacd8b09eb020,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-11 20:12:58+01:00,2,0,src/Services/Catalog/Catalog.UnitTests/Catalog.UnitTests.csproj,Catalog
+493df257c80554ed4f2daebd8cbfacd8b09eb020,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-11 20:12:58+01:00,2,0,src/Services/Marketing/Marketing.FunctionalTests/Marketing.FunctionalTests.csproj,Marketing
+493df257c80554ed4f2daebd8cbfacd8b09eb020,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-11 20:12:58+01:00,27,0,src/Services/Marketing/Marketing.FunctionalTests/Properties/launchSettings.json,Marketing
+493df257c80554ed4f2daebd8cbfacd8b09eb020,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-11 20:12:58+01:00,2,0,src/Services/Ordering/Ordering.FunctionalTests/Ordering.FunctionalTests.csproj,Ordering
+5e19f32b2dac68ca08868fa9b97e3a1f2c564c03,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-04-12 13:31:18-05:00,1,1,src/Services/Marketing/Marketing.FunctionalTests/CampaignScenarios.cs,Marketing
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,2,0,.dockerignore,
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,1,1,Dockerfile-scripts/restore-packages,
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,31,3,src/ApiGateways/ApiGw-Base/Dockerfile,
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,30,2,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Dockerfile,
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,30,2,src/ApiGateways/Web.Bff.Shopping/aggregator/Dockerfile,
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,33,5,src/Services/Basket/Basket.API/Dockerfile,Basket
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,30,2,src/Services/Catalog/Catalog.API/Dockerfile,Catalog
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,30,2,src/Services/Identity/Identity.API/Dockerfile,Identity
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,30,2,src/Services/Location/Locations.API/Dockerfile,Location
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,30,2,src/Services/Marketing/Marketing.API/Dockerfile,Marketing
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,46,21,src/Services/Ordering/Ordering.API/Dockerfile,Ordering
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,30,2,src/Services/Ordering/Ordering.BackgroundTasks/Dockerfile,Ordering
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,31,3,src/Services/Ordering/Ordering.SignalrHub/Dockerfile,Ordering
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,30,2,src/Services/Payment/Payment.API/Dockerfile,Payment
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,31,4,src/Services/Webhooks/Webhooks.API/Dockerfile,Webhooks
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,31,2,src/Web/WebMVC/Dockerfile,
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,35,7,src/Web/WebSPA/Dockerfile,
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,30,2,src/Web/WebStatus/Dockerfile,
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,32,5,src/Web/WebhookClient/Dockerfile,
+be75d554f26de1af53aa37734c5a60511d25f47d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-12 19:45:45+01:00,34,0,src/csproj-files.txt,
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,1,1,Dockerfile-scripts/restore-packages,
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/ApiGateways/ApiGw-Base/Dockerfile,
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Dockerfile,
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/ApiGateways/Web.Bff.Shopping/aggregator/Dockerfile,
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Basket/Basket.API/Dockerfile,Basket
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Catalog/Catalog.API/Dockerfile,Catalog
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Identity/Identity.API/Dockerfile,Identity
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Location/Locations.API/Dockerfile,Location
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Marketing/Marketing.API/Dockerfile,Marketing
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Ordering/Ordering.API/Dockerfile,Ordering
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Ordering/Ordering.BackgroundTasks/Dockerfile,Ordering
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Ordering/Ordering.SignalrHub/Dockerfile,Ordering
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Payment/Payment.API/Dockerfile,Payment
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Services/Webhooks/Webhooks.API/Dockerfile,Webhooks
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Web/WebMVC/Dockerfile,
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Web/WebSPA/Dockerfile,
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Web/WebStatus/Dockerfile,
+06018d4080ce0e89a6e3a33126f967cca570b402,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-13 08:23:40+01:00,6,25,src/Web/WebhookClient/Dockerfile,
+3ef07a580c6b8ff733462f91397a329555dc1163,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 19:32:12+01:00,0,2,src/Services/Basket/Basket.UnitTests/Application/BasketWebApiTest.cs,Basket
+3ef07a580c6b8ff733462f91397a329555dc1163,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 19:32:12+01:00,2,0,src/Services/Basket/Basket.UnitTests/Basket.UnitTests.csproj,Basket
+3ef07a580c6b8ff733462f91397a329555dc1163,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 19:32:12+01:00,2,0,src/Services/Catalog/Catalog.UnitTests/Catalog.UnitTests.csproj,Catalog
+3ef07a580c6b8ff733462f91397a329555dc1163,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 19:32:12+01:00,2,0,src/Services/Marketing/Marketing.FunctionalTests/Marketing.FunctionalTests.csproj,Marketing
+05fed22b017068092b1cbe48975c60b036f7b225,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 19:58:20+01:00,4,2,src/Services/Basket/Basket.UnitTests/Application/BasketWebApiTest.cs,Basket
+e42712bb693ca045d30a488725eb8e59d0edb1dd,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:30:59+01:00,1,2,src/Services/Marketing/Marketing.FunctionalTests/Marketing.FunctionalTests.csproj,Marketing
+f56f04dcb908404381916b4598212234a9995de3,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:34:22+01:00,2,0,.gitignore,
+f56f04dcb908404381916b4598212234a9995de3,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:34:22+01:00,0,65,,
+f56f04dcb908404381916b4598212234a9995de3,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:34:22+01:00,0,65,,
+f56f04dcb908404381916b4598212234a9995de3,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:34:22+01:00,0,89,,
+f56f04dcb908404381916b4598212234a9995de3,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:34:22+01:00,0,89,,
+f56f04dcb908404381916b4598212234a9995de3,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:34:22+01:00,0,47,,
+f56f04dcb908404381916b4598212234a9995de3,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:34:22+01:00,0,77,,
+f56f04dcb908404381916b4598212234a9995de3,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:34:22+01:00,0,41,,
+f56f04dcb908404381916b4598212234a9995de3,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-15 20:34:22+01:00,0,41,,
+fe81c78bbd88961a4676d4007095c456c2cd3aa7,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-04-17 09:17:04-05:00,2,2,src/Services/Marketing/Marketing.FunctionalTests/UserLocationRoleScenarios.cs,Marketing
+e781d004197acfab25992c0b20f6a7ac393d4bb8,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-04-18 10:34:08-05:00,4,2,src/Web/WebMVC/Views/Campaigns/Details.cshtml,
+e781d004197acfab25992c0b20f6a7ac393d4bb8,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-04-18 10:34:08-05:00,24,22,src/Web/WebMVC/Views/Campaigns/Index.cshtml,
+b8dbfa31045f3e801918e512118c2f094daf2b4b,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-04-18 10:47:21-05:00,17,16,src/Web/WebMVC/Views/Catalog/Index.cshtml,
+3224a777921a0818e075ee705b19fe14f070f313,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-04-18 14:28:45-05:00,40,0,src/Web/WebStatus/Views/Shared/Error.cshtml,
+3224a777921a0818e075ee705b19fe14f070f313,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-04-18 14:28:45-05:00,0,6,src/Web/WebStatus/WebStatus.csproj,
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,0,0,scripts/restore-packages,
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/ApiGateways/ApiGw-Base/Dockerfile,
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Dockerfile,
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/ApiGateways/Web.Bff.Shopping/aggregator/Dockerfile,
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Basket/Basket.API/Dockerfile,Basket
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Catalog/Catalog.API/Dockerfile,Catalog
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Identity/Identity.API/Dockerfile,Identity
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Location/Locations.API/Dockerfile,Location
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Marketing/Marketing.API/Dockerfile,Marketing
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Ordering/Ordering.API/Dockerfile,Ordering
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Ordering/Ordering.BackgroundTasks/Dockerfile,Ordering
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Ordering/Ordering.SignalrHub/Dockerfile,Ordering
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Payment/Payment.API/Dockerfile,Payment
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Services/Webhooks/Webhooks.API/Dockerfile,Webhooks
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Web/WebMVC/Dockerfile,
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Web/WebSPA/Dockerfile,
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Web/WebStatus/Dockerfile,
+914e8bd0cdd269b74a984e6cb1fd04584d1bee4f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-22 18:10:53+01:00,3,2,src/Web/WebhookClient/Dockerfile,
+df72a039c5686be1c518f38a50ba1fceb3e5584f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-23 12:48:56+01:00,0,28,build/azure-devops/apigws/azure-pipelines.yml,
+df72a039c5686be1c518f38a50ba1fceb3e5584f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-23 12:48:56+01:00,1,0,scripts/restore-packages.cmd,
+9159df343e6dfc663b66942e24c477b3a2a6bd0e,Joni,jonijpn@gmail.com,Joni,jonijpn@gmail.com,2019-04-26 01:25:43+09:00,2,2,src/Services/Ordering/Ordering.API/Application/IntegrationEvents/OrderingIntegrationEventService.cs,Ordering
+7dd819c4b544acf35737cd4b87f597b17265ca67,Gajendra Thokala,gababu@microsoft.com,Gajendra Thokala,gababu@microsoft.com,2019-04-27 18:27:15-07:00,1,0,cli-windows/set-dockernat-networkategory-to-private.ps1,
+1dacbb7a8ed5789cf272691f529526ae3193c761,Daniel Larsen,dalars@microsoft.com,Daniel Larsen,dalars@microsoft.com,2019-04-28 20:59:13+12:00,3,3,k8s/helm/deploy-all.ps1,
+896442a0bfc956cd7e265f55aa3707c21207d250,Gajendra Babu Thokala [MSFT],gajendra.babu@hotmail.com,GitHub,noreply@github.com,2019-04-29 09:42:01-07:00,2,1,cli-windows/set-dockernat-networkategory-to-private.ps1,
+ba721aa65c0c3af8eb3a8f447831f58bee62f157,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-30 19:19:11+01:00,1,1,run-docker-compose-build.ps1,
+ba721aa65c0c3af8eb3a8f447831f58bee62f157,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-04-30 19:19:11+01:00,1,3,scripts/restore-packages,
+95ac1fe9bd183f3442ab23726b4b0c8af66741c2,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-01 14:26:06-05:00,2,5,src/Web/WebStatus/Views/Shared/Error.cshtml,
+1bf7c6fe6c9b1033c19433cd4c87022c256b96e8,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 17:42:26+01:00,79,9,src/Web/WebStatus/appsettings.json,
+3026a55be80eb4928651dab8055aac7c74b62844,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 19:06:39+01:00,2,2,src/Web/WebMVC/Views/Shared/_Layout.cshtml,
+3026a55be80eb4928651dab8055aac7c74b62844,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 19:06:39+01:00,1,1,src/Web/WebMVC/libman.json,
+3026a55be80eb4928651dab8055aac7c74b62844,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 19:06:39+01:00,9,9,src/Web/WebSPA/package-lock.json,
+3026a55be80eb4928651dab8055aac7c74b62844,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 19:06:39+01:00,1,1,src/Web/WebSPA/package.json,
+3026a55be80eb4928651dab8055aac7c74b62844,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 19:06:39+01:00,1,1,src/Web/WebStatus/libman.json,
+3026a55be80eb4928651dab8055aac7c74b62844,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 19:06:39+01:00,2,2,src/Web/WebhookClient/Pages/Shared/_Layout.cshtml,
+3026a55be80eb4928651dab8055aac7c74b62844,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 19:06:39+01:00,415,181,src/Web/WebhookClient/wwwroot/lib/jquery/dist/jquery.js,
+3026a55be80eb4928651dab8055aac7c74b62844,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 19:06:39+01:00,2,2,src/Web/WebhookClient/wwwroot/lib/jquery/dist/jquery.min.js,
+3026a55be80eb4928651dab8055aac7c74b62844,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-02 19:06:39+01:00,1,1,src/Web/WebhookClient/wwwroot/lib/jquery/dist/jquery.min.map,
+38f5518e5e42d7b6f9365adf2ca903db9b630afe,Miguel Veloso,mvelosop@gmail.com,GitHub,noreply@github.com,2019-05-03 10:51:59+01:00,1,1,scripts/restore-packages,
+a95fbd993a3aeabec929fef154005aeb4ce69a87,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-03 16:00:47+01:00,34,34,docker-compose.override.yml,
+07081792e82294c1dfb6d5c7977245c44cfb6a95,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-03 16:01:58+01:00,12,7,src/Services/Identity/Identity.API/Controllers/AccountController.cs,Identity
+07081792e82294c1dfb6d5c7977245c44cfb6a95,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-03 16:01:58+01:00,3,1,src/Services/Identity/Identity.API/appsettings.json,Identity
+07081792e82294c1dfb6d5c7977245c44cfb6a95,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-03 16:01:58+01:00,11,1,src/Web/WebMVC/Controllers/AccountController.cs,
+07081792e82294c1dfb6d5c7977245c44cfb6a95,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-03 16:01:58+01:00,2,1,src/Web/WebMVC/Startup.cs,
+07081792e82294c1dfb6d5c7977245c44cfb6a95,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-03 16:01:58+01:00,2,1,src/Web/WebMVC/appsettings.json,
+53d4865021f6158bb7967fb5b05928972f60838a,Miguel Veloso,mvelosop@gmail.com,GitHub,noreply@github.com,2019-05-03 16:13:32+01:00,2,2,src/Web/WebMVC/appsettings.json,
+bcc158a96de4818c05b9e43c238f7f0922639fee,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-05 15:22:11+03:00,1,1,src/Services/Basket/Basket.API/Controllers/BasketController.cs,Basket
+bcc158a96de4818c05b9e43c238f7f0922639fee,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-05 15:22:11+03:00,3,2,src/Services/Basket/Basket.API/Infrastructure/Repositories/IBasketRepository.cs,Basket
+bcc158a96de4818c05b9e43c238f7f0922639fee,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-05 15:22:11+03:00,3,2,src/Services/Basket/Basket.API/Infrastructure/Repositories/RedisBasketRepository.cs,Basket
+bcc158a96de4818c05b9e43c238f7f0922639fee,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-05 15:22:11+03:00,1,1,src/Services/Basket/Basket.API/IntegrationEvents/EventHandling/OrderStartedIntegrationEventHandler.cs,Basket
+bcc158a96de4818c05b9e43c238f7f0922639fee,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-05 15:22:11+03:00,1,0,src/Services/Basket/Basket.API/IntegrationEvents/EventHandling/ProductPriceChangedIntegrationEventHandler.cs,Basket
+bcc158a96de4818c05b9e43c238f7f0922639fee,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-05 15:22:11+03:00,1,0,src/Services/Basket/Basket.API/Startup.cs,Basket
+bcc158a96de4818c05b9e43c238f7f0922639fee,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-05 15:22:11+03:00,1,0,src/Services/Basket/Basket.FunctionalTests/RedisBasketRepositoryTests.cs,Basket
+bcc158a96de4818c05b9e43c238f7f0922639fee,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-05 15:22:11+03:00,1,0,src/Services/Basket/Basket.UnitTests/Application/BasketWebApiTest.cs,Basket
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,1,1,src/Services/Ordering/Ordering.API/Application/Commands/CancelOrderCommandHandler.cs,Ordering
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,1,1,src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs,Ordering
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,1,1,src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs,Ordering
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,1,1,src/Services/Ordering/Ordering.API/Application/Commands/SetAwaitingValidationOrderStatusCommandHandler.cs,Ordering
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,2,2,src/Services/Ordering/Ordering.API/Application/Commands/SetPaidOrderStatusCommandHandler.cs,Ordering
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,2,2,src/Services/Ordering/Ordering.API/Application/Commands/SetStockConfirmedOrderStatusCommandHandler.cs,Ordering
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,2,2,src/Services/Ordering/Ordering.API/Application/Commands/SetStockRejectedOrderStatusCommandHandler.cs,Ordering
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,1,1,src/Services/Ordering/Ordering.API/Application/Commands/ShipOrderCommandHandler.cs,Ordering
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,1,1,src/Services/Ordering/Ordering.API/Application/DomainEventHandlers/OrderStartedEvent/ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler.cs,Ordering
+e4dc90356ed9803389ab36e067adfb7380f944a0,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-06 14:57:44-05:00,1,1,src/Services/Ordering/Ordering.Infrastructure/OrderingContext.cs,Ordering
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,4,0,docker-compose.override.yml,
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,1,1,scripts/restore-packages,
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,27,9,src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs,
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,4,1,src/BuildingBlocks/EventBus/IntegrationEventLogEF/IntegrationEventLogEntry.cs,
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,4,3,src/BuildingBlocks/EventBus/IntegrationEventLogEF/Services/IIntegrationEventLogService.cs,
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,9,9,src/BuildingBlocks/EventBus/IntegrationEventLogEF/Services/IntegrationEventLogService.cs,
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,50,0,src/Services/Catalog/Catalog.API/Infrastructure/IntegrationEventMigrations/20190507184807_AddTransactionId.Designer.cs,Catalog
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,22,0,src/Services/Catalog/Catalog.API/Infrastructure/IntegrationEventMigrations/20190507184807_AddTransactionId.cs,Catalog
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,18,0,src/Services/Catalog/Catalog.API/Infrastructure/IntegrationEventMigrations/IntegrationEventLogContextDesignTimeFactory.cs,Catalog
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,9,3,src/Services/Catalog/Catalog.API/Infrastructure/IntegrationEventMigrations/IntegrationEventLogContextModelSnapshot.cs,Catalog
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,1,1,src/Services/Catalog/Catalog.API/IntegrationEvents/CatalogIntegrationEventService.cs,Catalog
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,5,1,src/Services/Ordering/Ordering.API/Application/Behaviors/TransactionBehaviour.cs,Ordering
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,2,1,src/Services/Ordering/Ordering.API/Application/IntegrationEvents/IOrderingIntegrationEventService.cs,Ordering
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,3,3,src/Services/Ordering/Ordering.API/Application/IntegrationEvents/OrderingIntegrationEventService.cs,Ordering
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,50,0,src/Services/Ordering/Ordering.API/Infrastructure/IntegrationEventMigrations/20190507185219_AddTransactionId.Designer.cs,Ordering
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,22,0,src/Services/Ordering/Ordering.API/Infrastructure/IntegrationEventMigrations/20190507185219_AddTransactionId.cs,Ordering
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,18,0,src/Services/Ordering/Ordering.API/Infrastructure/IntegrationEventMigrations/IntegrationEventLogContextDesignTimeFactory.cs,Ordering
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,9,3,src/Services/Ordering/Ordering.API/Infrastructure/IntegrationEventMigrations/IntegrationEventLogContextModelSnapshot.cs,Ordering
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,1,1,src/Services/Ordering/Ordering.Infrastructure/OrderingContext.cs,Ordering
+61ecfba05215c56e4c6cdddf1731d93a7fd1c11a,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-07 21:29:37+01:00,2,0,src/Services/Payment/Payment.API/IntegrationEvents/EventHandling/OrderStatusChangedToStockConfirmedIntegrationEventHandler.cs,Payment
+4f352345ac8ae6983aded1b2f757e3ca9c2961fd,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-08 12:37:51-05:00,4,10,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Controllers/BasketController.cs,
+e9c5b041e1217474dcf370094a5f0d406b05c260,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-08 21:25:48+03:00,0,1,src/Services/Basket/Basket.API/Controllers/BasketController.cs,Basket
+e9c5b041e1217474dcf370094a5f0d406b05c260,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-08 21:25:48+03:00,1,1,src/Services/Basket/Basket.API/IntegrationEvents/EventHandling/OrderStartedIntegrationEventHandler.cs,Basket
+e9c5b041e1217474dcf370094a5f0d406b05c260,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-08 21:25:48+03:00,0,1,src/Services/Basket/Basket.API/IntegrationEvents/EventHandling/ProductPriceChangedIntegrationEventHandler.cs,Basket
+e9c5b041e1217474dcf370094a5f0d406b05c260,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-08 21:25:48+03:00,2,3,src/Services/Basket/Basket.API/Model/IBasketRepository.cs,Basket
+e9c5b041e1217474dcf370094a5f0d406b05c260,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-08 21:25:48+03:00,0,5,src/Services/Basket/Basket.FunctionalTests/RedisBasketRepositoryTests.cs,Basket
+e9c5b041e1217474dcf370094a5f0d406b05c260,Dmytro Hridin,dmytro.hridin@gmail.com,Dmytro Hridin,dmytro.hridin@gmail.com,2019-05-08 21:25:48+03:00,0,1,src/Services/Basket/Basket.UnitTests/Application/BasketWebApiTest.cs,Basket
+78d966b31c59eb2c4cba0e9952433a37eeabfd99,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:24:12+01:00,0,0,docs/Containerized Docker Application Lifecycle with Microsoft Platform and Tools (eBook)-v1.1.pdf,
+78d966b31c59eb2c4cba0e9952433a37eeabfd99,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:24:12+01:00,0,0,docs/Containerized Docker Application Lifecycle with Microsoft Platform and Tools (eBook).pdf,
+78d966b31c59eb2c4cba0e9952433a37eeabfd99,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:24:12+01:00,0,0,img/ebook_arch_dev_microservices_containers_cover.png,
+78d966b31c59eb2c4cba0e9952433a37eeabfd99,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:24:12+01:00,0,0,img/ebook_containers_lifecycle.png,
+ea7667f3408324c328ef3dfb67807f10477ec830,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:31:55+01:00,0,0,docs/Containerized Docker Application Lifecycle with Microsoft Platform and Tools (eBook)-v1.1.pdf,
+ea7667f3408324c328ef3dfb67807f10477ec830,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:31:55+01:00,0,0,docs/Containerized Docker Application Lifecycle with Microsoft Platform and Tools (eBook).pdf,
+ea7667f3408324c328ef3dfb67807f10477ec830,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:31:55+01:00,0,0,img/ebook_arch_dev_microservices_containers_cover.png,
+ea7667f3408324c328ef3dfb67807f10477ec830,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:31:55+01:00,0,0,img/ebook_containers_lifecycle.png,
+21a1962399774208b7bc2f133b4bab0d02035722,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:35:26+01:00,0,0,img/ebook_arch_dev_microservices_containers_cover.png,
+079ebaa1f05387ce38ba2585a5d093394803aedb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-10 11:37:33+01:00,0,0,img/ebook_arch_dev_microservices_containers_cover.png,
+c5a8e4c5e8ae3912d1fac7cd664b835b83798e31,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:02:40+01:00,0,302,,
+c5a8e4c5e8ae3912d1fac7cd664b835b83798e31,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:02:40+01:00,0,45,,
+c5a8e4c5e8ae3912d1fac7cd664b835b83798e31,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:02:40+01:00,0,19,,
+c5a8e4c5e8ae3912d1fac7cd664b835b83798e31,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:02:40+01:00,0,83,,
+c5a8e4c5e8ae3912d1fac7cd664b835b83798e31,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:02:40+01:00,0,54,,
+c5a8e4c5e8ae3912d1fac7cd664b835b83798e31,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:02:40+01:00,0,29,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,9,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,22,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,17,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,17,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,12,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,12,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,48,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,3,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,7,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,70,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,6,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,79,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,102,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,97,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,108,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,95,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,15,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,27,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,14,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/1.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/10.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/11.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/12.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/2.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/3.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/4.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/5.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/6.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/7.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/8.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/Pics/9.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,26,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,27,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,88,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,14,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,83,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,13,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,16,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,17,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,48,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,32,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,24,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,14,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,75,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,18,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,2,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,3,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,10,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,10,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,10,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,24,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,37,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,86,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,147,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,34,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/favicon.ico,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/fonts/Montserrat-Bold.eot,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1933,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/fonts/Montserrat-Bold.ttf,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/fonts/Montserrat-Bold.woff,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/fonts/Montserrat-Bold.woff2,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/fonts/Montserrat-Regular.eot,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1743,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/fonts/Montserrat-Regular.ttf,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/fonts/Montserrat-Regular.woff,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/fonts/Montserrat-Regular.woff2,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/images/arrow-down.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/images/brand.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/images/brand_dark.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/images/cart.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/images/logout.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/images/main_banner.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/images/main_banner_text.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,6,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/images/my_orders.png,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,44,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/js/site.min.js,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,45,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,21,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,587,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,6,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,6757,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,6,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,288,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,0,src/Web/WebMonolithic/eShopWeb/wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,2377,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,7,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,13,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,44,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,416,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,5,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,40,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,22,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,998,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,4,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1398,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,4,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,25,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,36,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,9831,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,4,,
+8790087b851161e73c4015e79d9887dbd4ae7eeb,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 17:04:38+01:00,0,1,,
+91515e7ea638a4f7eed9c0403fa15063cd9712b2,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 18:15:50+01:00,12,11,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Filters/AuthorizeCheckOperationFilter.cs,
+91515e7ea638a4f7eed9c0403fa15063cd9712b2,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 18:15:50+01:00,12,11,src/ApiGateways/Web.Bff.Shopping/aggregator/Filters/AuthorizeCheckOperationFilter.cs,
+91515e7ea638a4f7eed9c0403fa15063cd9712b2,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 18:15:50+01:00,12,13,src/Services/Basket/Basket.API/Infrastructure/Filters/AuthorizeCheckOperationFilter.cs,Basket
+91515e7ea638a4f7eed9c0403fa15063cd9712b2,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 18:15:50+01:00,11,10,src/Services/Location/Locations.API/Infrastructure/Filters/AuthorizeCheckOperationFilter.cs,Location
+91515e7ea638a4f7eed9c0403fa15063cd9712b2,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 18:15:50+01:00,12,13,src/Services/Marketing/Marketing.API/Infrastructure/Filters/AuthorizeCheckOperationFilter.cs,Marketing
+91515e7ea638a4f7eed9c0403fa15063cd9712b2,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 18:15:50+01:00,11,10,src/Services/Ordering/Ordering.API/Infrastructure/Filters/AuthorizeCheckOperationFilter.cs,Ordering
+91515e7ea638a4f7eed9c0403fa15063cd9712b2,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-13 18:15:50+01:00,11,10,src/Services/Webhooks/Webhooks.API/Infrastructure/AuthorizeCheckOperationFilter.cs,Webhooks
+1780057ec89ef019bc3dcb0796bea48a42aeeb51,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:31:38+01:00,0,0,img/ebook_arch_dev_microservices_containers_cover.png,
+aee4d91d41335e94cbad9a9e9d5e836de618e7a1,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:32:07+01:00,0,0,docs/Containerized Docker Application Lifecycle with Microsoft Platform and Tools (eBook)-v1.1.pdf,
+aee4d91d41335e94cbad9a9e9d5e836de618e7a1,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:32:07+01:00,0,0,docs/Containerized Docker Application Lifecycle with Microsoft Platform and Tools (eBook).pdf,
+aee4d91d41335e94cbad9a9e9d5e836de618e7a1,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:32:07+01:00,0,0,img/ebook_arch_dev_microservices_containers_cover.png,
+aee4d91d41335e94cbad9a9e9d5e836de618e7a1,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:32:07+01:00,0,0,img/ebook_containers_lifecycle.png,
+ca203e06489b260c671c642c36ea42bde1a487be,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:34:44+01:00,0,0,img/ebook_arch_dev_microservices_containers_cover.png,
+aa3123539191fec9fe978d852057b8b3c02481a0,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:34:56+01:00,0,0,docs/Containerized Docker Application Lifecycle with Microsoft Platform and Tools (eBook)-v1.1.pdf,
+aa3123539191fec9fe978d852057b8b3c02481a0,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:34:56+01:00,0,0,docs/Containerized Docker Application Lifecycle with Microsoft Platform and Tools (eBook).pdf,
+aa3123539191fec9fe978d852057b8b3c02481a0,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:34:56+01:00,0,0,img/ebook_arch_dev_microservices_containers_cover.png,
+aa3123539191fec9fe978d852057b8b3c02481a0,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-14 19:34:56+01:00,0,0,img/ebook_containers_lifecycle.png,
+fd2bf42a5f2237980f8be2cb25f4da8f5bdfa89d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-16 13:30:00+01:00,1,0,docker-compose.override.yml,
+fd2bf42a5f2237980f8be2cb25f4da8f5bdfa89d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-16 13:30:00+01:00,5,6,src/Services/Ordering/Ordering.API/Application/Validations/CancelOrderCommandValidator.cs,Ordering
+fd2bf42a5f2237980f8be2cb25f4da8f5bdfa89d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-16 13:30:00+01:00,9,6,src/Services/Ordering/Ordering.API/Application/Validations/CreateOrderCommandValidator.cs,Ordering
+fd2bf42a5f2237980f8be2cb25f4da8f5bdfa89d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-16 13:30:00+01:00,5,2,src/Services/Ordering/Ordering.API/Application/Validations/IdentifiedCommandValidator.cs,Ordering
+fd2bf42a5f2237980f8be2cb25f4da8f5bdfa89d,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-16 13:30:00+01:00,5,6,src/Services/Ordering/Ordering.API/Application/Validations/ShipOrderCommandValidator.cs,Ordering
+644b26c7b5be543a0adfb8e6deed74bba3fa3247,Nish Anil,nanil@microsoft.com,Nish Anil,nanil@microsoft.com,2019-05-16 09:42:59-07:00,0,0,docs/MicrosoftAzure_StartGuide_Developers-old.pdf,
+644b26c7b5be543a0adfb8e6deed74bba3fa3247,Nish Anil,nanil@microsoft.com,Nish Anil,nanil@microsoft.com,2019-05-16 09:42:59-07:00,0,0,docs/MicrosoftAzure_StartGuide_Developers.pdf,
+fef625a6c567739c46237d6ea95af5cd862a2275,Nish Anil,nanil@microsoft.com,Nish Anil,nanil@microsoft.com,2019-05-16 09:47:45-07:00,0,0,docs/MicrosoftAzure_StartGuide_Developers-old.pdf,
+fef625a6c567739c46237d6ea95af5cd862a2275,Nish Anil,nanil@microsoft.com,Nish Anil,nanil@microsoft.com,2019-05-16 09:47:45-07:00,0,0,docs/MicrosoftAzure_StartGuide_Developers.pdf,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/basket-api/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/catalog-api/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/identity-api/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/locations-api/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/marketing-api/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/mobileshoppingagg/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/ordering-api/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/ordering-backgroundtasks/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/ordering-signalrhub/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/payment-api/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/webhooks-api/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/webmvc/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/webshoppingagg/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/webspa/templates/configmap.yaml,
+df4663bd87d2d4d5748735be0b1f861c873e284b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 15:49:44+01:00,1,1,k8s/helm/webstatus/templates/configmap.yaml,
+0779a47565fa3f8e2dbb54ac1521f4b1d2ff1563,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 16:11:35+01:00,1,1,k8s/helm/app.yaml,
+0779a47565fa3f8e2dbb54ac1521f4b1d2ff1563,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-05-23 16:11:35+01:00,4,4,k8s/helm/inf.yaml,
+29ba3d5ddff4fd70037c0db2df3e12d3191ab91b,Lee Dumond,lee_dumond@aisreview.com,Lee Dumond,lee_dumond@aisreview.com,2019-05-23 14:21:41-05:00,4,9,src/ApiGateways/Web.Bff.Shopping/aggregator/Controllers/BasketController.cs,
+346994aff05420844b96c3459b87c69ff7f7f393,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:32:25+02:00,29,1,build/azure-devops/apigws/azure-pipelines.yml,
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/ApiGateways/ApiGw-Base/Dockerfile,
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Dockerfile,
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/ApiGateways/Web.Bff.Shopping/aggregator/Dockerfile,
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Basket/Basket.API/Dockerfile,Basket
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Catalog/Catalog.API/Dockerfile,Catalog
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Identity/Identity.API/Dockerfile,Identity
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Location/Locations.API/Dockerfile,Location
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Marketing/Marketing.API/Dockerfile,Marketing
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Ordering/Ordering.API/Dockerfile,Ordering
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Ordering/Ordering.BackgroundTasks/Dockerfile,Ordering
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Ordering/Ordering.SignalrHub/Dockerfile,Ordering
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Payment/Payment.API/Dockerfile,Payment
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Services/Webhooks/Webhooks.API/Dockerfile,Webhooks
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Web/WebMVC/Dockerfile,
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Web/WebSPA/Dockerfile,
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Web/WebStatus/Dockerfile,
+58f156f4172e57724b1315cb62ff725ba2ca9e73,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 11:49:39+02:00,0,3,src/Web/WebhookClient/Dockerfile,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,63,33,build/azure-devops/basket-api/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,63,33,build/azure-devops/catalog-api/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,63,33,build/azure-devops/identity-api/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,64,34,build/azure-devops/location-api/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,64,34,build/azure-devops/marketing-api/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,65,34,build/azure-devops/mobile-shopping-agg/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,63,33,build/azure-devops/ordering-api/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,63,33,build/azure-devops/payment-api/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,64,34,build/azure-devops/web-shopping-agg/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,64,34,build/azure-devops/webhooks-api/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,64,34,build/azure-devops/webhooks-client/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,64,34,build/azure-devops/webmvc/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,63,33,build/azure-devops/webspa/azure-pipelines.yml,
+6693719f49750d7a2a7aa4a12f4814df150a72fa,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-28 12:22:39+02:00,64,34,build/azure-devops/webstatus/azure-pipelines.yml,
+c0f950e4a78b01281a467696e7e8ffdc43d4c27a,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 08:49:21+02:00,3,1,build/azure-devops/webspa/azure-pipelines.yml,
+c0f950e4a78b01281a467696e7e8ffdc43d4c27a,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 08:49:21+02:00,2,0,docker-compose.yml,
+89a3decdac1a474715b51daa4ddc09049c07c550,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 16:15:22+02:00,6,1,build/azure-devops/apigws/azure-pipelines.yml,
+89a3decdac1a474715b51daa4ddc09049c07c550,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 16:15:22+02:00,23,0,build/azure-devops/multiarch.yaml,
+3857cc814317376ab31e1ff17dfe4dcf4b6fb9f9,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 16:18:26+02:00,3,3,build/azure-devops/multiarch.yaml,
+91dae69cc764fb77abe80026bd3249ce62d82e0b,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 16:28:27+02:00,4,1,build/azure-devops/multiarch.yaml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/basket-api/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/catalog-api/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,5,0,build/azure-devops/identity-api/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/location-api/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/marketing-api/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,5,0,build/azure-devops/mobile-shopping-agg/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,0,1,build/azure-devops/multiarch.yaml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/ordering-api/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/payment-api/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/web-shopping-agg/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/webhooks-api/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/webhooks-client/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/webmvc/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/webspa/azure-pipelines.yml,
+ad7d33968f102ffcb06e528b6a64002890947cea,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-29 17:02:51+02:00,6,1,build/azure-devops/webstatus/azure-pipelines.yml,
+2de66ba6827d6f6f164efccc075a8c460f4920ff,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-05-30 10:27:47+02:00,2,0,build/azure-devops/multiarch.yaml,
+df3c59434087758189257f2462117623a5ebd936,Nish Anil,nish@microsoft.com,GitHub,noreply@github.com,2019-06-05 20:03:35+05:30,0,0,img/eShopScreen.png,
+ac0da28f594a2681ebd48d87eeffcb08c54b1cf2,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:10:11+02:00,4,62,build/azure-devops/apigws/azure-pipelines.yml,
+ac0da28f594a2681ebd48d87eeffcb08c54b1cf2,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:10:11+02:00,92,0,build/azure-devops/buildimages.yaml,
+ac0da28f594a2681ebd48d87eeffcb08c54b1cf2,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:10:11+02:00,11,8,build/azure-devops/multiarch.yaml,
+116e193134b511514c9cd2e6aa41dde0538642f3,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:17:53+02:00,7,11,build/azure-devops/buildimages.yaml,
+7be7718a5d6ff73321d2313a26786f0e3dd0cf75,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:20:55+02:00,2,2,build/azure-devops/buildimages.yaml,
+7be7718a5d6ff73321d2313a26786f0e3dd0cf75,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:20:55+02:00,1,1,build/azure-devops/multiarch.yaml,
+3d881ba18a22517f19d0ba5694fbdb665d54b3ed,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:22:16+02:00,3,3,build/azure-devops/buildimages.yaml,
+d1675ad7fbc4dc79da78581b87b6e7522f41db8e,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:23:18+02:00,2,2,build/azure-devops/buildimages.yaml,
+d1675ad7fbc4dc79da78581b87b6e7522f41db8e,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:23:18+02:00,1,1,build/azure-devops/multiarch.yaml,
+d27902b87880bc2d552085e0381d53b770e2c5c3,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:23:53+02:00,2,2,build/azure-devops/buildimages.yaml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,1,1,build/azure-devops/apigws/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/basket-api/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,13,12,build/azure-devops/buildimages.yaml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/catalog-api/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/identity-api/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/location-api/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/marketing-api/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/mobile-shopping-agg/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/ordering-api/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/payment-api/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/web-shopping-agg/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/webhooks-api/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/webhooks-client/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/webmvc/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,64,build/azure-devops/webspa/azure-pipelines.yml,
+b01d8a87d19399664e93cf280472b56ed422ace0,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:53:06+02:00,4,62,build/azure-devops/webstatus/azure-pipelines.yml,
+3ffde0a89ee90b8f4a3884cc4f3d281b0771c2b9,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-05 19:54:35+02:00,1,0,build/azure-devops/buildimages.yaml,
+28bc81de31c9beff5b08f9012265c4299ca733b1,Steve Smith,steve@kentsmiths.com,GitHub,noreply@github.com,2019-06-05 16:19:17-04:00,1,1,readme/readme.md,
+5dd7e29b32c892a7bf589b789da8ed78f0439e32,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 08:51:36+02:00,1,1,build/azure-devops/buildimages.yaml,
+8d763979264872d65803b02ed1773a3a02190984,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 12:34:27+02:00,3,3,build/azure-devops/buildimages.yaml,
+8d763979264872d65803b02ed1773a3a02190984,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 12:34:27+02:00,8,9,build/azure-devops/multiarch.yaml,
+84567537123f2ee79f1d96a016c37187e82de099,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 12:35:26+02:00,3,3,build/azure-devops/buildimages.yaml,
+9489499567537e467decd45e0db1cd6f9880fba8,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 12:37:37+02:00,4,5,build/azure-devops/multiarch.yaml,
+32db98422c80f0bbc6a82c8148bae79514a0ff87,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 12:50:01+02:00,5,3,build/azure-devops/buildimages.yaml,
+32db98422c80f0bbc6a82c8148bae79514a0ff87,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 12:50:01+02:00,2,0,build/azure-devops/catalog-api/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/apigws/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/basket-api/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/identity-api/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/location-api/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/marketing-api/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/mobile-shopping-agg/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/ordering-api/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/payment-api/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/web-shopping-agg/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/webhooks-api/azure-pipelines.yml,
+b8df869b4590d34b07805da4fb8413c0fc472800,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:04:56+02:00,2,0,build/azure-devops/webhooks-client/azure-pipelines.yml,
+0ada6d85bd638b5a96f303f96c65daf04127b8fd,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 13:20:34+02:00,5,4,build/azure-devops/multiarch.yaml,
+6debff7b08f19500cbbd711f02abaf2cb83b564a,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 16:41:14+02:00,6,5,build/azure-devops/multiarch.yaml,
+e48e3902cb8905bf0fde8cd85f02e2be5cef37b9,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-06 16:43:30+02:00,4,4,build/azure-devops/multiarch.yaml,
+661de66666a46faed4ca1bdc5c3f2a536a2b0a06,chinaq,aaa6263@sina.com,chinaq,aaa6263@sina.com,2019-06-10 09:07:53+08:00,1,1,src/Services/Ordering/Ordering.UnitTests/Application/OrdersWebApiTest.cs,Ordering
+9c49bc57041169293ea7f38208c2ca487c7f7d7c,Joni,jonijpn@gmail.com,GitHub,noreply@github.com,2019-06-13 13:00:43+09:00,3,3,test/readme.md,
+33fb3a735ffd77641fed05cc573e875ba492f416,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-06-13 18:15:30+02:00,1,1,docker-compose.yml,
+5b7a86dca950a662412068a86ac8445945ccfa42,Steve Smith,steve@kentsmiths.com,Steve Smith,steve@kentsmiths.com,2019-06-13 18:39:24-04:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.0.pdf,
+5b7a86dca950a662412068a86ac8445945ccfa42,Steve Smith,steve@kentsmiths.com,Steve Smith,steve@kentsmiths.com,2019-06-13 18:39:24-04:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook).pdf,
+5d5e8d2e08a1225d219bdef0c4e8a7d075b1aa01,Steve Smith,steve@kentsmiths.com,Steve Smith,steve@kentsmiths.com,2019-06-13 18:41:10-04:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.0.pdf,
+5d5e8d2e08a1225d219bdef0c4e8a7d075b1aa01,Steve Smith,steve@kentsmiths.com,Steve Smith,steve@kentsmiths.com,2019-06-13 18:41:10-04:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook).pdf,
+b37bf7c83520a77e778b3fe48ce401cf5c9c98de,Steve Smith,steve@kentsmiths.com,Steve Smith,steve@kentsmiths.com,2019-06-14 15:40:25-04:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.0.pdf,
+b37bf7c83520a77e778b3fe48ce401cf5c9c98de,Steve Smith,steve@kentsmiths.com,Steve Smith,steve@kentsmiths.com,2019-06-14 15:40:25-04:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook).pdf,
+3ad99b11b37915ab29439b9ce9b788c38f7b864f,Steve Smith,steve@kentsmiths.com,Steve Smith,steve@kentsmiths.com,2019-06-14 15:49:23-04:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.0.pdf,
+3ad99b11b37915ab29439b9ce9b788c38f7b864f,Steve Smith,steve@kentsmiths.com,Steve Smith,steve@kentsmiths.com,2019-06-14 15:49:23-04:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook).pdf,
+e965e1c6c71e602322d686d44945c0b560026e68,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 17:55:41+01:00,0,6,,
+e965e1c6c71e602322d686d44945c0b560026e68,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 17:55:41+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-00-24.png,
+e965e1c6c71e602322d686d44945c0b560026e68,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 17:55:41+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-13-35.png,
+e965e1c6c71e602322d686d44945c0b560026e68,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 17:55:41+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-22-23.png,
+e965e1c6c71e602322d686d44945c0b560026e68,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 17:55:41+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-40-25.png,
+e965e1c6c71e602322d686d44945c0b560026e68,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 17:55:41+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-48-36.png,
+e965e1c6c71e602322d686d44945c0b560026e68,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 17:55:41+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-52-58.png,
+e965e1c6c71e602322d686d44945c0b560026e68,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 17:55:41+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_19-11-30.png,
+e965e1c6c71e602322d686d44945c0b560026e68,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 17:55:41+01:00,0,91,,
+5a27aadf0dd395eae296c51441e5f061dac0c468,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 19:00:37+01:00,54,0,eShopOnContainers.sln,
+2621c3695655fa35d7c70a4289cfa5bb4ea06691,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-17 22:00:19+01:00,4,0,src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,2,2,README.md,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-White-paper.pdf,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v1.1.pdf,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook).pdf,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.pdf,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,0,0,img/Containerized-Docker-Application-Lifecycle-cover-large.png,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,0,0,img/Containerized-Docker-Application-Lifecycle-cover-small.png,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,0,0,img/DevOps-Cover-small.png,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,0,0,img/Microservices-cover-small.png,
+ba2f68752a263b64ea025e048550632288a1616f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:40:36+01:00,0,0,img/Microservices-cover.png,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,2,2,README.md,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-White-paper.pdf,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v1.1.pdf,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook).pdf,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.pdf,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,0,0,img/Containerized-Docker-Application-Lifecycle-cover-large.png,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,0,0,img/Containerized-Docker-Application-Lifecycle-cover-small.png,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,0,0,img/DevOps-Cover-small.png,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,0,0,img/Microservices-cover-small.png,
+02a220b02b665d5823607775d26e4f16fe074109,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 09:46:16+01:00,0,0,img/Microservices-cover.png,
+8cd67e3bc4b00bdb26f77d608f37bfee487b8e0f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 10:38:34+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook).pdf,
+8cd67e3bc4b00bdb26f77d608f37bfee487b8e0f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 10:38:34+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.pdf,
+88abba49f71f22999ec65c28d2a22fabab014c1e,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 10:39:10+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook).pdf,
+88abba49f71f22999ec65c28d2a22fabab014c1e,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-18 10:39:10+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.pdf,
+c94c992bc3c20b0ab491fdf0ab8f8e550cce0d44,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-20 21:26:43+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v1.1.pdf,
+c94c992bc3c20b0ab491fdf0ab8f8e550cce0d44,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-20 21:26:43+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v2.0.pdf,
+c94c992bc3c20b0ab491fdf0ab8f8e550cce0d44,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-20 21:26:43+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.pdf,
+9509e78f7a9e5885d22d14b67ba353ed8d838434,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-20 21:27:33+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v1.1.pdf,
+9509e78f7a9e5885d22d14b67ba353ed8d838434,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-20 21:27:33+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v2.0.pdf,
+9509e78f7a9e5885d22d14b67ba353ed8d838434,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-20 21:27:33+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.pdf,
+6f53d85123aacd2761d471120c95310655812c26,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-30 23:35:57+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.1.pdf,
+6f53d85123aacd2761d471120c95310655812c26,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-30 23:35:57+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook).pdf,
+a05fd0ed75fa88db9425015a3ef714e59235ab33,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-30 23:37:08+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.1.pdf,
+a05fd0ed75fa88db9425015a3ef714e59235ab33,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-06-30 23:37:08+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook).pdf,
+441ea17f57dea319b869a43a6284a62dbe917014,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-07-08 17:05:46+02:00,1,1,build/azure-devops/buildimages.yaml,
+441ea17f57dea319b869a43a6284a62dbe917014,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-07-08 17:05:46+02:00,3,3,docker-compose.windows.yml,
+19755bdfa2390028bd7e8522e3614ea0c10dc3c9,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-07-08 17:17:25+02:00,1,1,build/azure-devops/buildimages.yaml,
+fd1fa22dac510e9e46c70c9114813f528ae35abc,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-07-08 17:46:17+02:00,2,0,build/azure-devops/webmvc/azure-pipelines.yml,
+fd1fa22dac510e9e46c70c9114813f528ae35abc,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-07-08 17:46:17+02:00,2,0,build/azure-devops/webspa/azure-pipelines.yml,
+fd1fa22dac510e9e46c70c9114813f528ae35abc,eiximenis,etomas@gmail.com,eiximenis,etomas@gmail.com,2019-07-08 17:46:17+02:00,2,0,build/azure-devops/webstatus/azure-pipelines.yml,
+7684278f8bc436020c9eecf0b88cba717004c02d,Carlos Milán Figueredo,cmilanf@hispamsx.org,Carlos Milán Figueredo,cmilanf@hispamsx.org,2019-07-09 17:49:53+02:00,2,2,k8s/helm/deploy-all.sh,
+00bf2470ce64fd43235e99247a33b6791f92410a,Carlos Milán Figueredo,cmilanf@hispamsx.org,Carlos Milán Figueredo,cmilanf@hispamsx.org,2019-07-10 07:35:44+02:00,20,13,k8s/helm/deploy-all.sh,
+d026eb44a4aa5b2b4325dee6cedf7b4de95148df,Carlos Milán Figueredo,cmilanf@hispamsx.org,Carlos Milán Figueredo,cmilanf@hispamsx.org,2019-07-10 13:29:25+02:00,1,1,k8s/helm/deploy-all.sh,
+fd9ca9c28e263d8682f02ac2e896a58cf249c5f4,Paulo Neto,paulo.neto@farfetch.com,Paulo Neto,paulo.neto@farfetch.com,2019-07-11 15:44:32+01:00,2,2,src/BuildingBlocks/EventBus/EventBusServiceBus/EventBusServiceBus.cs,
+93c86fc33eeee4104fa773ea62107d415340efbb,Carlos Milán Figueredo,cmilanf@hispamsx.org,Carlos Milán Figueredo,cmilanf@hispamsx.org,2019-07-11 18:30:34+02:00,27,13,k8s/helm/deploy-all.sh,
+186b2eb534fff1eb02b1e6d3e6b140b77f908cc7,Carlos Milán Figueredo,cmilanf@hispamsx.org,Carlos Milán Figueredo,cmilanf@hispamsx.org,2019-07-12 11:34:51+02:00,28,25,k8s/helm/deploy-all.sh,
+fad40850fa573f7d69293085d43a6326583361ad,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-07-19 10:47:03+01:00,11,16,README.md,
+f92d695560cd00d70034f510044ff3c8fa5c7f02,dvlsg,dvlsg@users.noreply.github.com,GitHub,noreply@github.com,2019-07-19 11:49:25-07:00,6,6,src/BuildingBlocks/EventBus/EventBusServiceBus/EventBusServiceBus.cs,
+389991cba6246e63f492f9033c1d2359bde2c648,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-09 15:50:02+01:00,0,26,,
+389991cba6246e63f492f9033c1d2359bde2c648,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-09 15:50:02+01:00,0,10,,
+5992eba6ded59103c86e5c948cc235bd84def853,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-09 16:32:38+01:00,572,398,src/Web/WebSPA/package-lock.json,
+5992eba6ded59103c86e5c948cc235bd84def853,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-09 16:32:38+01:00,3,3,src/Web/WebSPA/package.json,
+e9824ed930b97eddebded51682111a9450fa2fca,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-09 16:55:29+01:00,666,145,src/Web/WebSPA/package-lock.json,
+e9824ed930b97eddebded51682111a9450fa2fca,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-09 16:55:29+01:00,1,0,src/Web/WebSPA/package.json,
+dc892fe713c10885ff8ca25284eca4c6b438a2f6,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-09 17:46:55+01:00,9,12,src/Web/WebSPA/package-lock.json,
+dc892fe713c10885ff8ca25284eca4c6b438a2f6,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-09 17:46:55+01:00,1,1,src/Web/WebSPA/package.json,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,34,34,docker-compose.override.yml,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,34,34,k8s/helm/webstatus/values.yaml,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/ApiGateways/ApiGw-Base/OcelotApiGw.csproj,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Mobile.Shopping.HttpAggregator.csproj,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/ApiGateways/Web.Bff.Shopping/aggregator/Web.Shopping.HttpAggregator.csproj,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Basket/Basket.API/Basket.API.csproj,Basket
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Catalog/Catalog.API/Catalog.API.csproj,Catalog
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Identity/Identity.API/Identity.API.csproj,Identity
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Location/Locations.API/Locations.API.csproj,Location
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Marketing/Marketing.API/Marketing.API.csproj,Marketing
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Ordering/Ordering.API/Ordering.API.csproj,Ordering
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Ordering/Ordering.BackgroundTasks/Ordering.BackgroundTasks.csproj,Ordering
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Ordering/Ordering.SignalrHub/Ordering.SignalrHub.csproj,Ordering
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Payment/Payment.API/Payment.API.csproj,Payment
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Services/Webhooks/Webhooks.API/Webhooks.API.csproj,Webhooks
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Web/WebMVC/WebMVC.csproj,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Web/WebSPA/WebSPA.csproj,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,2,2,src/Web/WebStatus/WebStatus.csproj,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Web/WebStatus/appsettings.Development.json,
+033ebd350ee23353385ced213ae223280bf2acaa,Mateusz Karkula,mateusz.karkula@comarch.com,Mateusz Karkula,karql.pl@gmail.com,2019-08-09 20:11:45+02:00,1,1,src/Web/WebStatus/appsettings.json,
+b6d2910eae40e0ee9385188072792a5de81c69cf,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 13:53:52+01:00,1,1,docker-compose.yml,
+ca642eb0f8bd30aa4c3c083bb91829c9722b40f2,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 14:12:27+01:00,1,2,src/Services/Basket/Basket.API/Basket.API.csproj,Basket
+82fc549b1589279da80a8fcce5a6432c65d9d342,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 16:13:43+01:00,0,6,,
+82fc549b1589279da80a8fcce5a6432c65d9d342,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 16:13:43+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-00-24.png,
+82fc549b1589279da80a8fcce5a6432c65d9d342,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 16:13:43+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-13-35.png,
+82fc549b1589279da80a8fcce5a6432c65d9d342,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 16:13:43+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-22-23.png,
+82fc549b1589279da80a8fcce5a6432c65d9d342,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 16:13:43+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-40-25.png,
+82fc549b1589279da80a8fcce5a6432c65d9d342,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 16:13:43+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-48-36.png,
+82fc549b1589279da80a8fcce5a6432c65d9d342,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 16:13:43+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_18-52-58.png,
+82fc549b1589279da80a8fcce5a6432c65d9d342,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 16:13:43+01:00,0,0,docs-kb/simplified-cqrs-ddd/devenv_2018-05-22_19-11-30.png,
+82fc549b1589279da80a8fcce5a6432c65d9d342,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-12 16:13:43+01:00,0,91,,
+bdcab37c79086ddd24018ee9aa16c776483540b8,牛排大叔,beefsteak@live.cn,牛排大叔,beefsteak@live.cn,2019-08-14 21:47:41+08:00,6,6,src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/OrderPaymentSucceededIntegrationEventHandler.cs,Ordering
+bdcab37c79086ddd24018ee9aa16c776483540b8,牛排大叔,beefsteak@live.cn,牛排大叔,beefsteak@live.cn,2019-08-14 21:47:41+08:00,2,2,src/Services/Ordering/Ordering.API/Application/IntegrationEvents/Events/OrderPaymentSucceededIntegrationEvent.cs,Ordering
+bdcab37c79086ddd24018ee9aa16c776483540b8,牛排大叔,beefsteak@live.cn,牛排大叔,beefsteak@live.cn,2019-08-14 21:47:41+08:00,1,1,src/Services/Ordering/Ordering.API/Startup.cs,Ordering
+bdcab37c79086ddd24018ee9aa16c776483540b8,牛排大叔,beefsteak@live.cn,牛排大叔,beefsteak@live.cn,2019-08-14 21:47:41+08:00,1,1,src/Services/Payment/Payment.API/IntegrationEvents/EventHandling/OrderStatusChangedToStockConfirmedIntegrationEventHandler.cs,Payment
+bdcab37c79086ddd24018ee9aa16c776483540b8,牛排大叔,beefsteak@live.cn,牛排大叔,beefsteak@live.cn,2019-08-14 21:47:41+08:00,2,2,src/Services/Payment/Payment.API/IntegrationEvents/Events/OrderPaymentSucceededIntegrationEvent.cs,Payment
+ea01c97651b556399f7ef7038aa8b3c0db118217,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-15 16:19:43+01:00,11,21,src/Mobile/eShopOnContainers/eShopOnContainers.Core/Animations/Base/AnimationBase.cs,
+856bad834de3d811bbb8f74e35de9fb8bbe66370,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-15 17:16:43+01:00,1,1,src/Mobile/eShopOnContainers/eShopOnContainers.Droid/Properties/AndroidManifest.xml,
+856bad834de3d811bbb8f74e35de9fb8bbe66370,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-15 17:16:43+01:00,2,3,src/Mobile/eShopOnContainers/eShopOnContainers.Droid/eShopOnContainers.Droid.csproj,
+856bad834de3d811bbb8f74e35de9fb8bbe66370,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-15 17:16:43+01:00,1,1,src/Mobile/eShopOnContainers/eShopOnContainers.TestRunner.Droid/Properties/AndroidManifest.xml,
+856bad834de3d811bbb8f74e35de9fb8bbe66370,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-15 17:16:43+01:00,1,2,src/Mobile/eShopOnContainers/eShopOnContainers.TestRunner.Droid/eShopOnContainers.TestRunner.Droid.csproj,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,9,4,src/Mobile/eShopOnContainers/eShopOnContainers.Core/eShopOnContainers.Core.csproj,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,1,1,src/Mobile/eShopOnContainers/eShopOnContainers.Droid/Renderers/SlideDownMenuPageRenderer.cs,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,8859,4658,src/Mobile/eShopOnContainers/eShopOnContainers.Droid/Resources/Resource.Designer.cs,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,1,1,src/Mobile/eShopOnContainers/eShopOnContainers.Droid/Resources/values/styles.xml,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,26,193,src/Mobile/eShopOnContainers/eShopOnContainers.Droid/eShopOnContainers.Droid.csproj,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,7794,3644,src/Mobile/eShopOnContainers/eShopOnContainers.TestRunner.Droid/Resources/Resource.Designer.cs,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,15,194,src/Mobile/eShopOnContainers/eShopOnContainers.TestRunner.Droid/eShopOnContainers.TestRunner.Droid.csproj,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,0,96,,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,3,3,src/Mobile/eShopOnContainers/eShopOnContainers.TestRunner.Windows/eShopOnContainers.TestRunner.Windows.csproj,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,3,1,src/Mobile/eShopOnContainers/eShopOnContainers.TestRunner.iOS/Info.plist,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,22,155,src/Mobile/eShopOnContainers/eShopOnContainers.TestRunner.iOS/eShopOnContainers.TestRunner.iOS.csproj,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,0,79,,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,7,2,src/Mobile/eShopOnContainers/eShopOnContainers.UnitTests/eShopOnContainers.UnitTests.csproj,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,18,139,src/Mobile/eShopOnContainers/eShopOnContainers.iOS/eShopOnContainers.iOS.csproj,
+ddff0ce19e8aecb33a6f18eb45b343ac27034947,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-16 17:11:54+01:00,0,71,,
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,0,3,.dockerignore,
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,1,1,run-docker-compose-build.ps1,
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/ApiGateways/ApiGw-Base/Dockerfile,
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Dockerfile,
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/ApiGateways/Web.Bff.Shopping/aggregator/Dockerfile,
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Services/Basket/Basket.API/Dockerfile,Basket
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Services/Catalog/Catalog.API/Dockerfile,Catalog
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Services/Identity/Identity.API/Dockerfile,Identity
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Services/Location/Locations.API/Dockerfile,Location
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Services/Marketing/Marketing.API/Dockerfile,Marketing
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Services/Ordering/Ordering.API/Dockerfile,Ordering
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Services/Ordering/Ordering.BackgroundTasks/Dockerfile,Ordering
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Services/Ordering/Ordering.SignalrHub/Dockerfile,Ordering
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Services/Payment/Payment.API/Dockerfile,Payment
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,42,8,src/Services/Webhooks/Webhooks.API/Dockerfile,Webhooks
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Web/WebMVC/Dockerfile,
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Web/WebSPA/Dockerfile,
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Web/WebStatus/Dockerfile,
+038b3caffaa025b0172ea326bacce7446941860c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:56:30+01:00,41,7,src/Web/WebhookClient/Dockerfile,
+17ab5170f134e280177a31a396134d2eadb3719b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:57:22+01:00,17,1,src/Web/WebStatus/Controllers/HomeController.cs,
+17ab5170f134e280177a31a396134d2eadb3719b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:57:22+01:00,17,0,src/Web/WebStatus/Views/Home/Config.cshtml,
+17ab5170f134e280177a31a396134d2eadb3719b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:57:22+01:00,1,0,src/Web/WebStatus/WebStatus.csproj,
+17ab5170f134e280177a31a396134d2eadb3719b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:57:22+01:00,1,1,src/Web/WebStatus/appsettings.Development.json,
+17ab5170f134e280177a31a396134d2eadb3719b,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:57:22+01:00,1,1,src/Web/WebStatus/appsettings.json,
+faa7546e17e1e9fa05f13241e02151131df1efbc,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-16 19:58:27+01:00,9,2,k8s/helm/deploy-all.ps1,
+8351983b25235c0263b07fadf9aa3fa069e5b8ed,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-19 16:06:00+01:00,2,2,src/Mobile/eShopOnContainers/eShopOnContainers.TestRunner.Windows/eShopOnContainers.TestRunner.Windows.csproj,
+8351983b25235c0263b07fadf9aa3fa069e5b8ed,David Britch,davidbritch@users.noreply.github.com,David Britch,davidbritch@users.noreply.github.com,2019-08-19 16:06:00+01:00,1,2,src/Mobile/eShopOnContainers/eShopOnContainers.UnitTests/eShopOnContainers.UnitTests.csproj,
+da04d6df881620c19fc56220a198671696bab2bd,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-21 11:17:27+01:00,2,0,k8s/deploy-nodeports.ps1,
+da04d6df881620c19fc56220a198671696bab2bd,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-21 11:17:27+01:00,12,0,k8s/nodeports/rabbitmq-admin.yaml,
+da04d6df881620c19fc56220a198671696bab2bd,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-08-21 11:17:27+01:00,12,0,k8s/nodeports/sql-service.yaml,
+403b731d122b5cc9d5920072921880269fd6920b,jabarca,jesus.abarca@wizeline.com,jabarca,jesus.abarca@wizeline.com,2019-09-14 10:31:52-05:00,1,1,src/Services/Payment/Payment.API/IntegrationEvents/EventHandling/OrderStatusChangedToStockConfirmedIntegrationEventHandler.cs,Payment
+403b731d122b5cc9d5920072921880269fd6920b,jabarca,jesus.abarca@wizeline.com,jabarca,jesus.abarca@wizeline.com,2019-09-14 10:31:52-05:00,1,1,src/Services/Payment/Payment.API/PaymentSettings.cs,Payment
+403b731d122b5cc9d5920072921880269fd6920b,jabarca,jesus.abarca@wizeline.com,jabarca,jesus.abarca@wizeline.com,2019-09-14 10:31:52-05:00,1,1,src/Services/Payment/Payment.API/appsettings.json,Payment
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Azure Dev eBook_Booklet.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-White-paper.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v1.1.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v2.0.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook).pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.epub,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.mobi,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Enterprise-Application-Patterns-using-XamarinForms.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Microservicios-NET-Arquitectura-para-aplicaciones-NET-Contenerizadas-(Microsoft-eBook)-es-ES.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Microservicios-NET-Arquitectura-para-aplicaciones-NET-Contenerizadas-(Microsoft-for-Kindle)-es-ES.mobi,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Microservicios-NET-Arquitectura-para-aplicaciones-NET-Contenerizadas-(Microsoft-for-eReader)-es-ES.epub,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/MicrosoftAzure_StartGuide_Developers-old.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/MicrosoftAzure_StartGuide_Developers.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v1.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.0.1.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.0.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.1.01.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.1.02.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.1.03.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.0.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.1.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-zh-CN-v2-older.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-zh-CN.pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook).pdf,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v1.1.mobi,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v1.mobi,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v2.1.01.mobi,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v2.1.02.mobi,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v2.1.03.mobi,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle).mobi,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v1.1.epub,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v1.epub,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v2.1.01.epub,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v2.1.02.epub,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v2.1.03.epub,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader).epub,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Serverless-apps-Architecture-patterns-and-Azure-implementation-(Microsoft-eBook).epub,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Serverless-apps-Architecture-patterns-and-Azure-implementation-(Microsoft-for-Kindle).mobi,
+5070038733de31fb518aff71247e324ddd41e183,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:14:38+01:00,0,0,docs/Serverless-apps-Architecture-patterns-and-Azure-implementation-(Microsoft-for-eReader).pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Azure Dev eBook_Booklet.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-White-paper.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v1.1.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)-v2.0.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook).pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.epub,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Containerized-Docker-Application-Lifecycle-with-Microsoft-Platform-and-Tools-(eBook)_v1.1.mobi,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Enterprise-Application-Patterns-using-XamarinForms.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Microservicios-NET-Arquitectura-para-aplicaciones-NET-Contenerizadas-(Microsoft-eBook)-es-ES.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Microservicios-NET-Arquitectura-para-aplicaciones-NET-Contenerizadas-(Microsoft-for-Kindle)-es-ES.mobi,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Microservicios-NET-Arquitectura-para-aplicaciones-NET-Contenerizadas-(Microsoft-for-eReader)-es-ES.epub,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/MicrosoftAzure_StartGuide_Developers-old.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/MicrosoftAzure_StartGuide_Developers.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v1.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.0.1.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.0.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.1.01.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.1.02.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.1.03.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.0.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-v2.2.1.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-zh-CN-v2-older.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook)-zh-CN.pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook).pdf,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v1.1.mobi,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v1.mobi,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v2.1.01.mobi,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v2.1.02.mobi,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle)-v2.1.03.mobi,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-Kindle).mobi,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v1.1.epub,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v1.epub,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v2.1.01.epub,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v2.1.02.epub,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader)-v2.1.03.epub,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-for-eReader).epub,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Serverless-apps-Architecture-patterns-and-Azure-implementation-(Microsoft-eBook).epub,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Serverless-apps-Architecture-patterns-and-Azure-implementation-(Microsoft-for-Kindle).mobi,
+260fd76dfe7baf5c2f4c5b597fa2ef128853a395,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-09-26 15:17:07+01:00,0,0,docs/Serverless-apps-Architecture-patterns-and-Azure-implementation-(Microsoft-for-eReader).pdf,
+2d5fbc92379777bf19ea2e61196d03a86a86403a,Maira Wenzel,mairaw@microsoft.com,GitHub,noreply@github.com,2019-10-02 15:14:20-07:00,1,1,src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommand.cs,Ordering
+9dae52f80bddce4ead69717c8546c82e1d8eecac,Maira Wenzel,mairaw@microsoft.com,Miguel Veloso,mvelosop@gmail.com,2019-10-09 17:26:26+01:00,1,1,src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommand.cs,Ordering
+6375f5b763ca89a476da7a419fefa3322bf30cc1,Oleh Savoskin,oleh.savoskin@globallogic.com,Oleh Savoskin,oleh.savoskin@globallogic.com,2019-10-10 16:21:06+03:00,2,6,src/Services/Ordering/Ordering.Infrastructure/MediatorExtension.cs,Ordering
+8dc2d700243d6f003cfa3c09c6ef15d1c349f07c,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-10-17 15:45:14+01:00,9,0,README.md,
+cd7d2d464adc68a0f9c4d09aefdb3f28293e9049,Nish Anil,nish@microsoft.com,GitHub,noreply@github.com,2019-10-21 17:24:46+05:30,1,1,README.md,
+c0eb481f8e15e5257fc0817532d203dd8074ef2f,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-10-23 17:03:11+01:00,0,1,src/Services/Location/Locations.API/Locations.API.csproj,Location
+6308cdcbf3297f91314004f15b4fdce0625d0a41,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-10-25 17:10:02+01:00,0,0,docs/Decks/BRK3175_CesarDeIaTorre.pptx,
+6308cdcbf3297f91314004f15b4fdce0625d0a41,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-10-25 17:10:02+01:00,0,0,docs/Decks/eShopOnContainers-Architecture-v2.1.pptx,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,2,2,src/ApiGateways/Mobile.Bff.Shopping/aggregator/Mobile.Shopping.HttpAggregator.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,2,2,src/ApiGateways/Web.Bff.Shopping/aggregator/Web.Shopping.HttpAggregator.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,1,1,src/BuildingBlocks/EventBus/EventBus.Tests/EventBus.Tests.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,2,1,src/BuildingBlocks/EventBus/IntegrationEventLogEF/IntegrationEventLogEF.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,1,1,src/BuildingBlocks/WebHostCustomization/WebHost.Customization/WebHost.Customization.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,5,4,src/Mobile/eShopOnContainers/eShopOnContainers.Core/eShopOnContainers.Core.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,1,0,src/Mobile/eShopOnContainers/eShopOnContainers.UnitTests/eShopOnContainers.UnitTests.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,4,4,src/Services/Basket/Basket.FunctionalTests/Basket.FunctionalTests.csproj,Basket
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,4,4,src/Services/Basket/Basket.UnitTests/Basket.UnitTests.csproj,Basket
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,1,1,src/Services/Catalog/Catalog.API/Catalog.API.csproj,Catalog
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,3,3,src/Services/Catalog/Catalog.FunctionalTests/Catalog.FunctionalTests.csproj,Catalog
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,3,3,src/Services/Catalog/Catalog.UnitTests/Catalog.UnitTests.csproj,Catalog
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,1,1,src/Services/Identity/Identity.API/Identity.API.csproj,Identity
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,2,2,src/Services/Location/Locations.API/Locations.API.csproj,Location
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,3,3,src/Services/Location/Locations.FunctionalTests/Locations.FunctionalTests.csproj,Location
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,2,1,src/Services/Marketing/Infrastructure/AzureFunctions/marketing-functions.csproj,Marketing
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,4,2,src/Services/Marketing/Marketing.API/Marketing.API.csproj,Marketing
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,3,3,src/Services/Marketing/Marketing.FunctionalTests/Marketing.FunctionalTests.csproj,Marketing
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,3,2,src/Services/Ordering/Ordering.API/Ordering.API.csproj,Ordering
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,3,3,src/Services/Ordering/Ordering.BackgroundTasks/Ordering.BackgroundTasks.csproj,Ordering
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,1,1,src/Services/Ordering/Ordering.Domain/Ordering.Domain.csproj,Ordering
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,3,3,src/Services/Ordering/Ordering.FunctionalTests/Ordering.FunctionalTests.csproj,Ordering
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,1,1,src/Services/Ordering/Ordering.Infrastructure/Ordering.Infrastructure.csproj,Ordering
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,2,2,src/Services/Ordering/Ordering.SignalrHub/Ordering.SignalrHub.csproj,Ordering
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,4,4,src/Services/Ordering/Ordering.UnitTests/Ordering.UnitTests.csproj,Ordering
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,2,1,src/Services/Payment/Payment.API/Payment.API.csproj,Payment
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,7,6,src/Services/Webhooks/Webhooks.API/Webhooks.API.csproj,Webhooks
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,5,5,src/Web/WebMVC/WebMVC.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,2,12,src/Web/WebSPA/WebSPA.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,3,2,src/Web/WebStatus/WebStatus.csproj,
+9bbb37aed5daa7e1402eb99f6287b56bf30c8b66,Miguel Veloso,mvelosop@gmail.com,Miguel Veloso,mvelosop@gmail.com,2019-11-06 10:40:03+00:00,2,2,test/ServicesTests/Application.FunctionalTests/Application.FunctionalTests.csproj,
+92b435d65845b9771c6e1345f9d7fceb129cdc43,Gajendra Babu Thokala [MSFT],gajendra.babu@hotmail.com,GitHub,noreply@github.com,2019-11-12 15:49:34-08:00,7,6,src/Web/WebSPA/README.md,
