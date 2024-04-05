@@ -10,10 +10,13 @@ import pandas as pd
 __all__ = ['import_microservice_mapping', 'construct_network', 'mine_commits']
 
 
-def import_microservice_mapping(filename):
+def import_microservice_mapping(filename: str):
 
     if filename is None:
         return None
+    elif filename.startswith('mison.mappings'):
+        module = importlib.import_module(filename)
+        return module.microservice_mapping
 
     # Add the directory of the file to sys.path
     dir_name = os.path.dirname(filename)
