@@ -27,7 +27,7 @@ def import_microservice_mapping(filename):
     return module.microservice_mapping
 
 
-def construct_network(commit_table, field='file', output=None):
+def construct_network(commit_table, field='file', output=None, skip_zero=False):
 
     assert field in ('file', 'service')
 
@@ -43,6 +43,7 @@ def construct_network(commit_table, field='file', output=None):
 
     filecounts = [(dev_a, dev_b, len(devs[dev_a] & devs[dev_b])) for dev_a, dev_b in unordered_pairs]
     filecounts = pd.DataFrame(filecounts, columns=['developer_a', 'developer_b', 'weight'])
+    filecounts = filecounts[filecounts.weight != 0] if skip_zero else filecounts
 
     if output is not None:
         if output == 'default':
@@ -101,11 +102,11 @@ if __name__ == '__main__':
 
     def main_network(args):
         data = pandas.read_csv(args.commit_table)
-        construct_network(data, args.field, output=args.network_output)
+        construct_network(data, args.field, output=args.network_output, skip_zero=args.skip_zero)
 
     def main_all(args):
         data = main_commit(args)
-        construct_network(data, args.field, output=args.network_output)
+        construct_network(data, args.field, output=args.network_output, skip_zero=args.skip_zero)
 
 
     # Main parser
@@ -141,6 +142,7 @@ if __name__ == '__main__':
     network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
     network.add_argument('--field', choices=['file', 'service'], required=True, help='Which field to use for network weight')
     network.add_argument('--network_output', type=str, required=False, help='Output path for network')
+    network.add_argument('--skip_zero', action='store_true', help='If set, do no write rows containing zero weight')
 
     # Sub-commands for main
     subparsers = parser.add_subparsers(required=True)
