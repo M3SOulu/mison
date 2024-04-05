@@ -1,19 +1,15 @@
-import csv
 import datetime
 import os
 import importlib.util
 import sys
 import itertools
 
-import numpy as np
 import requests
 
 from pydriller import Repository
 import pandas as pd
 
-__all__ = ['import_microservice_mapping', 'construct_network', 'mine_commits']
-
-from commitsCrawler import headers
+__all__ = ['import_microservice_mapping', 'construct_network', 'pydriller_mine_commits', 'github_mine_commits']
 
 
 def import_microservice_mapping(filename: str):
@@ -62,7 +58,7 @@ def construct_network(commit_table, field='file', output=None, skip_zero=False):
     return filecounts
 
 
-def mine_commits(repo, output=None, mapping=None, **kwargs):
+def pydriller_mine_commits(repo, output=None, mapping=None, **kwargs):
 
     pydriller_kwargs = {k: v for k, v in kwargs.items() if v is not None}
     data = []
@@ -81,84 +77,71 @@ def mine_commits(repo, output=None, mapping=None, **kwargs):
 
     if output is not None:
         if output == 'default':
-            output = f"mison_commit_table_{datetime.datetime.now().isoformat()}.csv"
+            output = f"mison_pydriller_commit_table_{datetime.datetime.now().isoformat()}.csv"
         data.to_csv(output, index=False)
 
     return data
 
 
-def getCommitTablebyProject(repo, github_token=None):
+def github_mine_commits(repo, github_token=None, mapping=None, output=None, per_page=100):
 
     if github_token is None:
         github_token = os.getenv('GITHUB_TOKEN')
         if github_token is None:
             raise ValueError("GitHub token needs to be provided either as a function/cli argument or in env. var. GITHUB_TOKEN")
+
+    project_commits_query = f"https://api.github.com/repos/{repo}/commits"
     headers = {'Authorization': f'token {github_token}'}
+    params = {'per_page': per_page}
 
-    def getFileChanges(projectfullname, thecommitcsv, newcsv):
-        commit_df = pd.read_csv(thecommitcsv)
-        commit_features = ['project_id', 'commit_sha', 'author_name', 'committer_name', 'commit_date', 'additions',
-                           'deletions', 'changes', 'filename']
-        with open(newcsv, 'a', encoding='utf-8') as csvfile:
-            writer = csv.writer(csvfile, delimiter=',')
-            writer.writerow(commit_features)
-        for i in range(commit_df.shape[0]):
-            print(i)
-            thecommit = commit_df.iloc[i].values.tolist()
-            commit_sha = thecommit[1]
-            theCommitShaQuery = f"https://api.github.com/repos/{projectfullname}/commits/" + commit_sha
-            sha_result = requests.get(theCommitShaQuery, headers=headers)
-            commit_info = sha_result.json()
-            changed_files = [[x['additions'], x['deletions'], x['changes'], x['filename']] for x in
-                             commit_info['files']]
-            for file in changed_files:
-                with open(newcsv, 'a', encoding='utf-8') as csvfile:
-                    writer = csv.writer(csvfile, delimiter=',')
-                    writer.writerow(thecommit + list(file))
-
-    theCommitQuery = f"https://api.github.com/repos/{repo}/commits"
-    theProjectQuery = f"https://api.github.com/repos/{repo}"
-    p_search = requests.get(theProjectQuery, headers=headers)
-    project_info = p_search.json()
-    project_id = project_info['id']
-    params = {'per_page': 100}
+    data = []
     page = 1
-    #projectissuedataitems = []
-    commit_features = ['project_id', 'commit_sha', 'author_name', 'committer_name', 'commit_date']
-    with open(updateissuetablename, 'a', encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile, delimiter=',')
-        writer.writerow(commit_features)
     while 1 == 1:
         params['page'] = page
-        print(page)
-        print(projectfullname + ' ' + 'page ' + str(page))
-        theResult = requests.get(theCommitQuery, headers=headers, params=params)
-        theItemListPerPage = theResult.json()
-        if len(theItemListPerPage) == 0:
+        project_commits_result = requests.get(project_commits_query, headers=headers, params=params)
+        project_commits_data: list[dict] = project_commits_result.json()
+        if len(project_commits_data) == 0:
             break
-        else:
-            print(len(theItemListPerPage))
-            for item in theItemListPerPage:
-                commititem = {}
-                commititem['project_id'] = project_id
-                commititem['commit_sha'] = item['sha']
-                try:
-                    commititem['author_name'] = item['commit']['author']['name']
-                except:
-                    commititem['author_name'] = np.NaN
-                try:
-                    commititem['committer_name'] = item['commit']['committer']['name']
-                except:
-                    commititem['committer_name'] = np.NaN
-                commititem['commit_date'] = item['commit']['committer']['date']
+        for item in project_commits_data:
+            commit_hash = item['sha']
+            commit_data = [commit_hash]  # commit_hash
+            if 'commit' in item:
+                if 'author' in item:
+                    commit_data.append(item['commit']['author'].get('name', None))  # author_name
+                    commit_data.append(item['commit']['author'].get('email', None))  # author_email
+                else:
+                    commit_data.extend([None]*2)
+                if 'committer' in item:
+                    commit_data.append(item['commit']['committer'].get('name', None))  # committer_name
+                    commit_data.append(item['commit']['committer'].get('email', None))  # committer_email
+                    commit_data.append(item['commit']['committer']['date'])  # commit_date
+                else:
+                    commit_data.extend([None]*3)
+            else:
+                commit_data.extend([None]*5)
+            commit_changes_query = f'{project_commits_query}/{commit_hash}'
+            commit_changes_response = requests.get(commit_changes_query, headers=headers)
+            commit_changes_data = commit_changes_response.json()
+            changed_files = commit_changes_data['files']
+            for file in changed_files:
+                file_commit_data = commit_data.copy()
+                file_commit_data.extend([file['additions'], file['deletions'], file['filename']]) # additions, deletions, filename
+                data.append(file_commit_data)
+        page += 1
+    columns = ['commit_hash', 'author_name', 'author_email', 'committer_name', 'committer_email', 'commit_date',
+               'additions', 'deletions', 'filename']
+    data = pd.DataFrame(data, columns=columns)
 
-                with open(updateissuetablename, 'a', encoding='utf-8') as csvfile:
-                    writer = csv.writer(csvfile, delimiter=',')
-                    writer.writerow([commititem[x] for x in commit_features])
-            page = page + 1
+    if mapping is not None:
+        data['microservice'] = data['filename'].map(mapping)
+
+    if output is not None:
+        if output == 'default':
+            output = f"mison_github_commit_table_{datetime.datetime.now().isoformat()}.csv"
+        data.to_csv(output, index=False)
+
+    return data
 
 
 if __name__ == '__main__':
     print('ERROR - run this module as main as "python -m mison')
-
-
