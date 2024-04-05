@@ -6,7 +6,7 @@ import sys
 import itertools
 
 import pandas
-from pydriller import Repository, Commit, ModifiedFile
+from pydriller import Repository
 import pandas as pd
 
 
