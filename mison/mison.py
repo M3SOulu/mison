@@ -1,7 +1,5 @@
 import datetime
 import os
-import importlib.util
-import sys
 import itertools
 
 import requests
@@ -9,27 +7,7 @@ import requests
 from pydriller import Repository
 import pandas as pd
 
-__all__ = ['import_microservice_mapping', 'construct_network', 'pydriller_mine_commits', 'github_mine_commits']
-
-
-def import_microservice_mapping(filename: str):
-
-    if filename is None:
-        return None
-    elif filename.startswith('mison.mappings'):
-        module = importlib.import_module(filename)
-        return module.microservice_mapping
-
-    # Add the directory of the file to sys.path
-    dir_name = os.path.dirname(filename)
-    if dir_name not in sys.path:
-        sys.path.append(dir_name)
-
-    # Import the module
-    spec = importlib.util.spec_from_file_location('microservice_mapping', filename)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module.microservice_mapping
+__all__ = ['construct_network', 'pydriller_mine_commits', 'github_mine_commits']
 
 
 def construct_network(commit_table, field='file', output=None, skip_zero=False):

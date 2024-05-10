@@ -1,9 +1,31 @@
-from .mison import import_microservice_mapping, pydriller_mine_commits, github_mine_commits, construct_network
+from .mison import pydriller_mine_commits, github_mine_commits, construct_network
 
 import pandas
 
 import argparse
 import datetime
+import importlib.util
+import os
+import sys
+
+def import_microservice_mapping(filename: str):
+
+    if filename is None:
+        return None
+    elif filename.startswith('mison.mappings'):
+        module = importlib.import_module(filename)
+        return module.microservice_mapping
+
+    # Add the directory of the file to sys.path
+    dir_name = os.path.dirname(filename)
+    if dir_name not in sys.path:
+        sys.path.append(dir_name)
+
+    # Import the module
+    spec = importlib.util.spec_from_file_location('microservice_mapping', filename)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.microservice_mapping
 
 
 def main_commit(args):
@@ -122,3 +144,4 @@ end_to_end.set_defaults(func=main_all)
 # Parse the arguments
 args = parser.parse_args()
 args.func(args)
+
