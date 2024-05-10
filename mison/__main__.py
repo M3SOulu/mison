@@ -1,4 +1,4 @@
-from .mison import import_microservice_mapping, mine_commits, construct_network
+from .mison import import_microservice_mapping, pydriller_mine_commits, github_mine_commits, construct_network
 
 import pandas
 
@@ -8,22 +8,27 @@ import datetime
 
 def main_commit(args):
     microservice_mapping = import_microservice_mapping(args.import_mapping)
-    pydriller_kwargs = {'since': args.since,
-                        'from_commit': args.from_commit,
-                        'from_tag': args.from_tag,
-                        'to': args.to,
-                        'to_commit': args.to_commit,
-                        'to_tag': args.to_tag,
-                        'order': args.order,
-                        'only_in_branch': args.only_in_branch,
-                        'only_no_merge': args.only_no_merge,
-                        'only_authors': args.only_authors,
-                        'only_commits': args.only_commits,
-                        'only_releases': args.only_releases,
-                        'filepath': args.filepath,
-                        'only_modifications_with_file_types': args.only_modifications_with_file_types
-                        }
-    data = mine_commits(repo=args.repo, output=args.commit_table, mapping=microservice_mapping, **pydriller_kwargs)
+    if args.pydriller is True:
+        pydriller_kwargs = {'since': args.since,
+                            'from_commit': args.from_commit,
+                            'from_tag': args.from_tag,
+                            'to': args.to,
+                            'to_commit': args.to_commit,
+                            'to_tag': args.to_tag,
+                            'order': args.order,
+                            'only_in_branch': args.only_in_branch,
+                            'only_no_merge': args.only_no_merge,
+                            'only_authors': args.only_authors,
+                            'only_commits': args.only_commits,
+                            'only_releases': args.only_releases,
+                            'filepath': args.filepath,
+                            'only_modifications_with_file_types': args.only_modifications_with_file_types
+                            }
+        data = pydriller_mine_commits(repo=args.repo, output=args.commit_table, mapping=microservice_mapping,
+                                      **pydriller_kwargs)
+    elif args.github is True:
+        data = github_mine_commits(repo=args.repo, github_token=args.github_token, output=args.commit_table,
+                                   mapping=microservice_mapping, per_page=args.per_page)
     return data
 
 
