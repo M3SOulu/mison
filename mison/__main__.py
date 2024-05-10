@@ -1,4 +1,4 @@
-from .mison import pydriller_mine_commits, github_mine_commits
+from .mine import pydriller_mine_commits, github_mine_commits
 from .network import construct_network
 
 import pandas
