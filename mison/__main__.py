@@ -45,6 +45,12 @@ commit = argparse.ArgumentParser(description='Mine commits of a repository with 
 commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
 commit.add_argument('--import_mapping', type=str, required=False,
                     help='Python file to import a microservice_mapping function from')
+backend = commit.add_argument_group('Backends', 'Available backends for commit mining')
+backend = backend.add_mutually_exclusive_group(required=True)
+backend.add_argument('--pydriller', action='store_true', help='Use the pydriller library for mining commits'
+                                                              'Requires the dependency to be installed')
+backend.add_argument('--github', action='store_true', help='Use GitHub API to mine commits of a hosted repository.'
+                                                           'Requires an API key')
 
 # Filters for PyDriller
 filters = commit.add_argument_group('Filters', 'PyDriller filters for Repository class')
