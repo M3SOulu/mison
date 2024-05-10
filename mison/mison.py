@@ -83,13 +83,14 @@ def pydriller_mine_commits(repo, output=None, mapping=None, **kwargs):
     return data
 
 
-def github_mine_commits(repo, github_token=None, mapping=None, output=None, per_page=100):
+def github_mine_commits(repo: str, github_token=None, mapping=None, output=None, per_page=100):
 
     if github_token is None:
         github_token = os.getenv('GITHUB_TOKEN')
         if github_token is None:
             raise ValueError("GitHub token needs to be provided either as a function/cli argument or in env. var. GITHUB_TOKEN")
 
+    repo = repo.removeprefix('https://github.com/')
     project_commits_query = f"https://api.github.com/repos/{repo}/commits"
     headers = {'Authorization': f'token {github_token}'}
     params = {'per_page': per_page}
