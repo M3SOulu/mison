@@ -53,20 +53,19 @@ commit.add_argument('--import_mapping', type=str, required=False,
 backend = commit.add_argument('--backend', choices=['pydriller', 'github'], help='Available backends for commit mining')
 
 # Filters for PyDriller
-pydriller = commit.add_argument_group('PyDriller backend parameters', 'PyDriller filters for Repository class')
-# FROM filters
-from_f = pydriller.add_mutually_exclusive_group(required=False)
-from_f.add_argument('--since', required=False, type=datetime.datetime.fromisoformat,
+pydriller = commit.add_argument_group('PyDriller backend parameters', 'Parameters for mining commits with PyDriller backend')
+# FROM
+pydriller.add_argument('--since', required=False, type=datetime.datetime.fromisoformat,
                     help='Only commits after this date will be analyzed (converted to datetime object)')
-from_f.add_argument('--from_commit', required=False, type=str,
+pydriller.add_argument('--from_commit', required=False, type=str,
                     help='Only commits after this commit hash will be analyzed')
-from_f.add_argument('--from_tag', required=False, type=str, help='Only commits after this commit tag will be analyzed')
-# TO filters
-to_f = pydriller.add_mutually_exclusive_group(required=False)
-to_f.add_argument('--to', required=False, type=datetime.datetime.fromisoformat,
+pydriller.add_argument('--from_tag', required=False, type=str, help='Only commits after this commit tag will be analyzed')
+# TO
+pydriller.add_argument('--to', required=False, type=datetime.datetime.fromisoformat,
                   help='Only commits up to this date will be analyzed (converted to datetime object)')
-to_f.add_argument('--to_commit', required=False, type=str, help='Only commits up to this commit hash will be analyzed')
-to_f.add_argument('--to_tag', required=False, type=str, help='Only commits up to this commit tag will be analyzed')
+pydriller.add_argument('--to_commit', required=False, type=str, help='Only commits up to this commit hash will be analyzed')
+pydriller.add_argument('--to_tag', required=False, type=str, help='Only commits up to this commit tag will be analyzed')
+# Filters
 pydriller.add_argument('--order', required=False, choices=['date-order', 'author-date-order', 'topo-order', 'reverse'])
 pydriller.add_argument('--only_in_branch', required=False, type=str,
                        help='Only analyses commits that belong to this branch')
