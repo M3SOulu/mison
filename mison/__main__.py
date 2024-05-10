@@ -8,7 +8,7 @@ import datetime
 
 def main_commit(args):
     microservice_mapping = import_microservice_mapping(args.import_mapping)
-    if args.pydriller is True:
+    if args.backend == 'pydriller':
         pydriller_kwargs = {'since': args.since,
                             'from_commit': args.from_commit,
                             'from_tag': args.from_tag,
@@ -26,7 +26,7 @@ def main_commit(args):
                             }
         data = pydriller_mine_commits(repo=args.repo, output=args.commit_table, mapping=microservice_mapping,
                                       **pydriller_kwargs)
-    elif args.github is True:
+    elif args.backend == 'github':
         data = github_mine_commits(repo=args.repo, github_token=args.github_token, output=args.commit_table,
                                    mapping=microservice_mapping, per_page=args.per_page)
     return data
@@ -50,12 +50,7 @@ commit = argparse.ArgumentParser(description='Mine commits of a repository with 
 commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
 commit.add_argument('--import_mapping', type=str, required=False,
                     help='Python file to import a microservice_mapping function from')
-backend = commit.add_argument_group('Backends', 'Available backends for commit mining')
-backend = backend.add_mutually_exclusive_group(required=True)
-backend.add_argument('--pydriller', action='store_true', help='Use the pydriller library for mining commits'
-                                                              'Requires the dependency to be installed')
-backend.add_argument('--github', action='store_true', help='Use GitHub API to mine commits of a hosted repository.'
-                                                           'Requires an API key')
+backend = commit.add_argument('--backend', choices=['pydriller', 'github'], help='Available backends for commit mining')
 
 # Filters for PyDriller
 pydriller = commit.add_argument_group('PyDriller backend parameters', 'PyDriller filters for Repository class')
