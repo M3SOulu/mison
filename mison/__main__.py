@@ -1,4 +1,5 @@
-from .mison import pydriller_mine_commits, github_mine_commits, construct_network
+from .mison import pydriller_mine_commits, github_mine_commits
+from .network import construct_network
 
 import pandas
 
@@ -7,6 +8,7 @@ import datetime
 import importlib.util
 import os
 import sys
+
 
 def import_microservice_mapping(filename: str):
 

@@ -1,3 +1,4 @@
-from .mison import construct_network, pydriller_mine_commits, github_mine_commits
+from .mison import pydriller_mine_commits, github_mine_commits
+from .network import construct_network
 
-__all__ = ['construct_network', 'pydriller_mine_commits', 'github_mine_commits']
+__all__ = ['pydriller_mine_commits', 'github_mine_commits', 'construct_network']
