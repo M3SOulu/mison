@@ -7,6 +7,16 @@ __all__ = ['construct_network']
 
 
 def construct_network(commit_table, field='file', output=None, skip_zero=False):
+    """
+    Construct a developer collaboration network from commit data.
+    :param commit_table: pandas DataFrame of commits and their modified files, as returned by functions in mison.mine
+    :param field: "file" or "service": whether the weight connecting two developers should be the amount of co-modified
+        files or services, respectively
+    :param output: (optional) str, filename to save the mined commits csv table; if "default", will use the default
+        name with current timestamp
+    :param skip_zero: if True, remove weights equal to 0
+    :return: pandas DataFrame with weights for each pair of developers
+    """
 
     assert field in ('file', 'service')
 
