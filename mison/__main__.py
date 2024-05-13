@@ -70,6 +70,10 @@ def main_all(args):
 
 
 def main():
+
+    if len(sys.argv) == 1:
+            sys.argv.append('-h')
+
     # Main parser
     parser = argparse.ArgumentParser(description='MiSON - MicroService Organisational Network miner')
 
