@@ -10,7 +10,7 @@ import os
 import sys
 
 
-def import_microservice_mapping(filename: str):
+def import_microservice_mapping(filename: str, funcname: str = None):
 
     if filename is None:
         return None
@@ -23,15 +23,18 @@ def import_microservice_mapping(filename: str):
     if dir_name not in sys.path:
         sys.path.append(dir_name)
 
+    if funcname is None:
+        funcname = 'microservice_mapping'
+
     # Import the module
-    spec = importlib.util.spec_from_file_location('microservice_mapping', filename)
+    spec = importlib.util.spec_from_file_location(funcname, filename)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module.microservice_mapping
 
 
 def main_commit(args):
-    microservice_mapping = import_microservice_mapping(args.import_mapping)
+    microservice_mapping = import_microservice_mapping(args.import_mapping_file, args.import_mapping_func)
     if args.backend == 'pydriller':
         pydriller_kwargs = {'since': args.since,
                             'from_commit': args.from_commit,
@@ -72,9 +75,13 @@ parser = argparse.ArgumentParser(description='MiSON - MicroService Organisationa
 # Common commit parameters
 commit = argparse.ArgumentParser(description='Mine commits of a repository with PyDriller', add_help=False)
 commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
-commit.add_argument('--import_mapping', type=str, required=False,
+commit.add_argument('--import_mapping_file', type=str, required=False,
                     help='Python file to import a microservice_mapping function from: can be a .py file which defines '
-                         "a function 'microservice_mapping' function or a module in mison.mappings (e.g. 'mison.mappings.trainticket')")
+                         "a function 'microservice_mapping' (or other name, specificy with '--import_mapping_func') "
+                         "or a module in mison.mappings (e.g. 'mison.mappings.trainticket')")
+commit.add_argument('--import_mapping_func', type=str, required=False, default='microservice_mapping',
+                    help='Name of function defining a microservice mapping to import from file '
+                         "given by '--import_mapping_file'")
 backend = commit.add_argument('--backend', choices=['pydriller', 'github'], help='Available backends for commit mining')
 
 # Filters for PyDriller
