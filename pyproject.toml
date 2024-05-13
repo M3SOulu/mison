@@ -10,18 +10,21 @@ description = "MIcroService Organisational Network mining"
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = [
+    "microservice",
     "network",
-    "graph",
-    "temporal network",
-    "temporal graph"]
+    "collaboration",
+    "mining"]
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
     "Intended Audience :: Education",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
-    "Topic :: Scientific/Engineering :: Mathematics"]
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Version Control"]
 
 version = "1.0.0"
 requires-python = ">=3.9"
@@ -31,4 +34,4 @@ dependencies = [
     "pandas"]
 
 [project.urls]
-Homepage = "https://github.com/bakhtos/tenetan"
+Homepage = "https://github.com/bakhtos/mison"
