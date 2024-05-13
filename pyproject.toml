@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mison"
+version = "1.0.0"
 authors = [
     {name = "Alexander Bakhtin", email = "alexander.bakhtin@protonmail.com"}]
 description = "MIcroService Organisational Network mining"
@@ -26,12 +27,14 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Software Development :: Version Control"]
 
-version = "1.0.0"
 requires-python = ">=3.9"
 dependencies = [
     "pydriller",
     "requests",
     "pandas"]
+
+[project.scripts]
+mison = "mison.__main__:main"
 
 [project.urls]
 Homepage = "https://github.com/bakhtos/mison"
