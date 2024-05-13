@@ -73,7 +73,8 @@ parser = argparse.ArgumentParser(description='MiSON - MicroService Organisationa
 commit = argparse.ArgumentParser(description='Mine commits of a repository with PyDriller', add_help=False)
 commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
 commit.add_argument('--import_mapping', type=str, required=False,
-                    help='Python file to import a microservice_mapping function from')
+                    help='Python file to import a microservice_mapping function from: can be a .py file which defines '
+                         "a function 'microservice_mapping' function or a module in mison.mappings (e.g. 'mison.mappings.trainticket')")
 backend = commit.add_argument('--backend', choices=['pydriller', 'github'], help='Available backends for commit mining')
 
 # Filters for PyDriller
