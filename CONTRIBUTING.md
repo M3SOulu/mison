@@ -23,3 +23,4 @@ The checklist for contributing a backend to MiSON:
   - The choice of your backend for the `--backend` parameter
   - An argument group with all arguments specific to your backend
   - An `elif` statement to `main_commit` which calls your backend function correctly using arguments parsed to `args`
+- Update the wikis and README.md accordingly
