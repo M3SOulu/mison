@@ -9,6 +9,16 @@ __all__ = ['pydriller_mine_commits', 'github_mine_commits']
 
 
 def pydriller_mine_commits(repo, output=None, mapping=None, **kwargs):
+    """
+    Mining git repository commits and file modifications with PyDriller library
+    :param repo: str, path to the repository folder (can be online, will be temporarily cloned)
+    :param output: (optional) str, filename to save the mined commits csv table; if "default", will use the default
+        name with current timestamp
+    :param mapping: (optional) function of signature str -> str mapping a filename in the repository
+        to the corresponding microservice or None
+    :param kwargs: kwargs for pydriller.Repository (filters, commits range)
+    :return: pandas DataFrame with all mined commits and file modifications
+    """
 
     pydriller_kwargs = {k: v for k, v in kwargs.items() if v is not None}
     data = []
@@ -33,7 +43,19 @@ def pydriller_mine_commits(repo, output=None, mapping=None, **kwargs):
     return data
 
 
-def github_mine_commits(repo: str, github_token=None, mapping=None, output=None, per_page=100):
+def github_mine_commits(repo: str, github_token=None, output=None, mapping=None, per_page=100):
+    """
+    Mining git repository commits and file modifications with GitHub API.
+    :param repo: str, address of the repository on GitHub
+    :param github_token: str, the GitHub API token to use for API access; if None, will try to get GITHUB_TOKEN env
+    :param mapping: (optional) function of signature str -> str mapping a filename in the repository
+        to the corresponding microservice or None
+    :param output: (optional) str, filename to save the mined commits csv table; if "default", will use the default
+        name with current timestamp
+    :param per_page: (optional) amount of commits to return per page, passed to the GitHub API request
+    :return: pandas DataFrame with all mined commits and file modifications
+    :raise ValueError: if the GitHub API is not provided neither as parameter not environment variable
+    """
 
     if github_token is None:
         github_token = os.getenv('GITHUB_TOKEN')
