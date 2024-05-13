@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mison"
+authors = [
+    {name = "Alexander Bakhtin", email = "alexander.bakhtin@protonmail.com"}]
+description = "MIcroService Organisational Network mining"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = [
+    "network",
+    "graph",
+    "temporal network",
+    "temporal graph"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Topic :: Scientific/Engineering :: Mathematics"]
+
+version = "1.0.0"
+requires-python = ">=3.9"
+dependencies = [
+    "pydriller",
+    "requests",
+    "pandas"]
+
+[project.urls]
+Homepage = "https://github.com/bakhtos/tenetan"
