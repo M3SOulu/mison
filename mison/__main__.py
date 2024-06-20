@@ -87,7 +87,7 @@ def main():
     commit.add_argument('--import_mapping_func', type=str, required=False, default='microservice_mapping',
                         help='Name of function defining a microservice mapping to import from file '
                              "given by '--import_mapping_file'")
-    backend = commit.add_argument('--backend', choices=['pydriller', 'github'], help='Available backends for commit mining')
+    commit.add_argument('--backend', choices=['pydriller', 'github'], required=True, help='Available backends for commit mining')
 
     # Filters for PyDriller
     pydriller = commit.add_argument_group('PyDriller backend parameters', 'Parameters for mining commits with PyDriller backend')
