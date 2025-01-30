@@ -3,6 +3,7 @@ import os
 import requests
 from datetime import datetime
 from dataclasses import dataclass
+from json import JSONEncoder
 
 from pydriller import Repository
 import pandas as pd
@@ -20,6 +21,13 @@ class Commit:
     filename: str
     additions: int = 0
     deletions: int = 0
+
+class CommitJSONEncoder(JSONEncoder):
+    def default(self, o):
+        if isinstance(o, Commit):
+            return o.__dict__
+        else:
+            return super().default(o)
 
 def pydriller_mine_commits(repo, output=None, mapping=None, **kwargs):
     """
