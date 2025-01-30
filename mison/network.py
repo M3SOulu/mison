@@ -1,3 +1,4 @@
+from .mine import Commit
 import datetime
 import itertools
 
@@ -13,11 +14,9 @@ def construct_bipartite(commit_table):
     for row in commit_table.itertuples(index=False):
         dev = row.author_email
         file = row.filename
-        hash_ = row.commit_hash
-        date = row.commit_date
-        additions = row.additions
-        deletions = row.deletions
-        commit = {'hash': hash_, 'date': date, 'additions': additions, 'deletions': deletions}
+        commit = Commit(sha=row.commit_hash, author_name=row.author_name, author_email=row.author_email,
+                        committer_name=row.committer_name, committer_email=row.committer_email,
+                        commit_date=row.commit_date, filename=file, additions=row.additions, deletions=row.deletions)
         G.add_node(dev, bipartite='dev')
         G.add_node(file, bipartite='file')
         if G.has_edge(dev, file):

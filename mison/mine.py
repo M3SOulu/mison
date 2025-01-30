@@ -1,12 +1,25 @@
 import datetime
 import os
 import requests
+from datetime import datetime
+from dataclasses import dataclass
 
 from pydriller import Repository
 import pandas as pd
 
-__all__ = ['pydriller_mine_commits', 'github_mine_commits']
+__all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit']
 
+@dataclass
+class Commit:
+    sha: str
+    author_name: str
+    author_email: str
+    committer_name: str
+    committer_email: str
+    commit_date: datetime
+    filename: str
+    additions: int = 0
+    deletions: int = 0
 
 def pydriller_mine_commits(repo, output=None, mapping=None, **kwargs):
     """
