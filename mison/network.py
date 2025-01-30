@@ -2,9 +2,28 @@ import datetime
 import itertools
 
 import pandas as pd
+import networkx as nx
 
 __all__ = ['construct_network']
 
+
+def construct_bipartite(commit_table):
+    G = nx.Graph()
+    for row in commit_table.itertuples(index=False):
+        dev = row.author_email
+        file = row.filename
+        hash_ = row.commit_hash
+        date = row.commit_date
+        additions = row.additions
+        deletions = row.deletions
+        commit = {'hash': hash_, 'date': date, 'additions': additions, 'deletions': deletions}
+        G.add_node(dev, bipartite='dev')
+        G.add_node(file, bipartite='file')
+        if file in G[dev]:
+            G[dev][file]['commits'] += commit
+        else:
+            G.add_edge(dev, file, commits=[commit])
+    return G
 
 def construct_network(commit_table, field='file', output=None, skip_zero=False):
     """
