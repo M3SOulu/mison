@@ -3,6 +3,7 @@ import itertools
 
 import pandas as pd
 import networkx as nx
+from networkx.algorithms import bipartite
 
 __all__ = ['construct_network']
 
@@ -24,6 +25,11 @@ def construct_bipartite(commit_table):
         else:
             G.add_edge(dev, file, commits=[commit])
     return G
+
+def developer_collaboration_network(G):
+    devs = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'dev'}
+    D = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
+    return D
 
 def construct_network(commit_table, field='file', output=None, skip_zero=False):
     """
