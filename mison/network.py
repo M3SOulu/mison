@@ -20,8 +20,8 @@ def construct_bipartite(commit_table):
         commit = {'hash': hash_, 'date': date, 'additions': additions, 'deletions': deletions}
         G.add_node(dev, bipartite='dev')
         G.add_node(file, bipartite='file')
-        if file in G[dev]:
-            G[dev][file]['commits'] += commit
+        if G.has_edge(dev, file):
+            G[dev][file]['commits'] += [commit]
         else:
             G.add_edge(dev, file, commits=[commit])
     return G
