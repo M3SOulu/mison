@@ -1,13 +1,15 @@
-from .mine import pydriller_mine_commits, github_mine_commits
-from .network import construct_network
+from .mine import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder
+from .network import construct_bipartite, developer_collaboration_network
 
 import pandas
+import networkx as nx
 
 import argparse
 import datetime
 import importlib.util
 import os
 import sys
+import json
 
 
 def import_microservice_mapping(filename: str, funcname: str = None):
@@ -51,22 +53,20 @@ def main_commit(args):
                             'filepath': args.filepath,
                             'only_modifications_with_file_types': args.only_modifications_with_file_types
                             }
-        data = pydriller_mine_commits(repo=args.repo, output=args.commit_table, mapping=microservice_mapping,
-                                      **pydriller_kwargs)
+        pydriller_mine_commits(repo=args.repo, output=args.commit_table, mapping=microservice_mapping,
+                               **pydriller_kwargs)
     elif args.backend == 'github':
-        data = github_mine_commits(repo=args.repo, github_token=args.github_token, output=args.commit_table,
-                                   mapping=microservice_mapping, per_page=args.per_page)
-    return data
+        github_mine_commits(repo=args.repo, github_token=args.github_token, output=args.commit_table,
+                            mapping=microservice_mapping, per_page=args.per_page)
 
 
 def main_network(args):
     data = pandas.read_csv(args.commit_table)
-    construct_network(data, args.field, output=args.network_output, skip_zero=args.skip_zero)
-
-
-def main_all(args):
-    data = main_commit(args)
-    construct_network(data, args.field, output=args.network_output, skip_zero=args.skip_zero)
+    G = construct_bipartite(data)
+    D = developer_collaboration_network(G)
+    net = nx.node_link_data(D, link="edges")
+    with open(args.network_output, 'w') as f:
+        json.dump(net, f, cls=CommitJSONEncoder, indent=4)
 
 
 def main():
@@ -88,6 +88,8 @@ def main():
                         help='Name of function defining a microservice mapping to import from file '
                              "given by '--import_mapping_file'")
     commit.add_argument('--backend', choices=['pydriller', 'github'], required=True, help='Available backends for commit mining')
+    commit.add_argument('--commit_table', type=str, required=True,
+                            help='Output path for the csv table of mined commits')
 
     # Filters for PyDriller
     pydriller = commit.add_argument_group('PyDriller backend parameters', 'Parameters for mining commits with PyDriller backend')
@@ -124,12 +126,10 @@ def main():
                                                                              'Can also be provided as env. GITHUB_TOKEN')
     github.add_argument('--per_page', type=int, default=100, help='How many commits per page request from GitHub API')
 
-    # Common network parameters
+    # Network parameters
     network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
-    network.add_argument('--field', choices=['file', 'service'], required=True,
-                         help='Which field to use for network weight')
     network.add_argument('--network_output', type=str, required=False, help='Output path for network')
-    network.add_argument('--skip_zero', action='store_true', help='If set, do no write rows containing zero weight')
+    network.add_argument('--commit_table', type=str, required=True, help='Input path of the csv table of mined commits')
 
     # Sub-commands for main
     subparsers = parser.add_subparsers(required=True)
@@ -137,24 +137,13 @@ def main():
     # Commit command
     commit_sub = subparsers.add_parser('commit', parents=[commit], help='Mine commits of a repository with PyDriller',
                                        conflict_handler='resolve')
-    commit_sub.add_argument('--commit_table', type=str, required=True,
-                            help='Output path for the csv table of mined commits')
     commit_sub.set_defaults(func=main_commit)
 
     # Network command
     network_sub = subparsers.add_parser('network', parents=[network],
                                         help='Construct a developer network from a commit table',
                                         conflict_handler='resolve')
-    # Network only needs input file if called separately
-    network_sub.add_argument('--commit_table', type=str, required=True, help='Input path of the csv table of mined commits')
     network_sub.set_defaults(func=main_network)
-
-    # End-to-end command
-    end_to_end = subparsers.add_parser('all', parents=[commit, network],
-                                       help='End-to-end network generation from the repository', conflict_handler='resolve')
-    end_to_end.add_argument('--commit_table', type=str, required=False,
-                            help='Output path for the csv table of mined commits')
-    end_to_end.set_defaults(func=main_all)
 
     # Parse the arguments
     args = parser.parse_args()
