@@ -45,6 +45,28 @@ def map_developers(G: nx.Graph, developer_mapping: Union[Mapping, Callable]):
     return G
 
 
+def map_files_to_components(G: nx.Graph, component_mapping: Union[Mapping, Callable]):
+    files = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'file'}
+    devs = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'dev'}
+    D = nx.Graph()
+    D.add_nodes_from(devs, bipartite='dev')
+    if callable(component_mapping):
+        mapping_iter = map(component_mapping, files)
+    elif isinstance(component_mapping, Mapping):
+        mapping_iter = map(lambda x: component_mapping.get(x, None), files)
+    else:
+        raise ValueError("component_mapping must be a Mapping or a Callable")
+    for file, component in zip(files, mapping_iter):
+        if component is None:
+            print(f"File {file} does not belong to a component")
+            continue
+        print(f"File {file} belongs to {component}")
+        D.add_node(component, bipartite='component')
+        for _, dev, data in G.edges(file, data=True):
+            D.add_edge(dev, component, **data)
+    return D
+
+
 def developer_collaboration_network(G):
     devs = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'dev'}
     D = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
