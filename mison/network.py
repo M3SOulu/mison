@@ -10,6 +10,12 @@ from networkx.algorithms import bipartite
 __all__ = ['construct_bipartite', 'developer_collaboration_network']
 
 
+def split_bipartite_nodes(G, bipartite):
+    top = {n for n, d in G.nodes(data=True) if d["bipartite"] == bipartite}
+    bottom = set(G) - top
+    return top, bottom
+
+
 def construct_bipartite(commit_table):
     G = nx.Graph()
     for row in commit_table.itertuples(index=False):
@@ -27,7 +33,7 @@ def construct_bipartite(commit_table):
     return G
 
 def map_developers(G: nx.Graph, developer_mapping: Union[Mapping, Callable]):
-    devs = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'dev'}
+    devs, _ = split_bipartite_nodes(G, 'dev')
     if callable(developer_mapping):
         mapping_iter = map(developer_mapping, devs)
     elif isinstance(developer_mapping, Mapping):
@@ -46,8 +52,7 @@ def map_developers(G: nx.Graph, developer_mapping: Union[Mapping, Callable]):
 
 
 def map_files_to_components(G: nx.Graph, component_mapping: Union[Mapping, Callable]):
-    files = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'file'}
-    devs = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'dev'}
+    devs, files = split_bipartite_nodes(G, 'dev')
     D = nx.Graph()
     D.add_nodes_from(devs, bipartite='dev')
     if callable(component_mapping):
@@ -68,6 +73,6 @@ def map_files_to_components(G: nx.Graph, component_mapping: Union[Mapping, Calla
 
 
 def developer_collaboration_network(G):
-    devs = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'dev'}
+    devs, _ = split_bipartite_nodes(G, 'dev')
     D = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
     return D
