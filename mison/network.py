@@ -1,3 +1,5 @@
+from typing import Union, Callable
+
 from .mine import Commit
 
 from collections.abc import Mapping
@@ -24,9 +26,15 @@ def construct_bipartite(commit_table):
             G.add_edge(dev, file, commits=[commit])
     return G
 
-def map_developers(G: nx.Graph, developer_mapping: Mapping):
+def map_developers(G: nx.Graph, developer_mapping: Union[Mapping, Callable]):
     devs = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'dev'}
-    for old_dev, new_dev in zip(devs, map(lambda x: developer_mapping.get(x, x), devs)):
+    if callable(developer_mapping):
+        mapping_iter = map(developer_mapping, devs)
+    elif isinstance(developer_mapping, Mapping):
+        mapping_iter = map(lambda x: developer_mapping.get(x, x), devs)
+    else:
+        raise ValueError("developer_mapping must be a Mapping or a Callable")
+    for old_dev, new_dev in zip(devs, mapping_iter):
         if old_dev == new_dev:
             print(f"Keeping {old_dev}")
             continue
