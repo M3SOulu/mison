@@ -1,5 +1,5 @@
 from .mine import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder
-from .network import construct_bipartite, developer_collaboration_network
+from .network import construct_bipartite, developer_collaboration_network, map_developers
 
 import pandas
 import networkx as nx
@@ -36,7 +36,6 @@ def import_microservice_mapping(filename: str, funcname: str = None):
 
 
 def main_commit(args):
-    microservice_mapping = import_microservice_mapping(args.import_mapping_file, args.import_mapping_func)
     if args.backend == 'pydriller':
         pydriller_kwargs = {'since': args.since,
                             'from_commit': args.from_commit,
@@ -53,16 +52,25 @@ def main_commit(args):
                             'filepath': args.filepath,
                             'only_modifications_with_file_types': args.only_modifications_with_file_types
                             }
-        pydriller_mine_commits(repo=args.repo, output=args.commit_table, mapping=microservice_mapping,
-                               **pydriller_kwargs)
+        pydriller_mine_commits(repo=args.repo, output=args.commit_table, **pydriller_kwargs)
     elif args.backend == 'github':
         github_mine_commits(repo=args.repo, github_token=args.github_token, output=args.commit_table,
-                            mapping=microservice_mapping, per_page=args.per_page)
+                            per_page=args.per_page)
 
 
 def main_network(args):
     data = pandas.read_csv(args.commit_table)
+    if args.developer_mapping is not None:
+        if args.developer_mapping.endswith(".py"):
+            mapping = import_microservice_mapping(args.developer_mapping, "developer_mapping")
+        elif args.developer_mapping.endswith(".json"):
+            with open(args.developer_mapping, 'r') as f:
+                mapping = json.load(f)
+        else:
+            raise ValueError("--developer_mapping must be a .py or .json file")
     G = construct_bipartite(data)
+    if args.developer_mapping is not None:
+        G = map_developers(G, mapping)
     D = developer_collaboration_network(G)
     net = nx.node_link_data(D, link="edges")
     with open(args.network_output, 'w') as f:
@@ -80,13 +88,6 @@ def main():
     # Common commit parameters
     commit = argparse.ArgumentParser(description='Mine commits of a repository with PyDriller', add_help=False)
     commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
-    commit.add_argument('--import_mapping_file', type=str, required=False,
-                        help='Python file to import a microservice_mapping function from: can be a .py file which defines '
-                             "a function 'microservice_mapping' (or other name, specificy with '--import_mapping_func') "
-                             "or a module in mison.mappings (e.g. 'mison.mappings.trainticket')")
-    commit.add_argument('--import_mapping_func', type=str, required=False, default='microservice_mapping',
-                        help='Name of function defining a microservice mapping to import from file '
-                             "given by '--import_mapping_file'")
     commit.add_argument('--backend', choices=['pydriller', 'github'], required=True, help='Available backends for commit mining')
     commit.add_argument('--commit_table', type=str, required=True,
                             help='Output path for the csv table of mined commits')
@@ -130,6 +131,10 @@ def main():
     network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
     network.add_argument('--network_output', type=str, required=False, help='Output path for network')
     network.add_argument('--commit_table', type=str, required=True, help='Input path of the csv table of mined commits')
+    network.add_argument('--developer_mapping', type=str, required=False,
+                        help='File to import developer mapping from. Can be a .py file which defines '
+                             "a function 'developer_mapping'"
+                             "or a .json files with a dictionary")
 
     # Sub-commands for main
     subparsers = parser.add_subparsers(required=True)

@@ -7,7 +7,8 @@ from collections.abc import Mapping
 import networkx as nx
 from networkx.algorithms import bipartite
 
-__all__ = ['construct_bipartite', 'developer_collaboration_network']
+__all__ = ['construct_bipartite', 'developer_collaboration_network', 'quick_clean_devs', 'split_bipartite_nodes',
+           'map_developers', 'map_files_to_components']
 
 
 def quick_clean_devs(G: nx.Graph):
