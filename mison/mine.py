@@ -1,4 +1,3 @@
-import datetime
 import os
 import requests
 from datetime import datetime
@@ -29,14 +28,10 @@ class CommitJSONEncoder(JSONEncoder):
         else:
             return super().default(o)
 
-def pydriller_mine_commits(repo, output=None, mapping=None, **kwargs):
+def pydriller_mine_commits(repo, **kwargs):
     """
     Mining git repository commits and file modifications with PyDriller library
     :param repo: str, path to the repository folder (can be online, will be temporarily cloned)
-    :param output: (optional) str, filename to save the mined commits csv table; if "default", will use the default
-        name with current timestamp
-    :param mapping: (optional) function of signature str -> str mapping a filename in the repository
-        to the corresponding microservice or None
     :param kwargs: kwargs for pydriller.Repository (filters, commits range)
     :return: pandas DataFrame with all mined commits and file modifications
     """
@@ -52,27 +47,14 @@ def pydriller_mine_commits(repo, output=None, mapping=None, **kwargs):
 
     data = pd.DataFrame(data, columns=['commit_hash', 'author_name', 'author_email', 'committer_name', 'committer_email',
                                        'commit_date', 'additions', 'deletions', 'filename'])
-
-    if mapping is not None:
-        data['microservice'] = data['filename'].map(mapping)
-
-    if output is not None:
-        if output == 'default':
-            output = f"mison_pydriller_commit_table_{datetime.datetime.now().isoformat()}.csv"
-        data.to_csv(output, index=False)
-
     return data
 
 
-def github_mine_commits(repo: str, github_token=None, output=None, mapping=None, per_page=100):
+def github_mine_commits(repo: str, github_token=None, per_page=100):
     """
     Mining git repository commits and file modifications with GitHub API.
     :param repo: str, address of the repository on GitHub
     :param github_token: str, the GitHub API token to use for API access; if None, will try to get GITHUB_TOKEN env
-    :param mapping: (optional) function of signature str -> str mapping a filename in the repository
-        to the corresponding microservice or None
-    :param output: (optional) str, filename to save the mined commits csv table; if "default", will use the default
-        name with current timestamp
     :param per_page: (optional) amount of commits to return per page, passed to the GitHub API request
     :return: pandas DataFrame with all mined commits and file modifications
     :raise ValueError: if the GitHub API is not provided neither as parameter not environment variable
@@ -125,14 +107,6 @@ def github_mine_commits(repo: str, github_token=None, output=None, mapping=None,
     columns = ['commit_hash', 'author_name', 'author_email', 'committer_name', 'committer_email', 'commit_date',
                'additions', 'deletions', 'filename']
     data = pd.DataFrame(data, columns=columns)
-
-    if mapping is not None:
-        data['microservice'] = data['filename'].map(mapping)
-
-    if output is not None:
-        if output == 'default':
-            output = f"mison_github_commit_table_{datetime.datetime.now().isoformat()}.csv"
-        data.to_csv(output, index=False)
 
     return data
 
