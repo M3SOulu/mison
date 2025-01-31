@@ -26,11 +26,7 @@ def construct_bipartite(commit_table):
 
 def map_developers(G: nx.Graph, developer_mapping: Mapping):
     devs = {n for n, d in G.nodes(data=True) if d["bipartite"] == 'dev'}
-    for old_dev in devs:
-        if old_dev not in developer_mapping:
-            print(f"Keeping {old_dev}")
-            continue
-        new_dev = developer_mapping.get(old_dev)
+    for old_dev, new_dev in zip(devs, map(lambda x: developer_mapping.get(x, x), devs)):
         if old_dev == new_dev:
             print(f"Keeping {old_dev}")
             continue
