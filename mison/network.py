@@ -16,7 +16,7 @@ def split_bipartite_nodes(G, bipartite):
     return top, bottom
 
 
-def construct_bipartite(commit_table):
+def construct_bipartite(commit_table, repository=None):
     G = nx.Graph()
     for row in commit_table.itertuples(index=False):
         dev = row.author_email
@@ -25,7 +25,7 @@ def construct_bipartite(commit_table):
                         committer_name=row.committer_name, committer_email=row.committer_email,
                         commit_date=row.commit_date, filename=file, additions=row.additions, deletions=row.deletions)
         G.add_node(dev, bipartite='dev')
-        G.add_node(file, bipartite='file')
+        G.add_node(file, bipartite='file', repository=repository)
         if G.has_edge(dev, file):
             G[dev][file]['commits'] += [commit]
         else:
