@@ -10,6 +10,12 @@ from networkx.algorithms import bipartite
 __all__ = ['construct_bipartite', 'developer_collaboration_network']
 
 
+def quick_clean_devs(G: nx.Graph):
+    stop_list = {"(none)"}
+    nodes_remove = {node for node, data in G.nodes(data=True) if data["bipartite"] == "dev" and node in stop_list}
+    G.remove_nodes_from(nodes_remove)
+    return G
+
 def split_bipartite_nodes(G, bipartite):
     top = {n for n, d in G.nodes(data=True) if d["bipartite"] == bipartite}
     bottom = set(G) - top
