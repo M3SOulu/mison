@@ -83,7 +83,8 @@ def main():
             sys.argv.append('-h')
 
     # Main parser
-    parser = argparse.ArgumentParser(description='MiSON - MicroService Organisational Network miner')
+    parser = argparse.ArgumentParser(description='MiSON - MicroService Organisational Network miner',
+                                     prog="MiSON")
 
     # Common commit parameters
     commit = argparse.ArgumentParser(description='Mine commits of a repository with PyDriller', add_help=False)
