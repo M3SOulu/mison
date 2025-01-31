@@ -8,7 +8,7 @@ from json import JSONEncoder
 from pydriller import Repository
 import pandas as pd
 
-__all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit']
+__all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit', 'CommitJSONEncoder']
 
 @dataclass
 class Commit:
