@@ -1,7 +1,7 @@
 import os
 
 
-def microservice_mapping(filename):
+def component_mapping(filename):
     if filename is None:
         return None
 

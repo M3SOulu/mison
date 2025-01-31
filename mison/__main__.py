@@ -1,5 +1,6 @@
 from .mine import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder
-from .network import construct_bipartite, developer_collaboration_network, map_developers, quick_clean_devs
+from .network import construct_bipartite, developer_collaboration_network, map_developers, quick_clean_devs, \
+    map_files_to_components
 
 import pandas
 import networkx as nx
@@ -12,27 +13,18 @@ import sys
 import json
 
 
-def import_microservice_mapping(filename: str, funcname: str = None):
-
-    if filename is None:
-        return None
-    elif filename.startswith('mison.mappings'):
-        module = importlib.import_module(filename)
-        return module.microservice_mapping
+def import_mapping(filename: str, funcname: str):
 
     # Add the directory of the file to sys.path
     dir_name = os.path.dirname(filename)
     if dir_name not in sys.path:
         sys.path.append(dir_name)
 
-    if funcname is None:
-        funcname = 'microservice_mapping'
-
     # Import the module
     spec = importlib.util.spec_from_file_location(funcname, filename)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    return module.microservice_mapping
+    return getattr(module, funcname)
 
 
 def main_commit(args):
@@ -62,17 +54,27 @@ def main_network(args):
     data = pandas.read_csv(args.commit_table)
     if args.developer_mapping is not None:
         if args.developer_mapping.endswith(".py"):
-            mapping = import_microservice_mapping(args.developer_mapping, "developer_mapping")
+            dev_mapping = import_mapping(args.developer_mapping, "developer_mapping")
         elif args.developer_mapping.endswith(".json"):
             with open(args.developer_mapping, 'r') as f:
-                mapping = json.load(f)
+                dev_mapping = json.load(f)
         else:
             raise ValueError("--developer_mapping must be a .py or .json file")
+    if args.component_mapping is not None:
+        if args.component_mapping.endswith(".py"):
+            comp_mapping = import_mapping(args.component_mapping, "component_mapping")
+        elif args.component_mapping.endswith(".json"):
+            with open(args.component_mapping, 'r') as f:
+                comp_mapping = json.load(f)
+        else:
+            raise ValueError("--component_mapping must be a .py or .json file")
     G = construct_bipartite(data)
     if args.quick_clean:
         G = quick_clean_devs(G)
     if args.developer_mapping is not None:
-        G = map_developers(G, mapping)
+        G = map_developers(G, dev_mapping)
+    if args.component_mapping is not None:
+        G = map_files_to_components(G, comp_mapping)
     D = developer_collaboration_network(G)
     net = nx.node_link_data(D, link="edges")
     with open(args.network_output, 'w') as f:
@@ -139,6 +141,10 @@ def main():
                         help='File to import developer mapping from. Can be a .py file which defines '
                              "a function 'developer_mapping'"
                              "or a .json files with a dictionary")
+    network.add_argument('--component_mapping', type=str, required=False,
+                         help='File to import component mapping from. Can be a .py file which defines '
+                              "a function 'component_mapping'"
+                              "or a .json files with a dictionary")
 
     # Sub-commands for main
     subparsers = parser.add_subparsers(required=True)
