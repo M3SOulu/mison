@@ -1,5 +1,5 @@
 from .mine import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder
-from .network import construct_bipartite, developer_collaboration_network, map_developers
+from .network import construct_bipartite, developer_collaboration_network, map_developers, quick_clean_devs
 
 import pandas
 import networkx as nx
@@ -69,6 +69,8 @@ def main_network(args):
         else:
             raise ValueError("--developer_mapping must be a .py or .json file")
     G = construct_bipartite(data)
+    if args.quick_clean:
+        G = quick_clean_devs(G)
     if args.developer_mapping is not None:
         G = map_developers(G, mapping)
     D = developer_collaboration_network(G)
@@ -132,6 +134,7 @@ def main():
     network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
     network.add_argument('--network_output', type=str, required=False, help='Output path for network')
     network.add_argument('--commit_table', type=str, required=True, help='Input path of the csv table of mined commits')
+    network.add_argument('--quick_clean', action='store_true', help='If set, use pre-defined stop-list to remove developer nodes')
     network.add_argument('--developer_mapping', type=str, required=False,
                         help='File to import developer mapping from. Can be a .py file which defines '
                              "a function 'developer_mapping'"

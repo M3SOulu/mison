@@ -14,6 +14,8 @@ __all__ = ['construct_bipartite', 'developer_collaboration_network', 'quick_clea
 def quick_clean_devs(G: nx.Graph):
     stop_list = {"(none)"}
     nodes_remove = {node for node, data in G.nodes(data=True) if data["bipartite"] == "dev" and node in stop_list}
+    for node in nodes_remove:
+        print(f"Found {node}; to be removed")
     G.remove_nodes_from(nodes_remove)
     return G
 
