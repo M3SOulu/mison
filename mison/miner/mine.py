@@ -109,7 +109,3 @@ def github_mine_commits(repo: str, github_token=None, per_page=100):
     data = pd.DataFrame(data, columns=columns)
 
     return data
-
-
-if __name__ == '__main__':
-    print('ERROR - run this module as main as "python -m mison')

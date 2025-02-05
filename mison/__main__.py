@@ -1,6 +1,6 @@
-from .mine import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder
-from .network import construct_bipartite, developer_collaboration_network_count, map_developers, quick_clean_devs, \
-    map_files_to_components
+from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder
+from .network import construct_bipartite, map_developers, quick_clean_devs, map_files_to_components
+from .network.collaboration import developer_collaboration_network_count
 
 import pandas
 import networkx as nx
