@@ -11,14 +11,14 @@ __all__ = ['construct_bipartite', 'quick_clean_devs', 'split_bipartite_nodes', '
 
 def quick_clean_devs(G: nx.Graph):
     stop_list = {"(none)"}
-    nodes_remove = {node for node, data in G.nodes(data=True) if data["bipartite"] == "dev" and node in stop_list}
+    nodes_remove = {node for node, data in G.nodes(data=True) if data["type"] == "dev" and node in stop_list}
     for node in nodes_remove:
         print(f"Found {node}; to be removed")
     G.remove_nodes_from(nodes_remove)
     return G
 
-def split_bipartite_nodes(G, bipartite):
-    top = {n for n, d in G.nodes(data=True) if d["bipartite"] == bipartite}
+def split_bipartite_nodes(G, type):
+    top = {n for n, d in G.nodes(data=True) if d["type"] == type}
     bottom = set(G) - top
     return top, bottom
 
@@ -31,8 +31,8 @@ def construct_bipartite(commit_table, repository=None):
         commit = Commit(sha=row.commit_hash, author_name=row.author_name, author_email=row.author_email,
                         committer_name=row.committer_name, committer_email=row.committer_email,
                         commit_date=row.commit_date, filename=file, additions=row.additions, deletions=row.deletions)
-        G.add_node(dev, bipartite='dev')
-        G.add_node(file, bipartite='file', repository=repository)
+        G.add_node(dev, type='dev')
+        G.add_node(file, type='file', repository=repository)
         if G.has_edge(dev, file):
             G[dev][file]['commits'] += [commit]
         else:
@@ -61,7 +61,7 @@ def map_developers(G: nx.Graph, developer_mapping: Union[Mapping, Callable]):
 def map_files_to_components(G: nx.Graph, component_mapping: Union[Mapping, Callable]):
     devs, files = split_bipartite_nodes(G, 'dev')
     D = nx.Graph()
-    D.add_nodes_from(devs, bipartite='dev')
+    D.add_nodes_from(devs, type='dev')
     if callable(component_mapping):
         mapping_iter = map(component_mapping, files)
     elif isinstance(component_mapping, Mapping):
@@ -73,7 +73,7 @@ def map_files_to_components(G: nx.Graph, component_mapping: Union[Mapping, Calla
             print(f"File {file} does not belong to a component")
             continue
         print(f"File {file} belongs to {component}")
-        D.add_node(component, bipartite='component')
+        D.add_node(component, type='component')
         for _, dev, data in G.edges(file, data=True):
             D.add_edge(dev, component, **data)
     return D
