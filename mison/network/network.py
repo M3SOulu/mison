@@ -65,13 +65,14 @@ def get_dev_file_mapping(commits: List[Commit]) -> DevFileMapping:
     G: DevFileMapping = nx.Graph()
     for commit in commits:
         dev = commit.author_email
-        file = commit.filename
         G.add_node(dev, type='dev')
-        G.add_node(file, type='file')
-        if G.has_edge(dev, file):
-            G[dev][file]['commits'] += [commit]
-        else:
-            G.add_edge(dev, file, commits=[commit])
+        for file in commit.modified_files:
+            file = file.filename
+            G.add_node(file, type='file')
+            if G.has_edge(dev, file):
+                G[dev][file]['commits'] += [commit]
+            else:
+                G.add_edge(dev, file, commits=[commit])
     return G
 
 

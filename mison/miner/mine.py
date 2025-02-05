@@ -5,9 +5,30 @@ from dataclasses import dataclass
 from json import JSONEncoder, JSONDecoder
 from typing import List
 
-from pydriller import Repository
+from pydriller import Repository, ModificationType
 
-__all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit', 'CommitJSONEncoder', 'CommitJSONDecoder']
+__all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit', 'ModifiedFile',
+           'CommitJSONEncoder', 'CommitJSONDecoder']
+
+
+@dataclass
+class ModifiedFile:
+    new_filename: str
+    old_filename: str
+    modification_type: ModificationType
+    filename: str = None
+    additions: int = 0
+    deletions: int = 0
+
+    def __post_init__(self):
+        if self.filename is None:
+            if self.modification_type == ModificationType.DELETE:
+                self.filename = self.old_filename
+            else:
+                self.filename = self.new_filename
+        if self.modification_type != ModificationType.RENAME:
+            self.old_filename = None
+            self.new_filename = None
 
 @dataclass
 class Commit:
@@ -17,18 +38,34 @@ class Commit:
     committer_name: str
     committer_email: str
     commit_date: datetime
-    filename: str
-    additions: int = 0
-    deletions: int = 0
+    modified_files: List[ModifiedFile]
+
 
 class CommitJSONEncoder(JSONEncoder):
     def default(self, o):
         if isinstance(o, Commit):
-            return o.__dict__
+            d = {k: v for k, v in o.__dict__.items() if k != "modified_files"}
+            d["modified_files"] = [obj.__dict__ for obj in o.__dict__["modified_files"]]
+            return d
         elif isinstance(o, datetime):
             return o.isoformat()
+        elif isinstance(o, ModificationType):
+            match o:
+                case ModificationType.ADD:
+                    return "add"
+                case ModificationType.DELETE:
+                    return "delete"
+                case ModificationType.RENAME:
+                    return "rename"
+                case ModificationType.COPY:
+                    return "copy"
+                case ModificationType.MODIFY:
+                    return "modify"
+                case ModificationType.UNKNOWN:
+                    return "unknown"
         else:
             return super().default(o)
+
 
 class CommitJSONDecoder(JSONDecoder):
     def __init__(self, *args, **kwargs):
@@ -36,14 +73,32 @@ class CommitJSONDecoder(JSONDecoder):
 
     def object_hook(self, obj):
         if isinstance(obj, dict):
-            if "sha" in obj and "author_email" in obj:
+            if "new_filename" in obj:
+                match obj["modification_type"]:
+                    case "add":
+                        obj["modification_type"] = ModificationType.ADD
+                    case "delete":
+                        obj["modification_type"] = ModificationType.DELETE
+                    case "copy":
+                        obj["modification_type"] = ModificationType.COPY
+                    case "rename":
+                        obj["modification_type"] = ModificationType.RENAME
+                    case "modify":
+                        obj["modification_type"] = ModificationType.MODIFY
+                    case "unknown":
+                        obj["modification_type"] = ModificationType.UNKNOWN
+                return ModifiedFile(**obj)
+            elif "sha" in obj and "author_email" in obj:
                 obj["commit_date"] = datetime.fromisoformat(obj["commit_date"])
+                modified_files = [self.object_hook(item) for item in obj["modified_files"]]
+                obj["modified_files"] = modified_files
                 return Commit(**obj)
             else:
                 return {key: self.object_hook(value) for key, value in obj.items()}
         elif isinstance(obj, list):
             return [self.object_hook(item) for item in obj]
         return obj
+
 
 def pydriller_mine_commits(repo, **kwargs) -> List[Commit]:
     """
@@ -57,10 +112,9 @@ def pydriller_mine_commits(repo, **kwargs) -> List[Commit]:
     data = []
 
     for commit in Repository(repo, **pydriller_kwargs).traverse_commits():
-        for file in commit.modified_files:
-            data.append(Commit(commit.hash, commit.author.name, commit.author.email.lower(), commit.committer.name,
-                         commit.committer.email.lower(), commit.committer_date, file.new_path, file.deleted_lines,
-                         file.added_lines))
+        modified_files = [ModifiedFile(file.new_path, file.old_path, file.change_type, None, file.deleted_lines, file.added_lines) for file in commit.modified_files]
+        data.append(Commit(commit.hash, commit.author.name, commit.author.email.lower(), commit.committer.name,
+                         commit.committer.email.lower(), commit.committer_date, modified_files))
 
     return data
 
@@ -112,18 +166,38 @@ def github_mine_commits(repo: str, github_token=None, per_page=100) -> List[Comm
             commit_changes_response = requests.get(commit_changes_query, headers=headers)
             commit_changes_data = commit_changes_response.json()
 
+            modified_files = []
             for file in commit_changes_data.get("files", []):
-                commit_entry = Commit(
-                    sha=commit_sha,
-                    author_name=author_name,
-                    author_email=author_email,
-                    committer_name=committer_name,
-                    committer_email=committer_email,
-                    commit_date=commit_date,
-                    filename=file.get("filename"),
-                    additions=file.get("additions", 0),
-                    deletions=file.get("deletions", 0))
-                commits_data.append(commit_entry)
+                status = file.get("status")
+                match status:
+                    case "added":
+                        status = ModificationType.ADD
+                    case "removed":
+                        status = ModificationType.DELETE
+                        # Compatibility with PyDriller
+                        file["previous_filename"] = file.get("filename")
+                        file["filename"] = None
+                    case "modified":
+                        status = ModificationType.MODIFY
+                    case "renamed":
+                        status = ModificationType.RENAME
+                    case "copied":
+                        status = ModificationType.COPY
+                    case _:
+                        status = ModificationType.UNKNOWN
+
+                modified_files.append(
+                    ModifiedFile(file.get("filename"), file.get("previous_filename", None), status, None, file.get("additions", 0),
+                                 file.get("deletions", 0)))
+            commit_entry = Commit(
+                sha=commit_sha,
+                author_name=author_name,
+                author_email=author_email,
+                committer_name=committer_name,
+                committer_email=committer_email,
+                commit_date=commit_date,
+                modified_files=modified_files)
+            commits_data.append(commit_entry)
 
         page += 1
 
