@@ -3,9 +3,9 @@ import requests
 from datetime import datetime
 from dataclasses import dataclass
 from json import JSONEncoder
+from typing import List
 
 from pydriller import Repository
-import pandas as pd
 
 __all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit', 'CommitJSONEncoder']
 
@@ -25,10 +25,12 @@ class CommitJSONEncoder(JSONEncoder):
     def default(self, o):
         if isinstance(o, Commit):
             return o.__dict__
+        elif isinstance(o, datetime):
+            return o.isoformat()
         else:
             return super().default(o)
 
-def pydriller_mine_commits(repo, **kwargs):
+def pydriller_mine_commits(repo, **kwargs) -> List[Commit]:
     """
     Mining git repository commits and file modifications with PyDriller library
     :param repo: str, path to the repository folder (can be online, will be temporarily cloned)
@@ -41,16 +43,14 @@ def pydriller_mine_commits(repo, **kwargs):
 
     for commit in Repository(repo, **pydriller_kwargs).traverse_commits():
         for file in commit.modified_files:
-            data.append([commit.hash, commit.author.name, commit.author.email.lower(), commit.committer.name,
-                         commit.committer.email.lower(), commit.committer_date, file.added_lines, file.deleted_lines,
-                         file.new_path])
+            data.append(Commit(commit.hash, commit.author.name, commit.author.email.lower(), commit.committer.name,
+                         commit.committer.email.lower(), commit.committer_date, file.new_path, file.deleted_lines,
+                         file.added_lines))
 
-    data = pd.DataFrame(data, columns=['commit_hash', 'author_name', 'author_email', 'committer_name', 'committer_email',
-                                       'commit_date', 'additions', 'deletions', 'filename'])
     return data
 
 
-def github_mine_commits(repo: str, github_token=None, per_page=100):
+def github_mine_commits(repo: str, github_token=None, per_page=100) -> List[Commit]:
     """
     Mining git repository commits and file modifications with GitHub API.
     :param repo: str, address of the repository on GitHub
@@ -70,42 +70,46 @@ def github_mine_commits(repo: str, github_token=None, per_page=100):
     headers = {'Authorization': f'token {github_token}'}
     params = {'per_page': per_page}
 
-    data = []
+    commits_data = []
     page = 1
-    while 1 == 1:
+
+    while True:
         params['page'] = page
-        project_commits_result = requests.get(project_commits_query, headers=headers, params=params)
-        project_commits_data: list[dict] = project_commits_result.json()
-        if len(project_commits_data) == 0:
+        response = requests.get(project_commits_query, headers=headers, params=params)
+        project_commits_data: list[dict] = response.json()
+
+        if not project_commits_data:
             break
+
         for item in project_commits_data:
-            commit_hash = item['sha']
-            commit_data = [commit_hash]  # commit_hash
-            if 'commit' in item:
-                if 'author' in item:
-                    commit_data.append(item['commit']['author'].get('name', None))  # author_name
-                    commit_data.append(item['commit']['author'].get('email', None))  # author_email
-                else:
-                    commit_data.extend([None]*2)
-                if 'committer' in item:
-                    commit_data.append(item['commit']['committer'].get('name', None))  # committer_name
-                    commit_data.append(item['commit']['committer'].get('email', None))  # committer_email
-                    commit_data.append(item['commit']['committer']['date'])  # commit_date
-                else:
-                    commit_data.extend([None]*3)
-            else:
-                commit_data.extend([None]*5)
-            commit_changes_query = f'{project_commits_query}/{commit_hash}'
+            commit_sha = item['sha']
+            author_name: str = item.get('commit', {}).get('author', {}).get('name', None)
+            author_email: str = item.get('commit', {}).get('author', {}).get('email', None)
+            committer_name: str = item.get('commit', {}).get('committer', {}).get('name', None)
+            committer_email: str = item.get('commit', {}).get('committer', {}).get('email', None)
+            commit_date: str = item.get('commit', {}).get('committer', {}).get('date', None)
+
+            if commit_date:
+                commit_date: datetime = datetime.fromisoformat(commit_date.replace("Z", "+00:00"))
+
+            # Fetch detailed commit changes
+            commit_changes_query = f"{project_commits_query}/{commit_sha}"
             commit_changes_response = requests.get(commit_changes_query, headers=headers)
             commit_changes_data = commit_changes_response.json()
-            changed_files = commit_changes_data['files']
-            for file in changed_files:
-                file_commit_data = commit_data.copy()
-                file_commit_data.extend([file['additions'], file['deletions'], file['filename']]) # additions, deletions, filename
-                data.append(file_commit_data)
-        page += 1
-    columns = ['commit_hash', 'author_name', 'author_email', 'committer_name', 'committer_email', 'commit_date',
-               'additions', 'deletions', 'filename']
-    data = pd.DataFrame(data, columns=columns)
 
-    return data
+            for file in commit_changes_data.get("files", []):
+                commit_entry = Commit(
+                    sha=commit_sha,
+                    author_name=author_name,
+                    author_email=author_email,
+                    committer_name=committer_name,
+                    committer_email=committer_email,
+                    commit_date=commit_date,
+                    filename=file.get("filename"),
+                    additions=file.get("additions", 0),
+                    deletions=file.get("deletions", 0))
+                commits_data.append(commit_entry)
+
+        page += 1
+
+    return commits_data

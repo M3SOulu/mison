@@ -44,11 +44,11 @@ def main_commit(args):
                             'filepath': args.filepath,
                             'only_modifications_with_file_types': args.only_modifications_with_file_types
                             }
-        pydriller_mine_commits(repo=args.repo, output=args.commit_table, **pydriller_kwargs)
+        data = pydriller_mine_commits(repo=args.repo, **pydriller_kwargs)
     elif args.backend == 'github':
-        github_mine_commits(repo=args.repo, github_token=args.github_token, output=args.commit_table,
-                            per_page=args.per_page)
-
+        data = github_mine_commits(repo=args.repo, github_token=args.github_token, per_page=args.per_page)
+    with open(args.commit_json, 'w') as f:
+        json.dump(data, f, cls=CommitJSONEncoder, indent=4)
 
 def main_network(args):
     data = pandas.read_csv(args.commit_table)
@@ -98,8 +98,8 @@ def main():
     commit = argparse.ArgumentParser(description='Mine commits of a repository with PyDriller', add_help=False)
     commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
     commit.add_argument('--backend', choices=['pydriller', 'github'], required=True, help='Available backends for commit mining')
-    commit.add_argument('--commit_table', type=str, required=True,
-                            help='Output path for the csv table of mined commits')
+    commit.add_argument('--commit_json', type=str, required=True,
+                            help='Output path for the json file of mined commits')
 
     # Filters for PyDriller
     pydriller = commit.add_argument_group('PyDriller backend parameters', 'Parameters for mining commits with PyDriller backend')
