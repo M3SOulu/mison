@@ -14,6 +14,12 @@ DevComponentMapping: TypeAlias = nx.Graph
 
 
 def quick_clean_devs(G: Union[DevComponentMapping, DevFileMapping]):
+    """
+    Remove developers who found in a common stoplist.
+
+    :param G: A graph of either DevComponentMapping or DevFileMapping
+    :return: The filtered graph (graph is modified in-place)
+    """
     stop_list = {"(none)"}
     nodes_remove = {node for node, data in G.nodes(data=True) if data["type"] == "dev" and node in stop_list}
     for node in nodes_remove:
@@ -22,12 +28,41 @@ def quick_clean_devs(G: Union[DevComponentMapping, DevFileMapping]):
     return G
 
 def split_bipartite_nodes(G: Union[DevFileMapping, DevComponentMapping], type):
+    """
+    Get two sets of nodes from a bipartite network.
+
+    For a DevFileMapping or a DevCompoentMapping, return two sets of nodes: nodes with "type" type and all others.
+    :param G: A graph of either DevFileMapping or DevComponentMapping
+    :param type: type of nodes to split over
+    :return: top, bottom - top nodes are of "type" type and bottom are the rest
+    """
     top = {n for n, d in G.nodes(data=True) if d["type"] == type}
     bottom = set(G) - top
     return top, bottom
 
 
 def get_dev_file_mapping(commit_table):
+    """
+    Construct a mapping of developers committing to files.
+
+    This function generates a NetworkX graph (`DevFileMapping`) that represents the relationship between
+    developers and the files they have modified. The resulting graph consists of two types of nodes:
+
+    - **Developers** (`type="dev"`)
+    - **Files** (`type="file"`)
+
+    Edges between developers and files indicate that a developer has modified a particular file in at least
+    one commit. Each edge includes a `"commits"` attribute, which is a list of `mison.miner.Commit` objects
+    representing the commits where the developer changed the file.
+
+    ### Graph Properties:
+    - **Nodes**: Each node has a `"type"` attribute set to either `"dev"` (developer) or `"file"` (file).
+    - **Edges**: An edge exists between a developer and a file if the developer has modified that file.
+      The `"commits"` attribute on the edge contains the list of related commits.
+
+    :param commit_table: A Pandas DataFrame containing commit information (as returned by `mison.miner`).
+    :return: `DevFileMapping`, a NetworkX graph object representing the developer-file relationships.
+    """
     G: DevFileMapping = nx.Graph()
     for row in commit_table.itertuples(index=False):
         dev = row.author_email
@@ -45,6 +80,29 @@ def get_dev_file_mapping(commit_table):
 
 
 def map_developers(G: Union[DevFileMapping, DevComponentMapping], developer_mapping: Union[Mapping, Callable]):
+    """
+    Remap developers in a DevFileMapping or DevComponentMapping graph.
+
+    This function updates a given DevFileMapping or DevComponentMapping `G` by replacing developer names
+    according to the provided `developer_mapping`. Each occurrence of an old developer (`old_dev`) in `G`
+    is replaced with a new developer (`new_dev = developer_mapping[old_dev]`), while preserving and
+    reconnecting the links accordingly.
+
+    If multiple developers are mapped to the same new developer, their links to files or components
+    are merged under the new developer.
+
+    ### Developer Mapping Options:
+    - **Dictionary (`dict[old_dev, new_dev]`)**: Maps specific developers to new names. Developers not included
+      in the dictionary remain unchanged.
+    - **Function (`Callable[[old_dev], new_dev]`)**: A function that takes a developer name and returns the
+      new name. If the function returns the same developer name, it remains unchanged.
+
+    **Note:** The graph `G` is modified in place.
+
+    :param G: A graph of type `DevFileMapping` or `DevComponentMapping`.
+    :param developer_mapping: A dictionary or function mapping old developer names to new ones.
+    :return: The modified `DevFileMapping` or `DevComponentMapping` graph with remapped developers.
+    """
     devs, _ = split_bipartite_nodes(G, 'dev')
     if callable(developer_mapping):
         mapping_iter = map(developer_mapping, devs)
@@ -64,6 +122,33 @@ def map_developers(G: Union[DevFileMapping, DevComponentMapping], developer_mapp
 
 
 def map_files_to_components(G: DevFileMapping, component_mapping: Union[Mapping, Callable]):
+    """
+    Construct a `DevComponentMapping` graph from a `DevFileMapping` graph by grouping files into components.
+
+    This function transforms a `DevFileMapping` graph into a `DevComponentMapping` graph by assigning files
+    to components using the provided `component_mapping`. Each file in `DevFileMapping` is mapped to a
+    component using `component_mapping(file)`. Developers will then be linked to components
+    instead of individual files.
+
+    ### Component Mapping Options:
+    - **Dictionary (`dict[file, component]`)** mapping files to their corresponding components.
+    - **Function (`Callable[[file], component]`)** returning the component for a given file.
+    If a file is **not present in the dictionary** or if the function **returns `None`**, the file is
+    **excluded**, and commits involving that file are omitted.
+
+    ### Graph Structure:
+    - **Nodes**:
+      - Developers (`type="dev"`)
+      - Components (`type="component"`)
+    - **Edges**:
+      - A developer is connected to a component if they have modified any file belonging to that component.
+      - Each edge includes a `"commits"` attribute, which is a list of `mison.miner.Commit` objects representing
+        all commits that modified any file mapped to the corresponding component.
+
+    :param G: A `DevFileMapping` graph to be converted into a `DevComponentMapping` graph.
+    :param component_mapping: A dictionary or function that maps files to components.
+    :return: A `DevComponentMapping` graph with developers linked to components.
+    """
     devs, files = split_bipartite_nodes(G, 'dev')
     D: DevComponentMapping = nx.Graph()
     D.add_nodes_from(devs, type='dev')
