@@ -1,6 +1,6 @@
 from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder
 from .network import construct_bipartite, map_developers, quick_clean_devs, map_files_to_components
-from .network.collaboration import developer_collaboration_network_count, developer_collaboration_network_cosine
+from .network.collaboration import count_network, cosine_network
 
 import pandas
 import networkx as nx
@@ -77,9 +77,9 @@ def main_network(args):
     if args.component_mapping is not None:
         G = map_files_to_components(G, comp_mapping)
     if args.collaboration == "count":
-        D = developer_collaboration_network_count(G)
+        D = count_network(G)
     elif args.collaboration == "cosine":
-        D = developer_collaboration_network_cosine(G)
+        D = cosine_network(G)
     net = nx.node_link_data(D, link="edges")
     with open(args.network_output, 'w') as f:
         json.dump(net, f, cls=CommitJSONEncoder, indent=4)

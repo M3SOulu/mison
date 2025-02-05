@@ -6,16 +6,16 @@ from networkx.algorithms import bipartite
 
 from mison.network import split_bipartite_nodes
 
-__all__ = ["developer_collaboration_network_count", "developer_collaboration_network_cosine"]
+__all__ = ["count_network", "cosine_network"]
 
 
-def developer_collaboration_network_count(G):
+def count_network(G):
     devs, _ = split_bipartite_nodes(G, 'dev')
     D = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
     return D
 
 
-def developer_collaboration_network_cosine(G: nx.Graph):
+def cosine_network(G: nx.Graph):
     devs, files = split_bipartite_nodes(G, "dev")
     devs = sorted(devs)
     files = sorted(files)
