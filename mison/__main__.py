@@ -1,5 +1,5 @@
 from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
-from .network import get_dev_file_mapping, map_developers, quick_clean_devs, map_files_to_components
+from .network import get_dev_file_mapping, map_developers, quick_clean_devs, map_files_to_components, map_renamed_files
 from .network.collaboration import count_network, cosine_network
 
 import networkx as nx
@@ -71,6 +71,8 @@ def main_network(args):
     G = get_dev_file_mapping(data)
     if args.quick_clean:
         G = quick_clean_devs(G)
+    if args.rename_mapping:
+        G = map_renamed_files(G)
     if args.developer_mapping is not None:
         G = map_developers(G, dev_mapping)
     if args.component_mapping is not None:
@@ -140,6 +142,7 @@ def main():
     network.add_argument('--network_output', type=str, required=False, help='Output path for network')
     network.add_argument('--commit_json', type=str, required=True, help='Input path of the csv table of mined commits')
     network.add_argument('--quick_clean', action='store_true', help='If set, use pre-defined stop-list to remove developer nodes')
+    network.add_argument('--rename_mapping', action='store_true', help='If set, merge renamed files to the newest file name')
     network.add_argument('--developer_mapping', type=str, required=False,
                         help='File to import developer mapping from. Can be a .py file which defines '
                              "a function 'developer_mapping'"

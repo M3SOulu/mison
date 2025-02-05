@@ -4,9 +4,10 @@ from collections.abc import Mapping
 from typing import Union, Callable, TypeAlias, List
 
 import networkx as nx
+from pydriller import ModificationType
 
 __all__ = ['DevComponentMapping', 'DevFileMapping', 'get_dev_file_mapping', 'quick_clean_devs', 'split_bipartite_nodes',
-           'map_developers', 'map_files_to_components']
+           'map_developers', 'map_files_to_components', 'map_renamed_files']
 
 DevFileMapping: TypeAlias = nx.Graph
 DevComponentMapping: TypeAlias = nx.Graph
@@ -115,6 +116,60 @@ def map_developers(G: Union[DevFileMapping, DevComponentMapping], developer_mapp
         for _, file, data in G.edges(old_dev, data=True):
             G.add_edge(new_dev, file, **data)
         G.remove_node(old_dev)
+    return G
+
+
+def map_renamed_files(G: DevFileMapping) -> DevFileMapping:
+    """
+    Map renamed files in a `DevFileMapping` graph to their latest filenames.
+
+    This function updates a `DevFileMapping` graph by tracking file renames across commits and
+    ensuring that all references to old filenames are mapped to their latest version.
+
+    ### How It Works:
+    - Resolve each file's latest name by scanning the commit history for file renames
+        (`ModificationType.RENAME`) and records rename chains.
+    - Updates the graph:
+      - If an old filename has a newer version, it is **replaced** with the latest filename.
+      - Merge edges from the old file node to the new file node while preserving commit data.
+      - Store the list of old filenames under the `"old_filenames"` attribute of the latest filename.
+
+    ### Graph Updates:
+    - **Nodes**: Old filenames are removed, and their data is merged into the latest filename node.
+    - **Edges**: Developers previously linked to an old filename are reconnected to the latest filename.
+    - **Attributes**: Each latest filename node retains a list of `"old_filenames"` for traceability.
+
+    :param G: A `DevFileMapping` graph
+    :return: An updated `DevFileMapping` graph where all renamed files are mapped to their newest filenames.
+    """
+    files, _ = split_bipartite_nodes(G, 'file')
+    rename_chain = dict()
+    for u, v, data in G.edges.data(data="commits"):
+        for commit in data:
+            for modified_file in commit.modified_files:
+                if modified_file.modification_type == ModificationType.RENAME:
+                    rename_chain[modified_file.old_filename] = modified_file.new_filename
+    def reduce(key):
+        while key in rename_chain:
+            key = rename_chain[key]
+        return key
+    for old_file in files:
+        newest_filename = reduce(old_file)
+        if newest_filename == old_file:
+            print(f"{old_file} is the newest filename")
+            continue
+        print(f"Mapping {old_file} to {newest_filename}")
+        if newest_filename not in G:
+            G.add_node(newest_filename, old_filanames=[old_file])
+        else:
+            if "old_filenames" in G.nodes[newest_filename]:
+                G.nodes[newest_filename]["old_filenames"] += [old_file]
+            else:
+                G.nodes[newest_filename]["old_filenames"] = [old_file]
+        for _, dev, data in G.edges(old_file, data=True):
+            G.add_edge(newest_filename, dev, **data)
+        G.remove_node(old_file)
+
     return G
 
 
