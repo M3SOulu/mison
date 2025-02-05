@@ -52,6 +52,7 @@ def main_commit(args):
 
 def main_network(args):
     data = pandas.read_csv(args.commit_table)
+    data = data.dropna(subset="filename")
     if args.developer_mapping is not None:
         if args.developer_mapping.endswith(".py"):
             dev_mapping = import_mapping(args.developer_mapping, "developer_mapping")
