@@ -1,4 +1,4 @@
-from typing import Union, Callable
+from typing import Union, Callable, TypeAlias
 
 from mison.miner import Commit
 
@@ -6,10 +6,14 @@ from collections.abc import Mapping
 
 import networkx as nx
 
-__all__ = ['construct_bipartite', 'quick_clean_devs', 'split_bipartite_nodes', 'map_developers', 'map_files_to_components']
+__all__ = ['DevComponentMapping', 'DevFileMapping', 'get_dev_file_mapping', 'quick_clean_devs', 'split_bipartite_nodes',
+           'map_developers', 'map_files_to_components']
+
+DevFileMapping: TypeAlias = nx.Graph
+DevComponentMapping: TypeAlias = nx.Graph
 
 
-def quick_clean_devs(G: nx.Graph):
+def quick_clean_devs(G: Union[DevComponentMapping, DevFileMapping]):
     stop_list = {"(none)"}
     nodes_remove = {node for node, data in G.nodes(data=True) if data["type"] == "dev" and node in stop_list}
     for node in nodes_remove:
@@ -17,14 +21,14 @@ def quick_clean_devs(G: nx.Graph):
     G.remove_nodes_from(nodes_remove)
     return G
 
-def split_bipartite_nodes(G, type):
+def split_bipartite_nodes(G: Union[DevFileMapping, DevComponentMapping], type):
     top = {n for n, d in G.nodes(data=True) if d["type"] == type}
     bottom = set(G) - top
     return top, bottom
 
 
-def construct_bipartite(commit_table, repository=None):
-    G = nx.Graph()
+def get_dev_file_mapping(commit_table, repository=None):
+    G: DevFileMapping = nx.Graph()
     for row in commit_table.itertuples(index=False):
         dev = row.author_email
         file = row.filename
@@ -39,7 +43,8 @@ def construct_bipartite(commit_table, repository=None):
             G.add_edge(dev, file, commits=[commit])
     return G
 
-def map_developers(G: nx.Graph, developer_mapping: Union[Mapping, Callable]):
+
+def map_developers(G: Union[DevFileMapping, DevComponentMapping], developer_mapping: Union[Mapping, Callable]):
     devs, _ = split_bipartite_nodes(G, 'dev')
     if callable(developer_mapping):
         mapping_iter = map(developer_mapping, devs)
@@ -58,9 +63,9 @@ def map_developers(G: nx.Graph, developer_mapping: Union[Mapping, Callable]):
     return G
 
 
-def map_files_to_components(G: nx.Graph, component_mapping: Union[Mapping, Callable]):
+def map_files_to_components(G: DevFileMapping, component_mapping: Union[Mapping, Callable]):
     devs, files = split_bipartite_nodes(G, 'dev')
-    D = nx.Graph()
+    D: DevComponentMapping = nx.Graph()
     D.add_nodes_from(devs, type='dev')
     if callable(component_mapping):
         mapping_iter = map(component_mapping, files)

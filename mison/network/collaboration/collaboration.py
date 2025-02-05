@@ -1,21 +1,24 @@
 import itertools
+from typing import Union, TypeAlias
 
 import networkx as nx
 import numpy as np
 from networkx.algorithms import bipartite
 
-from mison.network import split_bipartite_nodes
+from mison.network import split_bipartite_nodes, DevComponentMapping, DevFileMapping
 
-__all__ = ["count_network", "cosine_network"]
+__all__ = ["count_network", "cosine_network", "DevCollaboration"]
+
+DevCollaboration: TypeAlias = nx.Graph
 
 
-def count_network(G):
+def count_network(G: Union[DevComponentMapping, DevFileMapping]):
     devs, _ = split_bipartite_nodes(G, 'dev')
-    D = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
+    D: DevCollaboration = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
     return D
 
 
-def cosine_network(G: nx.Graph):
+def cosine_network(G: Union[DevComponentMapping, DevFileMapping]):
     devs, files = split_bipartite_nodes(G, "dev")
     devs = sorted(devs)
     files = sorted(files)
@@ -37,5 +40,5 @@ def cosine_network(G: nx.Graph):
     normalized_weights = weight / (norms + 1e-10)  # Avoid division by zero
     similarity_matrix = np.dot(normalized_weights, normalized_weights.T)
 
-    D = bipartite.generic_weighted_projected_graph(G, devs,lambda G, u, v: float(similarity_matrix[indexed_devs[u], indexed_devs[v]]))
+    D: DevCollaboration = bipartite.generic_weighted_projected_graph(G, devs,lambda G, u, v: float(similarity_matrix[indexed_devs[u], indexed_devs[v]]))
     return D
