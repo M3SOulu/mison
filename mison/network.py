@@ -1,3 +1,4 @@
+import itertools
 from typing import Union, Callable
 
 from .mine import Commit
@@ -6,9 +7,10 @@ from collections.abc import Mapping
 
 import networkx as nx
 from networkx.algorithms import bipartite
+import numpy as np
 
-__all__ = ['construct_bipartite', 'developer_collaboration_network', 'quick_clean_devs', 'split_bipartite_nodes',
-           'map_developers', 'map_files_to_components']
+__all__ = ['construct_bipartite', 'developer_collaboration_network_count', 'developer_collaboration_network_cosine',
+           'quick_clean_devs', 'split_bipartite_nodes', 'map_developers', 'map_files_to_components']
 
 
 def quick_clean_devs(G: nx.Graph):
@@ -81,7 +83,33 @@ def map_files_to_components(G: nx.Graph, component_mapping: Union[Mapping, Calla
     return D
 
 
-def developer_collaboration_network(G):
+def developer_collaboration_network_count(G):
     devs, _ = split_bipartite_nodes(G, 'dev')
     D = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
+    return D
+
+
+def developer_collaboration_network_cosine(G: nx.Graph):
+    devs, files = split_bipartite_nodes(G, "dev")
+    devs = sorted(devs)
+    files = sorted(files)
+    N_devs = len(devs)
+    N_files = len(files)
+    weight = np.zeros(shape=(N_devs, N_files))
+    indexed_devs = {dev: i for i, dev in enumerate(devs)}
+    indexed_files = {file: i for i, file in enumerate(files)}
+    log_degree = {file: np.log(N_files / G.degree[file]) for file in files}
+
+    for file, dev in itertools.product(files, devs):
+        if G.has_edge(file, dev):
+            file_index = indexed_files[file]
+            dev_index = indexed_devs[dev]
+            weight[dev_index, file_index] = len(G[file][dev]["commits"]) * log_degree[file]
+
+    # Compute similarity using NumPy operations
+    norms = np.linalg.norm(weight, axis=1, keepdims=True)
+    normalized_weights = weight / (norms + 1e-10)  # Avoid division by zero
+    similarity_matrix = np.dot(normalized_weights, normalized_weights.T)
+
+    D = bipartite.generic_weighted_projected_graph(G, devs,lambda G, u, v: float(similarity_matrix[indexed_devs[u], indexed_devs[v]]))
     return D
