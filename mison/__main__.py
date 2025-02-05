@@ -76,10 +76,10 @@ def main_network(args):
     if args.component_mapping is not None:
         G = map_files_to_components(G, comp_mapping)
     if args.collaboration == "count":
-        D = count_network(G)
+        G = count_network(G)
     elif args.collaboration == "cosine":
-        D = cosine_network(G)
-    net = nx.node_link_data(D, link="edges")
+        G = cosine_network(G)
+    net = nx.node_link_data(G, link="edges")
     with open(args.network_output, 'w') as f:
         json.dump(net, f, cls=CommitJSONEncoder, indent=4)
 
@@ -148,7 +148,7 @@ def main():
                          help='File to import component mapping from. Can be a .py file which defines '
                               "a function 'component_mapping'"
                               "or a .json files with a dictionary")
-    network.add_argument('--collaboration', choices=['count', 'cosine'], required=True, help='Compute the developer collaboration either by count or cosine similarity')
+    network.add_argument('--collaboration', choices=['count', 'cosine'], required=False, help='Compute the developer collaboration either by count or cosine similarity')
 
     # Sub-commands for main
     subparsers = parser.add_subparsers(required=True)
