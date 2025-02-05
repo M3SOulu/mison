@@ -1,8 +1,7 @@
-from typing import Union, Callable, TypeAlias
-
 from mison.miner import Commit
 
 from collections.abc import Mapping
+from typing import Union, Callable, TypeAlias, List
 
 import networkx as nx
 
@@ -41,7 +40,7 @@ def split_bipartite_nodes(G: Union[DevFileMapping, DevComponentMapping], type):
     return top, bottom
 
 
-def get_dev_file_mapping(commit_table):
+def get_dev_file_mapping(commits: List[Commit]) -> DevFileMapping:
     """
     Construct a mapping of developers committing to files.
 
@@ -60,16 +59,13 @@ def get_dev_file_mapping(commit_table):
     - **Edges**: An edge exists between a developer and a file if the developer has modified that file.
       The `"commits"` attribute on the edge contains the list of related commits.
 
-    :param commit_table: A Pandas DataFrame containing commit information (as returned by `mison.miner`).
+    :param commits: A list of mison.miner.Commit objects
     :return: `DevFileMapping`, a NetworkX graph object representing the developer-file relationships.
     """
     G: DevFileMapping = nx.Graph()
-    for row in commit_table.itertuples(index=False):
-        dev = row.author_email
-        file = row.filename
-        commit = Commit(sha=row.commit_hash, author_name=row.author_name, author_email=row.author_email,
-                        committer_name=row.committer_name, committer_email=row.committer_email,
-                        commit_date=row.commit_date, filename=file, additions=row.additions, deletions=row.deletions)
+    for commit in commits:
+        dev = commit.author_email
+        file = commit.filename
         G.add_node(dev, type='dev')
         G.add_node(file, type='file')
         if G.has_edge(dev, file):

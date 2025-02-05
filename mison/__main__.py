@@ -1,8 +1,7 @@
-from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder
+from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
 from .network import get_dev_file_mapping, map_developers, quick_clean_devs, map_files_to_components
 from .network.collaboration import count_network, cosine_network
 
-import pandas
 import networkx as nx
 
 import argparse
@@ -51,8 +50,8 @@ def main_commit(args):
         json.dump(data, f, cls=CommitJSONEncoder, indent=4)
 
 def main_network(args):
-    data = pandas.read_csv(args.commit_table)
-    data = data.dropna(subset="filename")
+    with open(args.commit_json, 'r') as f:
+        data = json.load(f, cls=CommitJSONDecoder)
     if args.developer_mapping is not None:
         if args.developer_mapping.endswith(".py"):
             dev_mapping = import_mapping(args.developer_mapping, "developer_mapping")
@@ -139,7 +138,7 @@ def main():
     # Network parameters
     network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
     network.add_argument('--network_output', type=str, required=False, help='Output path for network')
-    network.add_argument('--commit_table', type=str, required=True, help='Input path of the csv table of mined commits')
+    network.add_argument('--commit_json', type=str, required=True, help='Input path of the csv table of mined commits')
     network.add_argument('--quick_clean', action='store_true', help='If set, use pre-defined stop-list to remove developer nodes')
     network.add_argument('--developer_mapping', type=str, required=False,
                         help='File to import developer mapping from. Can be a .py file which defines '

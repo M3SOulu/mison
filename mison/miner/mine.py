@@ -2,12 +2,12 @@ import os
 import requests
 from datetime import datetime
 from dataclasses import dataclass
-from json import JSONEncoder
+from json import JSONEncoder, JSONDecoder
 from typing import List
 
 from pydriller import Repository
 
-__all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit', 'CommitJSONEncoder']
+__all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit', 'CommitJSONEncoder', 'CommitJSONDecoder']
 
 @dataclass
 class Commit:
@@ -29,6 +29,21 @@ class CommitJSONEncoder(JSONEncoder):
             return o.isoformat()
         else:
             return super().default(o)
+
+class CommitJSONDecoder(JSONDecoder):
+    def __init__(self, *args, **kwargs):
+        super().__init__(object_hook=self.object_hook, *args, **kwargs)
+
+    def object_hook(self, obj):
+        if isinstance(obj, dict):
+            if "sha" in obj and "author_email" in obj:
+                obj["commit_date"] = datetime.fromisoformat(obj["commit_date"])
+                return Commit(**obj)
+            else:
+                return {key: self.object_hook(value) for key, value in obj.items()}
+        elif isinstance(obj, list):
+            return [self.object_hook(item) for item in obj]
+        return obj
 
 def pydriller_mine_commits(repo, **kwargs) -> List[Commit]:
     """
