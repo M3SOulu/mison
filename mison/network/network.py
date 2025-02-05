@@ -27,7 +27,7 @@ def split_bipartite_nodes(G: Union[DevFileMapping, DevComponentMapping], type):
     return top, bottom
 
 
-def get_dev_file_mapping(commit_table, repository=None):
+def get_dev_file_mapping(commit_table):
     G: DevFileMapping = nx.Graph()
     for row in commit_table.itertuples(index=False):
         dev = row.author_email
@@ -36,7 +36,7 @@ def get_dev_file_mapping(commit_table, repository=None):
                         committer_name=row.committer_name, committer_email=row.committer_email,
                         commit_date=row.commit_date, filename=file, additions=row.additions, deletions=row.deletions)
         G.add_node(dev, type='dev')
-        G.add_node(file, type='file', repository=repository)
+        G.add_node(file, type='file')
         if G.has_edge(dev, file):
             G[dev][file]['commits'] += [commit]
         else:
