@@ -1,6 +1,6 @@
 from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder
 from .network import construct_bipartite, map_developers, quick_clean_devs, map_files_to_components
-from .network.collaboration import developer_collaboration_network_count
+from .network.collaboration import developer_collaboration_network_count, developer_collaboration_network_cosine
 
 import pandas
 import networkx as nx
@@ -76,7 +76,10 @@ def main_network(args):
         G = map_developers(G, dev_mapping)
     if args.component_mapping is not None:
         G = map_files_to_components(G, comp_mapping)
-    D = developer_collaboration_network_count(G)
+    if args.collaboration == "count":
+        D = developer_collaboration_network_count(G)
+    elif args.collaboration == "cosine":
+        D = developer_collaboration_network_cosine(G)
     net = nx.node_link_data(D, link="edges")
     with open(args.network_output, 'w') as f:
         json.dump(net, f, cls=CommitJSONEncoder, indent=4)
@@ -146,6 +149,7 @@ def main():
                          help='File to import component mapping from. Can be a .py file which defines '
                               "a function 'component_mapping'"
                               "or a .json files with a dictionary")
+    network.add_argument('--collaboration', choices=['count', 'cosine'], required=True, help='Compute the developer collaboration either by count or cosine similarity')
 
     # Sub-commands for main
     subparsers = parser.add_subparsers(required=True)
