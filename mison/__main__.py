@@ -139,7 +139,7 @@ def main():
 
     # Network parameters
     network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
-    network.add_argument('--network_output', type=str, required=False, help='Output path for network')
+    network.add_argument('--network_output', type=str, required=True, help='Output path for network')
     network.add_argument('--commit_json', type=str, required=True, help='Input path of the csv table of mined commits')
     network.add_argument('--quick_clean', action='store_true', help='If set, use pre-defined stop-list to remove developer nodes')
     network.add_argument('--rename_mapping', action='store_true', help='If set, merge renamed files to the newest file name')
