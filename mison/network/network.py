@@ -155,6 +155,8 @@ def map_renamed_files(G: DevFileMapping) -> DevFileMapping:
             for modified_file in commit.modified_files:
                 if modified_file.modification_type == ModificationType.RENAME:
                     rename_chain[modified_file.old_filename] = modified_file.new_filename
+                    if rename_chain.get(modified_file.new_filename, None) == modified_file.old_filename:
+                        del rename_chain[modified_file.new_filename]
     def reduce(key):
         while key in rename_chain:
             key = rename_chain[key]
