@@ -68,7 +68,7 @@ def get_dev_file_mapping(commits: List[Commit]) -> DevFileMapping:
         dev = commit.author_email
         G.add_node(dev, type='dev')
         for file in commit.modified_files:
-            file = file.filename
+            file = file.path
             G.add_node(file, type='file')
             if G.has_edge(dev, file):
                 G[dev][file]['commits'] += [commit]
@@ -134,12 +134,12 @@ def map_renamed_files(G: DevFileMapping) -> DevFileMapping:
     - Updates the graph:
       - If an old filename has a newer version, it is **replaced** with the latest filename.
       - Merge edges from the old file node to the new file node while preserving commit data.
-      - Store the list of old filenames under the `"old_filenames"` attribute of the latest filename.
+      - Store the list of old filenames under the `"old_paths"` attribute of the latest filename.
 
     ### Graph Updates:
     - **Nodes**: Old filenames are removed, and their data is merged into the latest filename node.
     - **Edges**: Developers previously linked to an old filename are reconnected to the latest filename.
-    - **Attributes**: Each latest filename node retains a list of `"old_filenames"` for traceability.
+    - **Attributes**: Each latest filename node retains a list of `"old_paths"` for traceability.
 
     :param G: A `DevFileMapping` graph
     :return: An updated `DevFileMapping` graph where all renamed files are mapped to their newest filenames.
@@ -154,9 +154,9 @@ def map_renamed_files(G: DevFileMapping) -> DevFileMapping:
     for commit in commits:
             for modified_file in commit.modified_files:
                 if modified_file.modification_type == ModificationType.RENAME:
-                    rename_chain[modified_file.old_filename] = modified_file.new_filename
-                    if rename_chain.get(modified_file.new_filename, None) == modified_file.old_filename:
-                        del rename_chain[modified_file.new_filename]
+                    rename_chain[modified_file.old_path] = modified_file.new_path
+                    if rename_chain.get(modified_file.new_path, None) == modified_file.old_path:
+                        del rename_chain[modified_file.new_path]
     def reduce(key):
         while key in rename_chain:
             key = rename_chain[key]
@@ -168,7 +168,7 @@ def map_renamed_files(G: DevFileMapping) -> DevFileMapping:
             continue
         print(f"Mapping {old_file} to {newest_filename}")
         if newest_filename not in G:
-            G.add_node(newest_filename, old_filanames=[old_file])
+            G.add_node(newest_filename, old_paths=[old_file])
         else:
             if "old_filenames" in G.nodes[newest_filename]:
                 G.nodes[newest_filename]["old_filenames"] += [old_file]

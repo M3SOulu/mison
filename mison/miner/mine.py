@@ -14,22 +14,22 @@ __all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit', 'ModifiedF
 
 @dataclass
 class ModifiedFile:
-    new_filename: str
-    old_filename: str
+    new_path: str
+    old_path: str
     modification_type: ModificationType
     additions: int = 0
     deletions: int = 0
-    filename: str = None
+    path: str = None
 
     def __post_init__(self):
-        if self.filename is None:
+        if self.path is None:
             if self.modification_type == ModificationType.DELETE:
-                self.filename = self.old_filename
+                self.path = self.old_path
             else:
-                self.filename = self.new_filename
+                self.path = self.new_path
         if self.modification_type != ModificationType.RENAME:
-            self.old_filename = None
-            self.new_filename = None
+            self.old_path = None
+            self.new_path = None
 
 @dataclass
 class Commit:
@@ -74,7 +74,7 @@ class CommitJSONDecoder(JSONDecoder):
 
     def object_hook(self, obj):
         if isinstance(obj, dict):
-            if "new_filename" in obj:
+            if "new_path" in obj:
                 match obj["modification_type"]:
                     case "add":
                         obj["modification_type"] = ModificationType.ADD
@@ -115,9 +115,9 @@ def pydriller_mine_commits(repo, **kwargs) -> List[Commit]:
     for commit in Repository(repo, **pydriller_kwargs).traverse_commits():
         modified_files = []
         for file in commit.modified_files:
-            new_filename = None if file.new_path is None else f"{commit.project_name}/{Path(file.new_path).as_posix()}"
-            old_filename = None if file.old_path is None else f"{commit.project_name}/{Path(file.old_path).as_posix()}"
-            modified_files.append(ModifiedFile(new_filename=new_filename, old_filename=old_filename,
+            new_path = None if file.new_path is None else f"{commit.project_name}/{Path(file.new_path).as_posix()}"
+            old_path = None if file.old_path is None else f"{commit.project_name}/{Path(file.old_path).as_posix()}"
+            modified_files.append(ModifiedFile(new_path=new_path, old_path=old_path,
                                                modification_type=file.change_type, deletions=file.deleted_lines,
                                                additions=file.added_lines))
         data.append(Commit(sha=commit.hash, author_name=commit.author.name, author_email=commit.author.email.lower(),
@@ -195,10 +195,10 @@ def github_mine_commits(repo: str, github_token=None, per_page=100) -> List[Comm
                     case _:
                         status = ModificationType.UNKNOWN
 
-                new_filename = f"{repo}/{file.get('filename')}"
-                old_filename = None if file.get("previous_filename", None) is None else f"{repo}/{file.get('previous_filename')}"
+                new_path = f"{repo}/{file.get('filename')}"
+                old_path = None if file.get("previous_filename", None) is None else f"{repo}/{file.get('previous_filename')}"
                 modified_files.append(
-                    ModifiedFile(new_filename=new_filename, old_filename=old_filename,
+                    ModifiedFile(new_path=new_path, old_path=old_path,
                                  modification_type=status, additions=file.get("additions", 0),
                                  deletions=file.get("deletions", 0)))
             commit_entry = Commit(
