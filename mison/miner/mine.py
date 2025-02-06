@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import requests
 from datetime import datetime
 from dataclasses import dataclass
@@ -112,9 +113,13 @@ def pydriller_mine_commits(repo, **kwargs) -> List[Commit]:
     data = []
 
     for commit in Repository(repo, **pydriller_kwargs).traverse_commits():
-        modified_files = [ModifiedFile(new_filename=file.new_path, old_filename=file.old_path,
-                                       modification_type=file.change_type, deletions=file.deleted_lines,
-                                       additions=file.added_lines) for file in commit.modified_files]
+        modified_files = []
+        for file in commit.modified_files:
+            new_filename = None if file.new_path is None else f"{commit.project_name}/{Path(file.new_path).as_posix()}"
+            old_filename = None if file.old_path is None else f"{commit.project_name}/{Path(file.old_path).as_posix()}"
+            modified_files.append(ModifiedFile(new_filename=new_filename, old_filename=old_filename,
+                                               modification_type=file.change_type, deletions=file.deleted_lines,
+                                               additions=file.added_lines))
         data.append(Commit(sha=commit.hash, author_name=commit.author.name, author_email=commit.author.email.lower(),
                            committer_name=commit.committer.name, committer_email=commit.committer.email.lower(),
                            commit_date=commit.committer_date, modified_files=modified_files))
@@ -138,7 +143,8 @@ def github_mine_commits(repo: str, github_token=None, per_page=100) -> List[Comm
             raise ValueError("GitHub token needs to be provided either as a function/cli argument or in env. var. GITHUB_TOKEN")
 
     repo = repo.removeprefix('https://github.com/')
-    project_commits_query = f"https://api.github.com/repos/{repo}/commits"
+    owner, repo = repo.split("/")
+    project_commits_query = f"https://api.github.com/repos/{owner}/{repo}/commits"
     headers = {'Authorization': f'token {github_token}'}
     params = {'per_page': per_page}
 
@@ -189,8 +195,10 @@ def github_mine_commits(repo: str, github_token=None, per_page=100) -> List[Comm
                     case _:
                         status = ModificationType.UNKNOWN
 
+                new_filename = f"{repo}/{file.get('filename')}"
+                old_filename = None if file.get("previous_filename", None) is None else f"{repo}/{file.get('previous_filename')}"
                 modified_files.append(
-                    ModifiedFile(new_filename=file.get("filename"), old_filename=file.get("previous_filename", None),
+                    ModifiedFile(new_filename=new_filename, old_filename=old_filename,
                                  modification_type=status, additions=file.get("additions", 0),
                                  deletions=file.get("deletions", 0)))
             commit_entry = Commit(
