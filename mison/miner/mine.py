@@ -16,9 +16,9 @@ class ModifiedFile:
     new_filename: str
     old_filename: str
     modification_type: ModificationType
-    filename: str = None
     additions: int = 0
     deletions: int = 0
+    filename: str = None
 
     def __post_init__(self):
         if self.filename is None:
@@ -112,9 +112,12 @@ def pydriller_mine_commits(repo, **kwargs) -> List[Commit]:
     data = []
 
     for commit in Repository(repo, **pydriller_kwargs).traverse_commits():
-        modified_files = [ModifiedFile(file.new_path, file.old_path, file.change_type, None, file.deleted_lines, file.added_lines) for file in commit.modified_files]
-        data.append(Commit(commit.hash, commit.author.name, commit.author.email.lower(), commit.committer.name,
-                         commit.committer.email.lower(), commit.committer_date, modified_files))
+        modified_files = [ModifiedFile(new_filename=file.new_path, old_filename=file.old_path,
+                                       modification_type=file.change_type, deletions=file.deleted_lines,
+                                       additions=file.added_lines) for file in commit.modified_files]
+        data.append(Commit(sha=commit.hash, author_name=commit.author.name, author_email=commit.author.email.lower(),
+                           committer_name=commit.committer.name, committer_email=commit.committer.email.lower(),
+                           commit_date=commit.committer_date, modified_files=modified_files))
 
     return data
 
@@ -187,8 +190,9 @@ def github_mine_commits(repo: str, github_token=None, per_page=100) -> List[Comm
                         status = ModificationType.UNKNOWN
 
                 modified_files.append(
-                    ModifiedFile(file.get("filename"), file.get("previous_filename", None), status, None, file.get("additions", 0),
-                                 file.get("deletions", 0)))
+                    ModifiedFile(new_filename=file.get("filename"), old_filename=file.get("previous_filename", None),
+                                 modification_type=status, additions=file.get("additions", 0),
+                                 deletions=file.get("deletions", 0)))
             commit_entry = Commit(
                 sha=commit_sha,
                 author_name=author_name,
