@@ -114,6 +114,7 @@ def pydriller_mine_commits(repo, **kwargs) -> List[Commit]:
 
     for commit in Repository(repo, **pydriller_kwargs).traverse_commits():
         modified_files = []
+        print(f"Processing {commit.hash}")
         for file in commit.modified_files:
             new_path = None if file.new_path is None else f"{commit.project_name}/{Path(file.new_path).as_posix()}"
             old_path = None if file.old_path is None else f"{commit.project_name}/{Path(file.old_path).as_posix()}"
@@ -161,6 +162,7 @@ def github_mine_commits(repo: str, github_token=None, per_page=100) -> List[Comm
 
         for item in project_commits_data:
             commit_sha = item['sha']
+            print(f"Processing {commit_sha}")
             author_name: str = item.get('commit', {}).get('author', {}).get('name', None)
             author_email: str = item.get('commit', {}).get('author', {}).get('email', None)
             committer_name: str = item.get('commit', {}).get('committer', {}).get('name', None)
