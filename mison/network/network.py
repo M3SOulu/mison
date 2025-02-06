@@ -113,6 +113,8 @@ def map_developers(G: Union[DevFileMapping, DevComponentMapping], developer_mapp
             print(f"Keeping {old_dev}")
             continue
         print(f"Replacing {old_dev} with {new_dev}")
+        if new_dev not in G:
+            G.add_node(new_dev, type='dev')
         for _, file, data in G.edges(old_dev, data=True):
             G.add_edge(new_dev, file, **data)
         G.remove_node(old_dev)
