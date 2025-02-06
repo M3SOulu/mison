@@ -146,8 +146,12 @@ def map_renamed_files(G: DevFileMapping) -> DevFileMapping:
     """
     files, _ = split_bipartite_nodes(G, 'file')
     rename_chain = dict()
+    commits =  []
     for u, v, data in G.edges.data(data="commits"):
         for commit in data:
+            commits.append(commit)
+    commits = sorted(commits, key=lambda x: x.commit_date)
+    for commit in commits:
             for modified_file in commit.modified_files:
                 if modified_file.modification_type == ModificationType.RENAME:
                     rename_chain[modified_file.old_filename] = modified_file.new_filename
