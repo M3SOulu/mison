@@ -170,10 +170,10 @@ def map_renamed_files(G: DevFileMapping) -> DevFileMapping:
         if newest_filename not in G:
             G.add_node(newest_filename, old_paths=[old_file])
         else:
-            if "old_filenames" in G.nodes[newest_filename]:
-                G.nodes[newest_filename]["old_filenames"] += [old_file]
+            if "old_paths" in G.nodes[newest_filename]:
+                G.nodes[newest_filename]["old_paths"] += [old_file]
             else:
-                G.nodes[newest_filename]["old_filenames"] = [old_file]
+                G.nodes[newest_filename]["old_paths"] = [old_file]
         for _, dev, data in G.edges(old_file, data=True):
             G.add_edge(newest_filename, dev, **data)
         G.remove_node(old_file)
