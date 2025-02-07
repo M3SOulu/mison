@@ -1,5 +1,5 @@
 from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
-from .network import map_files_to_components, DevFileMapping
+from .network import DevFileMapping, DevComponentMapping
 from .network.collaboration import count_network, cosine_network
 
 import networkx as nx
@@ -76,7 +76,7 @@ def main_network(args):
     if args.developer_mapping is not None:
         G.map_developers(dev_mapping)
     if args.component_mapping is not None:
-        G = map_files_to_components(G, comp_mapping)
+        G = DevComponentMapping(G, comp_mapping)
     if args.collaboration == "count":
         G = count_network(G)
     elif args.collaboration == "cosine":

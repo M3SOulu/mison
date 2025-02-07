@@ -1,14 +1,12 @@
 from mison.miner import Commit
 
 from collections.abc import Mapping
-from typing import Union, Callable, TypeAlias, List
+from typing import Union, Callable, List
 
 import networkx as nx
 from pydriller import ModificationType
 
-__all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'map_files_to_components']
-
-DevComponentMapping: TypeAlias = nx.Graph
+__all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'quick_clean_devs']
 
 
 def quick_clean_devs(G):
@@ -162,52 +160,53 @@ class DevFileMapping(nx.Graph):
     quick_clean_devs = quick_clean_devs
 
 
-def map_files_to_components(G: DevFileMapping, component_mapping: Union[Mapping, Callable]):
-    """
-    Construct a `DevComponentMapping` graph from a `DevFileMapping` graph by grouping files into components.
+class DevComponentMapping(nx.Graph):
+    quick_clean_devs = quick_clean_devs
+    def __init__(self, G: DevFileMapping, component_mapping: Union[Mapping, Callable]):
+        """
+        Construct a `DevComponentMapping` graph from a `DevFileMapping` graph by grouping files into components.
 
-    This function transforms a `DevFileMapping` graph into a `DevComponentMapping` graph by assigning files
-    to components using the provided `component_mapping`. Each file in `DevFileMapping` is mapped to a
-    component using `component_mapping(file)`. Developers will then be linked to components
-    instead of individual files.
+        This function transforms a `DevFileMapping` graph into a `DevComponentMapping` graph by assigning files
+        to components using the provided `component_mapping`. Each file in `DevFileMapping` is mapped to a
+        component using `component_mapping(file)`. Developers will then be linked to components
+        instead of individual files.
 
-    ### Component Mapping Options:
-    - **Dictionary (`dict[file, component]`)** mapping files to their corresponding components.
-    - **Function (`Callable[[file], component]`)** returning the component for a given file.
-    If a file is **not present in the dictionary** or if the function **returns `None`**, the file is
-    **excluded**, and commits involving that file are omitted.
+        ### Component Mapping Options:
+        - **Dictionary (`dict[file, component]`)** mapping files to their corresponding components.
+        - **Function (`Callable[[file], component]`)** returning the component for a given file.
+        If a file is **not present in the dictionary** or if the function **returns `None`**, the file is
+        **excluded**, and commits involving that file are omitted.
 
-    ### Graph Structure:
-    - **Nodes**:
-      - Developers (`type="dev"`)
-      - Components (`type="component"`)
-    - **Edges**:
-      - A developer is connected to a component if they have modified any file belonging to that component.
-      - Each edge includes a `"commits"` attribute, which is a list of `mison.miner.Commit` objects representing
-        all commits that modified any file mapped to the corresponding component.
+        ### Graph Structure:
+        - **Nodes**:
+          - Developers (`type="dev"`)
+          - Components (`type="component"`)
+        - **Edges**:
+          - A developer is connected to a component if they have modified any file belonging to that component.
+          - Each edge includes a `"commits"` attribute, which is a list of `mison.miner.Commit` objects representing
+            all commits that modified any file mapped to the corresponding component.
 
-    :param G: A `DevFileMapping` graph to be converted into a `DevComponentMapping` graph.
-    :param component_mapping: A dictionary or function that maps files to components.
-    :return: A `DevComponentMapping` graph with developers linked to components.
-    """
-    devs, files = split_bipartite_nodes(G, 'dev')
-    D: DevComponentMapping = nx.Graph()
-    D.add_nodes_from(devs, type='dev')
-    if callable(component_mapping):
-        mapping_iter = map(component_mapping, files)
-    elif isinstance(component_mapping, Mapping):
-        mapping_iter = map(lambda x: component_mapping.get(x, None), files)
-    else:
-        raise ValueError("component_mapping must be a Mapping or a Callable")
-    for file, component in zip(files, mapping_iter):
-        if component is None:
-            print(f"File {file} does not belong to a component")
-            continue
-        print(f"File {file} belongs to {component}")
-        D.add_node(component, type='component')
-        for _, dev, data in G.edges(file, data=True):
-            D.add_edge(dev, component, **data)
-    return D
+        :param G: A `DevFileMapping` graph to be converted into a `DevComponentMapping` graph.
+        :param component_mapping: A dictionary or function that maps files to components.
+        :return: A `DevComponentMapping` graph with developers linked to components.
+        """
+        super().__init__()
+        devs, files = split_bipartite_nodes(G, 'dev')
+        self.add_nodes_from(devs, type='dev')
+        if callable(component_mapping):
+            mapping_iter = map(component_mapping, files)
+        elif isinstance(component_mapping, Mapping):
+            mapping_iter = map(lambda x: component_mapping.get(x, None), files)
+        else:
+            raise ValueError("component_mapping must be a Mapping or a Callable")
+        for file, component in zip(files, mapping_iter):
+            if component is None:
+                print(f"File {file} does not belong to a component")
+                continue
+            print(f"File {file} belongs to {component}")
+            self.add_node(component, type='component')
+            for _, dev, data in G.edges(file, data=True):
+                self.add_edge(dev, component, **data)
 
 
 def split_bipartite_nodes(G: Union[DevFileMapping, DevComponentMapping], type):
