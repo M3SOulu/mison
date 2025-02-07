@@ -1,5 +1,5 @@
 from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
-from .network import get_dev_file_mapping, map_developers, quick_clean_devs, map_files_to_components, map_renamed_files
+from .network import map_files_to_components, DevFileMapping
 from .network.collaboration import count_network, cosine_network
 
 import networkx as nx
@@ -68,13 +68,13 @@ def main_network(args):
                 comp_mapping = json.load(f)
         else:
             raise ValueError("--component_mapping must be a .py or .json file")
-    G = get_dev_file_mapping(data)
+    G = DevFileMapping(data)
     if args.quick_clean:
-        G = quick_clean_devs(G)
+        G.quick_clean_devs()
     if args.rename_mapping:
-        G = map_renamed_files(G)
+        G.map_renamed_files()
     if args.developer_mapping is not None:
-        G = map_developers(G, dev_mapping)
+        G.map_developers(dev_mapping)
     if args.component_mapping is not None:
         G = map_files_to_components(G, comp_mapping)
     if args.collaboration == "count":
