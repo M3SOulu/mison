@@ -6,8 +6,9 @@ from typing import Union, Callable, List
 import networkx as nx
 from pydriller import ModificationType
 
-__all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'quick_clean_devs']
+__all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'quick_clean_devs', 'DEV_STOP_LIST']
 
+DEV_STOP_LIST = {"(none)"}
 
 def quick_clean_devs(G):
     """
@@ -16,8 +17,7 @@ def quick_clean_devs(G):
     :param G: A graph of either DevComponentMapping or DevFileMapping
     :return: The filtered graph (graph is modified in-place)
     """
-    stop_list = {"(none)"}
-    nodes_remove = {node for node, data in G.nodes(data=True) if data["type"] == "dev" and node in stop_list}
+    nodes_remove = {node for node, data in G.nodes(data=True) if data["type"] == "dev" and node in DEV_STOP_LIST}
     for node in nodes_remove:
         print(f"Found {node}; to be removed")
     G.remove_nodes_from(nodes_remove)
