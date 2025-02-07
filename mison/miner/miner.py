@@ -41,6 +41,9 @@ class Commit:
     commit_date: datetime
     modified_files: List[ModifiedFile]
 
+    def __hash__(self):
+        return hash(self.sha)
+
 
 class CommitJSONEncoder(JSONEncoder):
     def default(self, o):
