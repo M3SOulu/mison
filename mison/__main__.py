@@ -81,7 +81,7 @@ def main_network(args):
         G = count_network(G)
     elif args.collaboration == "cosine":
         G = cosine_network(G)
-    net = nx.node_link_data(G, link="edges")
+    net = nx.node_link_data(G, edges="edges")
     with open(args.network_output, 'w') as f:
         json.dump(net, f, cls=CommitJSONEncoder, indent=4)
 
