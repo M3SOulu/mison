@@ -1,6 +1,7 @@
 from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
 from .network import DevFileMapping, DevComponentMapping
 from .network.collaboration import count_network, cosine_network
+from .network.coupling import organizational_coupling
 
 import networkx as nx
 
@@ -69,6 +70,7 @@ def main_network(args):
         else:
             raise ValueError("--component_mapping must be a .py or .json file")
     G = DevFileMapping(data)
+    savefile = args.commit_json.replace(".json", "")
     if args.quick_clean:
         G.quick_clean_devs()
     if args.rename_mapping:
@@ -77,13 +79,21 @@ def main_network(args):
         G.map_developers(dev_mapping)
     if args.component_mapping is not None:
         G = DevComponentMapping(G, comp_mapping)
-    if args.collaboration == "count":
-        G = count_network(G)
-    elif args.collaboration == "cosine":
-        G = cosine_network(G)
-    net = nx.node_link_data(G, edges="edges")
-    with open(args.network_output, 'w') as f:
-        json.dump(net, f, cls=CommitJSONEncoder, indent=4)
+    if "count" in args.collaboration:
+        D = count_network(G)
+        net = nx.node_link_data(D, edges="edges")
+        with open(f"{savefile}_count_collaboration.json", 'w') as f:
+            json.dump(net, f, indent=4)
+    if "cosine" in args.collaboration:
+        D = cosine_network(G)
+        net = nx.node_link_data(D, edges="edges")
+        with open(f"{savefile}_cosine_collaboration.json", 'w') as f:
+            json.dump(net, f, indent=4)
+    if "organisational" in args.coupling:
+        D = organizational_coupling(G)
+        net = nx.node_link_data(D, edges="edges")
+        with open(f"{savefile}_organisational_coupling.json", 'w') as f:
+            json.dump(net, f, cls=CommitJSONEncoder, indent=4)
 
 
 def main():
@@ -139,7 +149,6 @@ def main():
 
     # Network parameters
     network = argparse.ArgumentParser(description='Construct a developer network from a commit table', add_help=False)
-    network.add_argument('--network_output', type=str, required=True, help='Output path for network')
     network.add_argument('--commit_json', type=str, required=True, help='Input path of the csv table of mined commits')
     network.add_argument('--quick_clean', action='store_true', help='If set, use pre-defined stop-list to remove developer nodes')
     network.add_argument('--rename_mapping', action='store_true', help='If set, merge renamed files to the newest file name')
@@ -151,7 +160,8 @@ def main():
                          help='File to import component mapping from. Can be a .py file which defines '
                               "a function 'component_mapping'"
                               "or a .json files with a dictionary")
-    network.add_argument('--collaboration', choices=['count', 'cosine'], required=False, help='Compute the developer collaboration either by count or cosine similarity')
+    network.add_argument('--collaboration', choices=['count', 'cosine'], nargs='+', required=False, help='Compute the developer collaboration')
+    network.add_argument('--coupling', choices=['organisational'], nargs='+', required=False, help='Compute the component coupling')
 
     # Sub-commands for main
     subparsers = parser.add_subparsers(required=True)
