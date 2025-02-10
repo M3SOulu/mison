@@ -6,7 +6,7 @@ from itertools import pairwise
 import networkx as nx
 from networkx import bipartite
 
-from mison.network import split_bipartite_nodes, DevComponentMapping
+from mison.network import DevComponentMapping
 from mison.miner import Commit
 
 __all__ = ['organizational_coupling', 'logical_coupling']
@@ -14,12 +14,17 @@ __all__ = ['organizational_coupling', 'logical_coupling']
 ComponentCoupling: TypeAlias = nx.Graph
 
 def organizational_coupling(G: DevComponentMapping):
-    devs, components = split_bipartite_nodes(G, 'dev')
+    devs = set()
+    components = set()
     contribution_switch = defaultdict(float)  # Contributions switches between two components done by dev
     contribution_value = Counter()  # Contribution values for a components by devs
     dev_commits_to_ms = defaultdict(set)
     commits_to_ms_mapping = defaultdict(set)  # Mapping of a commit SHA to the components it touched
-    for dev in devs:
+    for dev, d in G.nodes(data=True):
+        if d["type"] != 'dev':
+            components.add(dev)
+            continue
+        devs.add(dev)
         dev_commits_set: set[Commit] = set()
         for _, component, data in G.edges(dev, data=True):
             for commit in data["commits"]:
@@ -60,9 +65,12 @@ def organizational_coupling(G: DevComponentMapping):
 
 def logical_coupling(G: DevComponentMapping):
 
-    components, _ = split_bipartite_nodes(G, 'component')
     component_commits = defaultdict(set)
-    for component in components:
+    components = set()
+    for component in G:
+        if G.nodes[component]["type"] != 'component':
+            continue
+        components.add(component)
         for _, _, data in G.edges(component, data=True):
             component_commits[component].update(data["commits"])
 
