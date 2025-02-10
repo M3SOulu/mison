@@ -204,7 +204,10 @@ class DevComponentMapping(nx.Graph):
                 print(f"File {file} does not belong to a component")
                 continue
             print(f"File {file} belongs to {component}")
-            self.add_node(component, type='component')
+            if component not in self:
+                self.add_node(component, type='component', files={file})
+            else:
+                self.nodes[component]["files"].update({file})
             for _, dev, data in G.edges(file, data=True):
                 if dev in self.adj[component]:
                     self.adj[component][dev]["commits"].extend(data["commits"])
