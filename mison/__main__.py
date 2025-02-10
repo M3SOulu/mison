@@ -1,7 +1,7 @@
 from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
 from .network import DevFileMapping, DevComponentMapping
 from .network.collaboration import count_network, cosine_network
-from .network.coupling import organizational_coupling
+from .network.coupling import organizational_coupling, logical_coupling
 
 import networkx as nx
 
@@ -94,6 +94,11 @@ def main_network(args):
         net = nx.node_link_data(D, edges="edges")
         with open(f"{savefile}_organisational_coupling.json", 'w') as f:
             json.dump(net, f, cls=CommitJSONEncoder, indent=4)
+    if "logical" in args.coupling:
+        D = logical_coupling(G)
+        net = nx.node_link_data(D, edges="edges")
+        with open(f"{savefile}_logical_coupling.json", 'w') as f:
+            json.dump(net, f, cls=CommitJSONEncoder, indent=4)
 
 
 def main():
@@ -161,7 +166,7 @@ def main():
                               "a function 'component_mapping'"
                               "or a .json files with a dictionary")
     network.add_argument('--collaboration', choices=['count', 'cosine'], nargs='+', required=False, help='Compute the developer collaboration')
-    network.add_argument('--coupling', choices=['organisational'], nargs='+', required=False, help='Compute the component coupling')
+    network.add_argument('--coupling', choices=['organisational', 'logical'], nargs='+', required=False, help='Compute the component coupling')
 
     # Sub-commands for main
     subparsers = parser.add_subparsers(required=True)

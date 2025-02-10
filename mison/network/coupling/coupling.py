@@ -9,7 +9,7 @@ from networkx import bipartite
 from mison.network import split_bipartite_nodes, DevComponentMapping
 from mison.miner import Commit
 
-__all__ = ['organizational_coupling']
+__all__ = ['organizational_coupling', 'logical_coupling']
 
 ComponentCoupling: TypeAlias = nx.Graph
 
@@ -55,4 +55,16 @@ def organizational_coupling(G: DevComponentMapping):
         return weight
 
     D = bipartite.generic_weighted_projected_graph(G, components, org_coupling)
+    return D
+
+
+def logical_coupling(G: DevComponentMapping):
+
+    components, _ = split_bipartite_nodes(G, 'component')
+    component_commits = defaultdict(set)
+    for component in components:
+        for _, _, data in G.edges(component, data=True):
+            component_commits[component].update(data["commits"])
+
+    D = bipartite.generic_weighted_projected_graph(G, components, lambda G, u, v: len(component_commits[u] & component_commits[v]))
     return D
