@@ -67,6 +67,8 @@ class CommitJSONEncoder(JSONEncoder):
                     return "modify"
                 case ModificationType.UNKNOWN:
                     return "unknown"
+        elif isinstance(o, set):
+            return list(o)
         else:
             return super().default(o)
 
