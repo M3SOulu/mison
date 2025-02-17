@@ -13,7 +13,40 @@ __all__ = ['organizational_coupling', 'logical_coupling']
 
 ComponentCoupling: TypeAlias = nx.Graph
 
-def organizational_coupling(G: DevComponentMapping):
+def organizational_coupling(G: DevComponentMapping) -> ComponentCoupling:
+    """
+    Calculate the organizational coupling of components from a `DevComponentMapping` graph.
+
+    This function measures the **organizational coupling** of software components by analyzing
+    developer contributions, following the approach described in [1]. The coupling is based on
+    two key factors:
+
+    1. **Per-Component Contributions**:
+       - For each developer and component, the function quantifies the number of modifications
+         the developer has made to that component (microservice).
+
+    2. **Cross-Component Contribution Switching**:
+       - For each developer and a **pair of components**, the function counts how often the
+         developer has switched contributions between the two components.
+       - Higher switching frequency between two components indicates a **stronger organizational coupling**.
+
+    ### Graph Structure:
+    - **Nodes**: Components (microservices).
+    - **Edges**: Weighted edges represent the **organizational coupling strength** between two components
+      based on shared developer contributions.
+    - **Edge Weights**: The weight of an edge is determined by the number of contributions and
+      contribution switches to given components.
+
+    ### Reference:
+    [1] Li, Xiaozhou, Dario Amoroso d’Aragona, and Davide Taibi.
+        "Evaluating Microservice Organizational Coupling Based on Cross-Service Contribution."
+        *International Conference on Product-Focused Software Process Improvement.*
+        Cham: Springer Nature Switzerland, 2023.
+
+    :param G: A `DevComponentMapping` graph representing developer contributions to components.
+    :return: A `ComponentCoupling` graph where nodes represent components, and edge weights indicate
+             the level of organizational coupling between them.
+    """
     devs = set()
     components = set()
     contribution_switch = defaultdict(float)  # Contributions switches between two components done by dev
