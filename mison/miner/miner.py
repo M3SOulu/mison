@@ -1,12 +1,12 @@
 import os
 from pathlib import Path
-import requests
 from datetime import datetime
 from dataclasses import dataclass
 from json import JSONEncoder, JSONDecoder
 from typing import List
 
 from pydriller import Repository, ModificationType
+import requests
 
 __all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit', 'ModifiedFile',
            'CommitJSONEncoder', 'CommitJSONDecoder']

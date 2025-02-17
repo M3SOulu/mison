@@ -1,3 +1,6 @@
+from mison.network import DevComponentMapping
+from mison.miner import Commit
+
 from typing import List, Set, TypeAlias
 from collections import Counter, defaultdict
 from statistics import harmonic_mean
@@ -6,8 +9,6 @@ from itertools import pairwise
 import networkx as nx
 from networkx import bipartite
 
-from mison.network import DevComponentMapping
-from mison.miner import Commit
 
 __all__ = ['organizational_coupling', 'logical_coupling']
 

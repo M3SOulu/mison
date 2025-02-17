@@ -1,3 +1,5 @@
+from mison.network import split_bipartite_nodes, DevComponentMapping, DevFileMapping
+
 import itertools
 from typing import Union, TypeAlias
 
@@ -5,7 +7,6 @@ import networkx as nx
 import numpy as np
 from networkx.algorithms import bipartite
 
-from mison.network import split_bipartite_nodes, DevComponentMapping, DevFileMapping
 
 __all__ = ["count_network", "cosine_network", "DevCollaboration"]
 
