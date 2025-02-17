@@ -96,7 +96,37 @@ def organizational_coupling(G: DevComponentMapping) -> ComponentCoupling:
     return D
 
 
-def logical_coupling(G: DevComponentMapping):
+def logical_coupling(G: DevComponentMapping) -> ComponentCoupling:
+    """
+    Calculate logical coupling between components from a `DevComponentMapping` graph.
+
+    This function constructs a `ComponentCoupling` network where components are considered
+    **logically coupled** if they have been modified in the same commit, following the
+    approach described in [1].
+
+    ### How Logical Coupling is Measured:
+    - **Nodes**: Components (microservices).
+    - **Edges**: A weighted edge exists between two components if they were modified together in at least
+      one commit.
+    - **Edge Weights**: The weight of an edge represents the **number of commits** in which
+      the corresponding pair of components was co-modified.
+
+    ### Important Considerations:
+    - **Not all commits that co-modify components induce logical coupling** [2].
+
+    ### References:
+    [1] d’Aragona, D. A., Pascarella, L., Janes, A., Lenarduzzi, V., & Taibi, D. (2023, March).
+        *Microservice logical coupling: A preliminary validation.*
+        2023 IEEE 20th International Conference on Software Architecture Companion (ICSA-C), pp. 81-85, IEEE.
+
+    [2] Amoroso d'Aragona, Dario, Xiaozhou Li, and Andrea Janes.
+        *Understanding the causes of microservice logical coupling: an exploratory study.*
+        Proceedings of the 1st International Workshop on New Trends in Software Architecture, 2024.
+
+    :param G: A `DevComponentMapping` graph representing developer contributions to components.
+    :return: A `ComponentCoupling` graph where nodes represent components, and edge weights indicate
+             the level of logical coupling between them.
+    """
 
     component_commits = defaultdict(set)
     components = set()
