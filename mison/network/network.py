@@ -8,7 +8,7 @@ from pydriller import ModificationType
 
 __all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'quick_clean_devs', 'DEV_STOP_LIST']
 
-DEV_STOP_LIST = {"(none)"}
+DEV_STOP_LIST = {"(none)", ""}
 
 def quick_clean_devs(G):
     """
