@@ -84,7 +84,7 @@ def organizational_coupling(G: DevComponentMapping) -> ComponentCoupling:
                 for old_ms in prev_commit:
                     if new_ms != old_ms:
                         n = len(dev_commits_to_ms[(dev, new_ms)] | dev_commits_to_ms[(dev, old_ms)])
-                        contribution_weight = 1/(2*(n-1))
+                        contribution_weight = 1/(2*(n-1)) if n != 1 else 0.5
                         contribution_switch[frozenset([old_ms, new_ms, dev])] += contribution_weight
 
     def org_coupling(G, u, v):
