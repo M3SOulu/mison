@@ -10,17 +10,17 @@ __all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'qu
 
 DEV_STOP_LIST = {"(none)", ""}
 
-def quick_clean_devs(G):
+def quick_clean_devs(self):
     """
     Remove developers who found in a common stoplist.
 
-    :param G: A graph of either DevComponentMapping or DevFileMapping
+    :param self: A graph of either DevComponentMapping or DevFileMapping
     :return: The filtered graph (graph is modified in-place)
     """
-    nodes_remove = {node for node, data in G.nodes(data=True) if data["type"] == "dev" and node in DEV_STOP_LIST}
+    nodes_remove = {node for node, data in self.nodes(data=True) if data["type"] == "dev" and node in DEV_STOP_LIST}
     for node in nodes_remove:
         print(f"Found {node}; to be removed")
-    G.remove_nodes_from(nodes_remove)
+    self.remove_nodes_from(nodes_remove)
 
 
 class DevFileMapping(nx.Graph):
