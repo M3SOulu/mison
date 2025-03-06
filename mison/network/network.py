@@ -1,7 +1,7 @@
 from mison.miner import Commit
 
 from collections.abc import Mapping
-from typing import Union, Callable, List
+from typing import Union, Callable, Iterable
 
 import networkx as nx
 from pydriller import ModificationType
@@ -25,7 +25,7 @@ def quick_clean_devs(G):
 
 class DevFileMapping(nx.Graph):
 
-    def __init__(self, commits: List[Commit]):
+    def __init__(self, commits: Iterable[Commit]):
         """
         Construct a mapping of developers committing to files.
 
@@ -44,7 +44,7 @@ class DevFileMapping(nx.Graph):
         - **Edges**: An edge exists between a developer and a file if the developer has modified that file.
           The `"commits"` attribute on the edge contains the list of related commits.
 
-        :param commits: A list of mison.miner.Commit objects
+        :param commits: An iterable of mison.miner.Commit objects
         """
         super().__init__()
         for commit in commits:
