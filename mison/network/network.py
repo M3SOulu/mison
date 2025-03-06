@@ -125,10 +125,9 @@ class DevFileMapping(nx.Graph):
         """
         files, _ = split_bipartite_nodes(self, 'file')
         rename_chain = dict()
-        commits =  []
+        commits = set()
         for u, v, data in self.edges.data(data="commits"):
-            for commit in data:
-                commits.append(commit)
+            commits.update(data)
         commits = sorted(commits, key=lambda x: x.commit_date)
         for commit in commits:
                 for modified_file in commit.modified_files:
