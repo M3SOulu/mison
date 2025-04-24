@@ -25,7 +25,7 @@ with open("eshop_commits_3.0.0.json", 'r') as f:
 
 
 ## Make the Dev to File network
-from mison.network import DevFileMapping
+from mison.networks import DevFileMapping
 file_network = DevFileMapping(data)
 
 
@@ -40,7 +40,7 @@ file_network.map_developers(email_map)
 file_network.map_renamed_files()
 
 ## Compute developer collaboration on file level (can also be done on components)
-from mison.network.collaboration import CountCollaboration, CosineCollaboration
+from mison.networks.collaboration import CountCollaboration, CosineCollaboration
 
 # Count collaboration (Li et al.)
 count_collaboration_files = CountCollaboration(file_network)
@@ -53,12 +53,12 @@ cosine_collaboration_files.to_json("eshop_3.0.0_cosine_collab_file.json")
 
 ## Make the Dev to Component network
 from eshop_component_mapping import component_mapping as eshop_mapping
-from mison.network import DevComponentMapping
+from mison.networks import DevComponentMapping
 component_network = DevComponentMapping(file_network, eshop_mapping)
 
 
 ## Compute microservice coupling
-from mison.network.coupling import LogicalCoupling, OrganizationalCoupling
+from mison.networks.coupling import LogicalCoupling, OrganizationalCoupling
 
 logical_coupling_ms =  LogicalCoupling(component_network)
 logical_coupling_ms.to_json("eshop_3.0.0_logical_ms.json")

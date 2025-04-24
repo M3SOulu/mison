@@ -1,4 +1,4 @@
-from mison.network import DevComponentMapping
+from mison.networks import DevComponentMapping
 from mison.miner import Commit, CommitJSONEncoder
 
 from typing import List, Set

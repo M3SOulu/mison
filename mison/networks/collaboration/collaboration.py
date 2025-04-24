@@ -1,4 +1,4 @@
-from mison.network import DevComponentMapping, DevFileMapping
+from mison.networks import DevComponentMapping, DevFileMapping
 
 import itertools
 from typing import Union

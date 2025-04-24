@@ -1,7 +1,7 @@
 from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
-from .network import DevFileMapping, DevComponentMapping
-from .network.collaboration import CountCollaboration, CosineCollaboration
-from .network.coupling import OrganizationalCoupling, LogicalCoupling
+from .networks import DevFileMapping, DevComponentMapping
+from .networks.collaboration import CountCollaboration, CosineCollaboration
+from .networks.coupling import OrganizationalCoupling, LogicalCoupling
 
 import argparse
 import datetime
