@@ -1,0 +1,476 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "type": "dev",
+            "id": "jose.manuel.corral@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "ratanparai@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "nnish@live.com"
+        },
+        {
+            "type": "dev",
+            "id": "jesus.abarca@wizeline.com"
+        },
+        {
+            "type": "dev",
+            "id": "dalars@microsoft.com"
+        },
+        {
+            "type": "dev",
+            "id": "dmytro.hridin@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "davidbritch@users.noreply.github.com"
+        },
+        {
+            "type": "dev",
+            "id": "nish@microsoft.com"
+        },
+        {
+            "type": "dev",
+            "id": "aaa6263@sina.com"
+        },
+        {
+            "type": "dev",
+            "id": "oleh.savoskin@globallogic.com"
+        },
+        {
+            "type": "dev",
+            "id": "mairaw@microsoft.com"
+        },
+        {
+            "type": "dev",
+            "id": "nanil@microsoft.com"
+        },
+        {
+            "type": "dev",
+            "id": "gajendra.babu@hotmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "yangxiaodong1214@126.com"
+        },
+        {
+            "type": "dev",
+            "id": "jonijpn@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "steve@kentsmiths.com"
+        },
+        {
+            "type": "dev",
+            "id": "jcorral@plainconcepts.com"
+        },
+        {
+            "type": "dev",
+            "id": "cmilanf@hispamsx.org"
+        },
+        {
+            "type": "dev",
+            "id": "darius.tehrani@microsoft.com"
+        },
+        {
+            "type": "dev",
+            "id": "leedumond@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "etomas@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "paulo.neto@farfetch.com"
+        },
+        {
+            "type": "dev",
+            "id": "beefsteak@live.cn"
+        },
+        {
+            "type": "dev",
+            "id": "mvelosop@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "dvlsg@users.noreply.github.com"
+        },
+        {
+            "type": "dev",
+            "id": "rafsanulhasan@outlook.com"
+        },
+        {
+            "type": "dev",
+            "id": "mateusz.karkula@comarch.com"
+        },
+        {
+            "type": "dev",
+            "id": "gababu@microsoft.com"
+        }
+    ],
+    "edges": [
+        {
+            "weight": 1,
+            "source": "ratanparai@gmail.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 1,
+            "source": "ratanparai@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "ratanparai@gmail.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "ratanparai@gmail.com",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 1,
+            "source": "ratanparai@gmail.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 1,
+            "source": "ratanparai@gmail.com",
+            "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "jesus.abarca@wizeline.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 1,
+            "source": "jesus.abarca@wizeline.com",
+            "target": "beefsteak@live.cn"
+        },
+        {
+            "weight": 1,
+            "source": "jesus.abarca@wizeline.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "jesus.abarca@wizeline.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 1,
+            "source": "jesus.abarca@wizeline.com",
+            "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "dmytro.hridin@gmail.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 1,
+            "source": "dmytro.hridin@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "dmytro.hridin@gmail.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "dmytro.hridin@gmail.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 1,
+            "source": "dmytro.hridin@gmail.com",
+            "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "jonijpn@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "oleh.savoskin@globallogic.com"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "beefsteak@live.cn"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "mairaw@microsoft.com"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 1,
+            "source": "aaa6263@sina.com",
+            "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "oleh.savoskin@globallogic.com",
+            "target": "jonijpn@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "oleh.savoskin@globallogic.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 1,
+            "source": "oleh.savoskin@globallogic.com",
+            "target": "beefsteak@live.cn"
+        },
+        {
+            "weight": 1,
+            "source": "oleh.savoskin@globallogic.com",
+            "target": "mairaw@microsoft.com"
+        },
+        {
+            "weight": 1,
+            "source": "oleh.savoskin@globallogic.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "oleh.savoskin@globallogic.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "oleh.savoskin@globallogic.com",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 1,
+            "source": "oleh.savoskin@globallogic.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 1,
+            "source": "oleh.savoskin@globallogic.com",
+            "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "mairaw@microsoft.com",
+            "target": "jonijpn@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "mairaw@microsoft.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 1,
+            "source": "mairaw@microsoft.com",
+            "target": "beefsteak@live.cn"
+        },
+        {
+            "weight": 1,
+            "source": "mairaw@microsoft.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "mairaw@microsoft.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "mairaw@microsoft.com",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 1,
+            "source": "mairaw@microsoft.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 1,
+            "source": "mairaw@microsoft.com",
+            "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "jonijpn@gmail.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 1,
+            "source": "jonijpn@gmail.com",
+            "target": "beefsteak@live.cn"
+        },
+        {
+            "weight": 1,
+            "source": "jonijpn@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "jonijpn@gmail.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "jonijpn@gmail.com",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 1,
+            "source": "jonijpn@gmail.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 1,
+            "source": "jonijpn@gmail.com",
+            "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 2,
+            "source": "jcorral@plainconcepts.com",
+            "target": "beefsteak@live.cn"
+        },
+        {
+            "weight": 8,
+            "source": "jcorral@plainconcepts.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 6,
+            "source": "jcorral@plainconcepts.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
+            "weight": 3,
+            "source": "jcorral@plainconcepts.com",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 8,
+            "source": "jcorral@plainconcepts.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 8,
+            "source": "jcorral@plainconcepts.com",
+            "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "leedumond@gmail.com",
+            "target": "beefsteak@live.cn"
+        },
+        {
+            "weight": 6,
+            "source": "leedumond@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 3,
+            "source": "leedumond@gmail.com",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 6,
+            "source": "leedumond@gmail.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 6,
+            "source": "leedumond@gmail.com",
+            "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 2,
+            "source": "etomas@gmail.com",
+            "target": "beefsteak@live.cn"
+        },
+        {
+            "weight": 8,
+            "source": "etomas@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 3,
+            "source": "etomas@gmail.com",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 8,
+            "source": "etomas@gmail.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 2,
+            "source": "beefsteak@live.cn",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "beefsteak@live.cn",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 2,
+            "source": "beefsteak@live.cn",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 3,
+            "source": "mvelosop@gmail.com",
+            "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 8,
+            "source": "mvelosop@gmail.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 3,
+            "source": "rafsanulhasan@outlook.com",
+            "target": "mateusz.karkula@comarch.com"
+        }
+    ]
+}

@@ -52,19 +52,7 @@ cosine_collaboration_files.to_json("eshop_3.0.0_cosine_collab_file.json")
 
 
 ## Make the Dev to Component network
-# Mapping from files to components for eShopOnContainers
-def eshop_mapping(filename):
-    if filename is None:
-        return None
-
-    try:
-        paths = str(filename).split("/")
-        if paths[2] == 'Services' or paths[2] == 'Microservices':
-            return paths[3]
-        return None
-    except IndexError:
-        return None
-
+from eshop_component_mapping import component_mapping as eshop_mapping
 from mison.network import DevComponentMapping
 component_network = DevComponentMapping(file_network, eshop_mapping)
 
