@@ -1,4 +1,4 @@
-from mison.network import split_bipartite_nodes, DevComponentMapping, DevFileMapping
+from mison.network import DevComponentMapping, DevFileMapping
 
 import itertools
 from typing import Union, TypeAlias
@@ -37,7 +37,7 @@ def count_network(G: Union[DevComponentMapping, DevFileMapping]):
     :return: A `DevCollaboration` graph where nodes represent developers, and edge weights correspond
              to the number of shared files or components.
     """
-    devs, _ = split_bipartite_nodes(G, 'dev')
+    devs = G.devs
     D: DevCollaboration = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
     return D
 
@@ -86,7 +86,7 @@ def cosine_network(G: Union[DevComponentMapping, DevFileMapping]):
     :return: A `DevCollaboration` graph where nodes represent developers, and edge weights correspond
              to the cosine similarity of their log-normalized activity vectors.
     """
-    devs, files = split_bipartite_nodes(G, "dev")
+    devs, files = G.devs, G.components
     devs = sorted(devs)
     files = sorted(files)
     N_devs = len(devs)

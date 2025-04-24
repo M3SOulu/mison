@@ -6,7 +6,7 @@ from typing import Union, Callable, Iterable
 import networkx as nx
 from pydriller import ModificationType
 
-__all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'DEV_STOP_LIST']
+__all__ = ['DevComponentMapping', 'DevFileMapping', 'DEV_STOP_LIST']
 
 DEV_STOP_LIST = {"(none)", ""}
 
@@ -35,16 +35,32 @@ class DevFileMapping(nx.Graph):
         :param commits: An iterable of mison.miner.Commit objects
         """
         super().__init__()
+        self._files = set()
+        self._devs = set()
         for commit in commits:
             dev = commit.author_email
             self.add_node(dev, type='dev')
+            self._devs.add(dev)
             for file in commit.modified_files:
                 file = file.path
                 self.add_node(file, type='file')
+                self._files.add(file)
                 if self.has_edge(dev, file):
                     self[dev][file]['commits'] += [commit]
                 else:
                     self.add_edge(dev, file, commits=[commit])
+
+    @property
+    def devs(self):
+        return self._devs
+
+    @property
+    def files(self):
+        return self._files
+
+    @property
+    def components(self):
+        return self._files
 
     def map_developers(self, developer_mapping: Union[Mapping, Callable]):
         """
@@ -66,7 +82,7 @@ class DevFileMapping(nx.Graph):
 
         :param developer_mapping: A dictionary or function mapping old developers to new ones.
         """
-        devs, _ = split_bipartite_nodes(self, 'dev')
+        devs = self._devs
         if callable(developer_mapping):
             mapping_iter = map(developer_mapping, devs)
         elif isinstance(developer_mapping, Mapping):
@@ -108,7 +124,7 @@ class DevFileMapping(nx.Graph):
         :param self: A `DevFileMapping` graph
         :return: An updated `DevFileMapping` graph where all renamed files are mapped to their newest filenames.
         """
-        files, _ = split_bipartite_nodes(self, 'file')
+        files = self._files
         rename_chain = dict()
         commits = set()
         for u, v, data in self.edges.data(data="commits"):
@@ -148,7 +164,7 @@ class DevFileMapping(nx.Graph):
         :param self: A graph of either DevComponentMapping or DevFileMapping
         :return: The filtered graph (graph is modified in-place)
         """
-        nodes_remove = {node for node, data in self.nodes(data=True) if data["type"] == "dev" and node in DEV_STOP_LIST}
+        nodes_remove = {node for node in self._devs if node in DEV_STOP_LIST}
         for node in nodes_remove:
             print(f"Found {node}; to be removed")
         self.remove_nodes_from(nodes_remove)
@@ -184,7 +200,9 @@ class DevComponentMapping(nx.Graph):
         :return: A `DevComponentMapping` graph with developers linked to components.
         """
         super().__init__()
-        devs, files = split_bipartite_nodes(G, 'dev')
+        self._components = set()
+        devs, files = G.devs, G.files
+        self._devs = devs
         self.add_nodes_from(devs, type='dev')
         if callable(component_mapping):
             mapping_iter = map(component_mapping, files)
@@ -199,6 +217,7 @@ class DevComponentMapping(nx.Graph):
             print(f"File {file} belongs to {component}")
             if component not in self:
                 self.add_node(component, type='component', files={file})
+                self._components.add(component)
             else:
                 self.nodes[component]["files"].update({file})
             for _, dev, data in G.edges(file, data=True):
@@ -207,8 +226,16 @@ class DevComponentMapping(nx.Graph):
                 else:
                     self.add_edge(dev, component, **data)
 
+    @property
+    def components(self):
+        return self._components
 
-def split_bipartite_nodes(G: Union[DevFileMapping, DevComponentMapping], type):
+    @property
+    def devs(self):
+        return self._devs
+
+
+def _split_bipartite_nodes(G: Union[DevFileMapping, DevComponentMapping], type):
     """
     Get two sets of nodes from a bipartite network.
 

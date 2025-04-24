@@ -1,3 +1,3 @@
 from .network import *
 
-__all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'DEV_STOP_LIST']
+__all__ = ['DevComponentMapping', 'DevFileMapping', 'DEV_STOP_LIST']

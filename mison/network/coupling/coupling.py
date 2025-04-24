@@ -48,17 +48,12 @@ def organizational_coupling(G: DevComponentMapping) -> ComponentCoupling:
     :return: A `ComponentCoupling` graph where nodes represent components, and edge weights indicate
              the level of organizational coupling between them.
     """
-    devs = set()
-    components = set()
+    devs, components = G.devs, G.components
     contribution_switch = defaultdict(float)  # Contributions switches between two components done by dev
     contribution_value = Counter()  # Contribution values for a components by devs
     dev_commits_to_ms = defaultdict(set)
     commits_to_ms_mapping = defaultdict(set)  # Mapping of a commit SHA to the components it touched
-    for dev, d in G.nodes(data=True):
-        if d["type"] != 'dev':
-            components.add(dev)
-            continue
-        devs.add(dev)
+    for dev in devs:
         dev_commits_set: set[Commit] = set()
         for _, component, data in G.edges(dev, data=True):
             for commit in data["commits"]:
@@ -130,11 +125,8 @@ def logical_coupling(G: DevComponentMapping) -> ComponentCoupling:
     """
 
     component_commits = defaultdict(set)
-    components = set()
-    for component in G:
-        if G.nodes[component]["type"] != 'component':
-            continue
-        components.add(component)
+    components = G.components
+    for component in components:
         for _, _, data in G.edges(component, data=True):
             component_commits[component].update(data["commits"])
 
