@@ -48,26 +48,23 @@ class DevFileMapping(nx.Graph):
 
     def map_developers(self, developer_mapping: Union[Mapping, Callable]):
         """
-        Remap developers in a DevFileMapping or DevComponentMapping graph.
+        Remap developers in a DevFileMapping.
 
-        This function updates a given DevFileMapping or DevComponentMapping `G` by replacing developer names
-        according to the provided `developer_mapping`. Each occurrence of an old developer (`old_dev`) in `G`
+        This function updates the DevFileMapping by replacing developers
+        according to the provided `developer_mapping`. Each occurrence of an old developer (`old_dev`)
         is replaced with a new developer (`new_dev = developer_mapping[old_dev]`), while preserving and
         reconnecting the links accordingly.
 
-        If multiple developers are mapped to the same new developer, their links to files or components
+        If multiple developers are mapped to the same new developer, their links to files
         are merged under the new developer.
 
         ### Developer Mapping Options:
-        - **Dictionary (`dict[old_dev, new_dev]`)**: Maps specific developers to new names. Developers not included
+        - **Dictionary (`dict[old_dev, new_dev]`)**: Maps specific developers to new ones. Developers not included
           in the dictionary remain unchanged.
-        - **Function (`Callable[[old_dev], new_dev]`)**: A function that takes a developer name and returns the
-          new name. If the function returns the same developer name, it remains unchanged.
+        - **Function (`Callable[[old_dev], new_dev]`)**: A function that takes a developer email and returns the
+          new email. If the function returns the same developer email, the developer remains unchanged.
 
-        **Note:** The graph `G` is modified in place.
-
-        :param developer_mapping: A dictionary or function mapping old developer names to new ones.
-        :return: The modified `DevFileMapping` or `DevComponentMapping` graph with remapped developers.
+        :param developer_mapping: A dictionary or function mapping old developers to new ones.
         """
         devs, _ = split_bipartite_nodes(self, 'dev')
         if callable(developer_mapping):
