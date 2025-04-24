@@ -1,7 +1,7 @@
 from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
 from .network import DevFileMapping, DevComponentMapping
-from .network.collaboration import count_network, cosine_network
-from .network.coupling import organizational_coupling, logical_coupling
+from .network.collaboration import CountCollaboration, CosineCollaboration
+from .network.coupling import OrganizationalCoupling, LogicalCoupling
 
 import networkx as nx
 
@@ -80,22 +80,22 @@ def main_network(args):
     if args.component_mapping is not None:
         G = DevComponentMapping(G, comp_mapping)
     if "count" in args.collaboration:
-        D = count_network(G)
+        D = CountCollaboration(G)
         net = nx.node_link_data(D, edges="edges")
         with open(f"{savefile}_count_collaboration.json", 'w') as f:
             json.dump(net, f, indent=4)
     if "cosine" in args.collaboration:
-        D = cosine_network(G)
+        D = CosineCollaboration(G)
         net = nx.node_link_data(D, edges="edges")
         with open(f"{savefile}_cosine_collaboration.json", 'w') as f:
             json.dump(net, f, indent=4)
     if "organisational" in args.coupling:
-        D = organizational_coupling(G)
+        D = OrganizationalCoupling(G)
         net = nx.node_link_data(D, edges="edges")
         with open(f"{savefile}_organisational_coupling.json", 'w') as f:
             json.dump(net, f, cls=CommitJSONEncoder, indent=4)
     if "logical" in args.coupling:
-        D = logical_coupling(G)
+        D = LogicalCoupling(G)
         net = nx.node_link_data(D, edges="edges")
         with open(f"{savefile}_logical_coupling.json", 'w') as f:
             json.dump(net, f, cls=CommitJSONEncoder, indent=4)

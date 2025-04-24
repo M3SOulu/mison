@@ -1,19 +1,20 @@
 from mison.network import DevComponentMapping, DevFileMapping
 
 import itertools
-from typing import Union, TypeAlias
+from typing import Union
 
 import networkx as nx
 import numpy as np
 from networkx.algorithms import bipartite
 
 
-__all__ = ["count_network", "cosine_network", "DevCollaboration"]
+__all__ = ["CountCollaboration", "CosineCollaboration", "DevCollaboration"]
 
-DevCollaboration: TypeAlias = nx.Graph
+class DevCollaboration(nx.Graph):
+    def __init__(self, G):
+        super().__init__(G)
 
-
-def count_network(G: Union[DevComponentMapping, DevFileMapping]):
+class CountCollaboration(DevCollaboration):
     """
     Construct a `DevCollaboration` network from a `DevFileMapping` or `DevComponentMapping` graph.
 
@@ -34,15 +35,14 @@ def count_network(G: Union[DevComponentMapping, DevFileMapping]):
         *2023 IEEE International Conference on Service-Oriented System Engineering (SOSE)*, pp. 1-8, IEEE.
 
     :param G: A `DevFileMapping` or `DevComponentMapping` graph.
-    :return: A `DevCollaboration` graph where nodes represent developers, and edge weights correspond
              to the number of shared files or components.
     """
-    devs = G.devs
-    D: DevCollaboration = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
-    return D
+    def __init__(self, G: Union[DevComponentMapping, DevFileMapping]):
+        devs = G.devs
+        D = bipartite.weighted_projected_graph(G, nodes=devs, ratio=False)
+        super().__init__(D)
 
-
-def cosine_network(G: Union[DevComponentMapping, DevFileMapping]):
+class CosineCollaboration(DevCollaboration):
     """
     Construct a `DevCollaboration` network using cosine similarity of log-normalized developer activity vectors.
 
@@ -86,26 +86,28 @@ def cosine_network(G: Union[DevComponentMapping, DevFileMapping]):
     :return: A `DevCollaboration` graph where nodes represent developers, and edge weights correspond
              to the cosine similarity of their log-normalized activity vectors.
     """
-    devs, files = G.devs, G.components
-    devs = sorted(devs)
-    files = sorted(files)
-    N_devs = len(devs)
-    N_files = len(files)
-    weight = np.zeros(shape=(N_devs, N_files))
-    indexed_devs = {dev: i for i, dev in enumerate(devs)}
-    indexed_files = {file: i for i, file in enumerate(files)}
-    log_degree = {file: np.log(N_files / G.degree[file]) for file in files}
+    def __init__(self, G: Union[DevComponentMapping, DevFileMapping]):
+        devs, files = G.devs, G.components
+        devs = sorted(devs)
+        files = sorted(files)
+        N_devs = len(devs)
+        N_files = len(files)
+        weight = np.zeros(shape=(N_devs, N_files))
+        indexed_devs = {dev: i for i, dev in enumerate(devs)}
+        indexed_files = {file: i for i, file in enumerate(files)}
+        log_degree = {file: np.log(N_files / G.degree[file]) for file in files}
 
-    for file, dev in itertools.product(files, devs):
-        if G.has_edge(file, dev):
-            file_index = indexed_files[file]
-            dev_index = indexed_devs[dev]
-            weight[dev_index, file_index] = len(G[file][dev]["commits"]) * log_degree[file]
+        for file, dev in itertools.product(files, devs):
+            if G.has_edge(file, dev):
+                file_index = indexed_files[file]
+                dev_index = indexed_devs[dev]
+                weight[dev_index, file_index] = len(G[file][dev]["commits"]) * log_degree[file]
 
-    # Compute similarity using NumPy operations
-    norms = np.linalg.norm(weight, axis=1, keepdims=True)
-    normalized_weights = weight / (norms + 1e-10)  # Avoid division by zero
-    similarity_matrix = np.dot(normalized_weights, normalized_weights.T)
+        # Compute similarity using NumPy operations
+        norms = np.linalg.norm(weight, axis=1, keepdims=True)
+        normalized_weights = weight / (norms + 1e-10)  # Avoid division by zero
+        similarity_matrix = np.dot(normalized_weights, normalized_weights.T)
 
-    D: DevCollaboration = bipartite.generic_weighted_projected_graph(G, devs,lambda G, u, v: float(similarity_matrix[indexed_devs[u], indexed_devs[v]]))
-    return D
+        D: DevCollaboration = bipartite.generic_weighted_projected_graph(G, devs, lambda G, u, v: float(
+            similarity_matrix[indexed_devs[u], indexed_devs[v]]))
+        super().__init__(D)

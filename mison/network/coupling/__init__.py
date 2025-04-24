@@ -1,3 +1,3 @@
 from .coupling import *
 
-__all__ = ['organizational_coupling', 'logical_coupling']
+__all__ = ['OrganizationalCoupling', 'LogicalCoupling', 'ComponentCoupling']

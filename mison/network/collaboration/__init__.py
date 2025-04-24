@@ -1,3 +1,3 @@
 from .collaboration import *
 
-__all__ = ["count_network", "cosine_network", "DevCollaboration"]
+__all__ = ["CountCollaboration", "CosineCollaboration", "DevCollaboration"]

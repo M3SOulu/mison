@@ -1,7 +1,7 @@
 from mison.network import DevComponentMapping
 from mison.miner import Commit
 
-from typing import List, Set, TypeAlias
+from typing import List, Set
 from collections import Counter, defaultdict
 from statistics import harmonic_mean
 from itertools import pairwise
@@ -10,11 +10,13 @@ import networkx as nx
 from networkx import bipartite
 
 
-__all__ = ['organizational_coupling', 'logical_coupling']
+__all__ = ['OrganizationalCoupling', 'LogicalCoupling', 'ComponentCoupling']
 
-ComponentCoupling: TypeAlias = nx.Graph
+class ComponentCoupling(nx.Graph):
+    def __init__(self, G):
+        super().__init__(G)
 
-def organizational_coupling(G: DevComponentMapping) -> ComponentCoupling:
+class OrganizationalCoupling(ComponentCoupling):
     """
     Calculate the organizational coupling of components from a `DevComponentMapping` graph.
 
@@ -48,51 +50,53 @@ def organizational_coupling(G: DevComponentMapping) -> ComponentCoupling:
     :return: A `ComponentCoupling` graph where nodes represent components, and edge weights indicate
              the level of organizational coupling between them.
     """
-    devs, components = G.devs, G.components
-    contribution_switch = defaultdict(float)  # Contributions switches between two components done by dev
-    contribution_value = Counter()  # Contribution values for a components by devs
-    dev_commits_to_ms = defaultdict(set)
-    commits_to_ms_mapping = defaultdict(set)  # Mapping of a commit SHA to the components it touched
-    for dev in devs:
-        dev_commits_set: set[Commit] = set()
-        for _, component, data in G.edges(dev, data=True):
-            for commit in data["commits"]:
-                # Developer made this commit
-                dev_commits_set.add(commit)
-                # Developer made this commit to a specific service
-                dev_commits_to_ms[dev, component].add(commit.sha)
-                # Map commit SHA to component it touched
-                commits_to_ms_mapping[commit.sha].add(component)
-                # Calculate contribution value of dev to component by summing over all files of component
-                component_files = G.nodes[component]["files"]
-                contribution_value[(dev, component)] += sum((mod_file.additions + mod_file.deletions)
-                                                            for mod_file in commit.modified_files
-                                                            if mod_file.path in component_files)
 
-        # Get the list of commits a dev made sequentially
-        dev_commits_list: List[Commit] = sorted(dev_commits_set, key=lambda x: x.commit_date)
-        # Get the list of components a dev touched with their commits sequentially
-        dev_component_list: List[Set[str]] = [commits_to_ms_mapping.get(x.sha) for x in dev_commits_list]
-        # Calculate contribution switches
-        for prev_commit, next_commit in pairwise(dev_component_list):
-            for new_ms in next_commit:
-                for old_ms in prev_commit:
-                    if new_ms != old_ms:
-                        n = len(dev_commits_to_ms[(dev, new_ms)] | dev_commits_to_ms[(dev, old_ms)])
-                        contribution_weight = 1/(2*(n-1)) if n != 1 else 0.5
-                        contribution_switch[frozenset([old_ms, new_ms, dev])] += contribution_weight
-
-    def org_coupling(G, u, v):
-        weight = 0.0
+    def __init__(self, G:DevComponentMapping):
+        devs, components = G.devs, G.components
+        contribution_switch = defaultdict(float)  # Contributions switches between two components done by dev
+        contribution_value = Counter()  # Contribution values for a components by devs
+        dev_commits_to_ms = defaultdict(set)
+        commits_to_ms_mapping = defaultdict(set)  # Mapping of a commit SHA to the components it touched
         for dev in devs:
-            weight += contribution_switch.get(frozenset([u, v, dev]), 0.0) * harmonic_mean([contribution_value[(dev, u)], contribution_value[(dev, v)]])
-        return weight
+            dev_commits_set: set[Commit] = set()
+            for _, component, data in G.edges(dev, data=True):
+                for commit in data["commits"]:
+                    # Developer made this commit
+                    dev_commits_set.add(commit)
+                    # Developer made this commit to a specific service
+                    dev_commits_to_ms[dev, component].add(commit.sha)
+                    # Map commit SHA to component it touched
+                    commits_to_ms_mapping[commit.sha].add(component)
+                    # Calculate contribution value of dev to component by summing over all files of component
+                    component_files = G.nodes[component]["files"]
+                    contribution_value[(dev, component)] += sum((mod_file.additions + mod_file.deletions)
+                                                                for mod_file in commit.modified_files
+                                                                if mod_file.path in component_files)
 
-    D = bipartite.generic_weighted_projected_graph(G, components, org_coupling)
-    return D
+            # Get the list of commits a dev made sequentially
+            dev_commits_list: List[Commit] = sorted(dev_commits_set, key=lambda x: x.commit_date)
+            # Get the list of components a dev touched with their commits sequentially
+            dev_component_list: List[Set[str]] = [commits_to_ms_mapping.get(x.sha) for x in dev_commits_list]
+            # Calculate contribution switches
+            for prev_commit, next_commit in pairwise(dev_component_list):
+                for new_ms in next_commit:
+                    for old_ms in prev_commit:
+                        if new_ms != old_ms:
+                            n = len(dev_commits_to_ms[(dev, new_ms)] | dev_commits_to_ms[(dev, old_ms)])
+                            contribution_weight = 1/(2*(n-1)) if n != 1 else 0.5
+                            contribution_switch[frozenset([old_ms, new_ms, dev])] += contribution_weight
+
+        def org_coupling(G, u, v):
+            weight = 0.0
+            for dev in devs:
+                weight += contribution_switch.get(frozenset([u, v, dev]), 0.0) * harmonic_mean([contribution_value[(dev, u)], contribution_value[(dev, v)]])
+            return weight
+
+        D = bipartite.generic_weighted_projected_graph(G, components, org_coupling)
+        super().__init__(D)
 
 
-def logical_coupling(G: DevComponentMapping) -> ComponentCoupling:
+class LogicalCoupling(ComponentCoupling):
     """
     Calculate logical coupling between components from a `DevComponentMapping` graph.
 
@@ -124,11 +128,12 @@ def logical_coupling(G: DevComponentMapping) -> ComponentCoupling:
              the level of logical coupling between them.
     """
 
-    component_commits = defaultdict(set)
-    components = G.components
-    for component in components:
-        for _, _, data in G.edges(component, data=True):
-            component_commits[component].update(data["commits"])
+    def __init__(self, G:DevComponentMapping):
+        component_commits = defaultdict(set)
+        components = G.components
+        for component in components:
+            for _, _, data in G.edges(component, data=True):
+                component_commits[component].update(data["commits"])
 
-    D = bipartite.generic_weighted_projected_graph(G, components, lambda G, u, v: len(component_commits[u] & component_commits[v]))
-    return D
+        D = bipartite.generic_weighted_projected_graph(G, components, lambda G, u, v: len(component_commits[u] & component_commits[v]))
+        super().__init__(D)
