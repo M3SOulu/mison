@@ -2,6 +2,7 @@ from mison.network import DevComponentMapping, DevFileMapping
 
 import itertools
 from typing import Union
+import json
 
 import networkx as nx
 import numpy as np
@@ -13,6 +14,12 @@ __all__ = ["CountCollaboration", "CosineCollaboration", "DevCollaboration"]
 class DevCollaboration(nx.Graph):
     def __init__(self, G):
         super().__init__(G)
+
+    def to_json(self, path):
+        net = nx.node_link_data(self, edges="edges")
+        with open(path, 'w') as f:
+            json.dump(net, f, indent=4)
+
 
 class CountCollaboration(DevCollaboration):
     """

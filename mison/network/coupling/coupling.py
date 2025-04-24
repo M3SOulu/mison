@@ -1,10 +1,11 @@
 from mison.network import DevComponentMapping
-from mison.miner import Commit
+from mison.miner import Commit, CommitJSONEncoder
 
 from typing import List, Set
 from collections import Counter, defaultdict
 from statistics import harmonic_mean
 from itertools import pairwise
+import json
 
 import networkx as nx
 from networkx import bipartite
@@ -15,6 +16,11 @@ __all__ = ['OrganizationalCoupling', 'LogicalCoupling', 'ComponentCoupling']
 class ComponentCoupling(nx.Graph):
     def __init__(self, G):
         super().__init__(G)
+
+    def to_json(self, path):
+        net = nx.node_link_data(self, edges="edges")
+        with open(path, 'w') as f:
+            json.dump(net, f, cls=CommitJSONEncoder, indent=4)
 
 class OrganizationalCoupling(ComponentCoupling):
     """

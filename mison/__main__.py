@@ -3,8 +3,6 @@ from .network import DevFileMapping, DevComponentMapping
 from .network.collaboration import CountCollaboration, CosineCollaboration
 from .network.coupling import OrganizationalCoupling, LogicalCoupling
 
-import networkx as nx
-
 import argparse
 import datetime
 import importlib.util
@@ -81,24 +79,16 @@ def main_network(args):
         G = DevComponentMapping(G, comp_mapping)
     if "count" in args.collaboration:
         D = CountCollaboration(G)
-        net = nx.node_link_data(D, edges="edges")
-        with open(f"{savefile}_count_collaboration.json", 'w') as f:
-            json.dump(net, f, indent=4)
+        D.to_json(f"{savefile}_count_collaboration.json")
     if "cosine" in args.collaboration:
         D = CosineCollaboration(G)
-        net = nx.node_link_data(D, edges="edges")
-        with open(f"{savefile}_cosine_collaboration.json", 'w') as f:
-            json.dump(net, f, indent=4)
+        D.to_json(f"{savefile}_cosine_collaboration.json")
     if "organisational" in args.coupling:
         D = OrganizationalCoupling(G)
-        net = nx.node_link_data(D, edges="edges")
-        with open(f"{savefile}_organisational_coupling.json", 'w') as f:
-            json.dump(net, f, cls=CommitJSONEncoder, indent=4)
+        D.to_json(f"{savefile}_organisational_coupling.json")
     if "logical" in args.coupling:
         D = LogicalCoupling(G)
-        net = nx.node_link_data(D, edges="edges")
-        with open(f"{savefile}_logical_coupling.json", 'w') as f:
-            json.dump(net, f, cls=CommitJSONEncoder, indent=4)
+        D.to_json(f"{savefile}_logical_coupling.json")
 
 
 def main():
