@@ -4,12 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mison"
-version = "1.2.1"
+version = "1.3.0"
 authors = [
     {name = "Alexander Bakhtin", email = "alexander.bakhtin@protonmail.com"}]
 description = "MIcroService Organisational Network mining"
 readme = "README.md"
-license = {file = "LICENSE"}
 keywords = [
     "microservice",
     "network",
@@ -21,7 +20,6 @@ classifiers = [
     "Intended Audience :: Education",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Information Technology",
-    "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Topic :: Scientific/Engineering :: Mathematics",
