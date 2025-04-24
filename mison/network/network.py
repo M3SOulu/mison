@@ -83,6 +83,7 @@ class DevFileMapping(nx.Graph):
         :param developer_mapping: A dictionary or function mapping old developers to new ones.
         """
         devs = self._devs
+        new_devs = set()
         if callable(developer_mapping):
             mapping_iter = map(developer_mapping, devs)
         elif isinstance(developer_mapping, Mapping):
@@ -92,6 +93,7 @@ class DevFileMapping(nx.Graph):
         for old_dev, new_dev in zip(devs, mapping_iter):
             if old_dev == new_dev:
                 print(f"Keeping {old_dev}")
+                new_devs.add(old_dev)
                 continue
             print(f"Replacing {old_dev} with {new_dev}")
             if new_dev not in self:
@@ -99,6 +101,8 @@ class DevFileMapping(nx.Graph):
             for _, file, data in self.edges(old_dev, data=True):
                 self.add_edge(new_dev, file, **data)
             self.remove_node(old_dev)
+            new_devs.add(new_dev)
+        self._devs = new_devs
 
 
     def map_renamed_files(self):
@@ -140,8 +144,10 @@ class DevFileMapping(nx.Graph):
             while key in rename_chain:
                 key = rename_chain[key]
             return key
+        new_files = set()
         for old_file in files:
             newest_filename = reduce(old_file)
+            new_files.add(newest_filename)
             if newest_filename == old_file:
                 print(f"{old_file} is the newest filename")
                 continue
@@ -156,6 +162,7 @@ class DevFileMapping(nx.Graph):
             for _, dev, data in self.edges(old_file, data=True):
                 self.add_edge(newest_filename, dev, **data)
             self.remove_node(old_file)
+        self._files = new_files
 
     def quick_clean_devs(self):
         """
