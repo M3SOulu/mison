@@ -6,21 +6,9 @@ from typing import Union, Callable, Iterable
 import networkx as nx
 from pydriller import ModificationType
 
-__all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'quick_clean_devs', 'DEV_STOP_LIST']
+__all__ = ['DevComponentMapping', 'DevFileMapping', 'split_bipartite_nodes', 'DEV_STOP_LIST']
 
 DEV_STOP_LIST = {"(none)", ""}
-
-def quick_clean_devs(self):
-    """
-    Remove developers who found in a common stoplist.
-
-    :param self: A graph of either DevComponentMapping or DevFileMapping
-    :return: The filtered graph (graph is modified in-place)
-    """
-    nodes_remove = {node for node, data in self.nodes(data=True) if data["type"] == "dev" and node in DEV_STOP_LIST}
-    for node in nodes_remove:
-        print(f"Found {node}; to be removed")
-    self.remove_nodes_from(nodes_remove)
 
 
 class DevFileMapping(nx.Graph):
@@ -156,11 +144,20 @@ class DevFileMapping(nx.Graph):
                 self.add_edge(newest_filename, dev, **data)
             self.remove_node(old_file)
 
-    quick_clean_devs = quick_clean_devs
+    def quick_clean_devs(self):
+        """
+        Remove developers who found in a common stoplist.
+
+        :param self: A graph of either DevComponentMapping or DevFileMapping
+        :return: The filtered graph (graph is modified in-place)
+        """
+        nodes_remove = {node for node, data in self.nodes(data=True) if data["type"] == "dev" and node in DEV_STOP_LIST}
+        for node in nodes_remove:
+            print(f"Found {node}; to be removed")
+        self.remove_nodes_from(nodes_remove)
 
 
 class DevComponentMapping(nx.Graph):
-    quick_clean_devs = quick_clean_devs
     def __init__(self, G: DevFileMapping, component_mapping: Union[Mapping, Callable]):
         """
         Construct a `DevComponentMapping` graph from a `DevFileMapping` graph by grouping files into components.
