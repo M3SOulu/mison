@@ -13,7 +13,7 @@ DEV_STOP_LIST = {"(none)", ""}
 
 class DevFileMapping(nx.Graph):
 
-    def __init__(self, commits: Iterable[Commit]):
+    def __init__(self, *commits):
         """
         Construct a mapping of developers committing to files.
 
@@ -32,23 +32,42 @@ class DevFileMapping(nx.Graph):
         - **Edges**: An edge exists between a developer and a file if the developer has modified that file.
           The `"commits"` attribute on the edge contains the list of related commits.
 
-        :param commits: An iterable of mison.miner.Commit objects
+        :param commits: An Iterable, list of positional argument or a single instance of mison.miner.Commit objects
         """
         super().__init__()
         self._files = set()
         self._devs = set()
-        for commit in commits:
-            dev = commit.author_email
-            self.add_node(dev, type='dev')
-            self._devs.add(dev)
-            for file in commit.modified_files:
-                file = file.path
-                self.add_node(file, type='file')
-                self._files.add(file)
-                if self.has_edge(dev, file):
-                    self[dev][file]['commits'] += [commit]
-                else:
-                    self.add_edge(dev, file, commits=[commit])
+        if len(commits) > 0:
+            self.add_commits(*commits)
+
+    def add_commits(self, *commits):
+        # If only one argument is passed
+        if len(commits) == 1:
+            obj = commits[0]
+            if isinstance(obj, Iterable) and not isinstance(obj, (str, bytes)):
+                # Single iterable provided (but not a string or bytes)
+                for item in obj:
+                    self._add_commit(item)
+            elif isinstance(obj, Commit):
+                # Single non-iterable object
+                self._add_commit(obj)
+        else:
+            # Multiple positional arguments provided
+            for obj in commits:
+                self._add_commit(obj)
+
+    def _add_commit(self, commit: Commit):
+        dev = commit.author_email
+        self.add_node(dev, type='dev')
+        self._devs.add(dev)
+        for file in commit.modified_files:
+            file = file.path
+            self.add_node(file, type='file')
+            self._files.add(file)
+            if self.has_edge(dev, file):
+                self[dev][file]['commits'] += [commit]
+            else:
+                self.add_edge(dev, file, commits=[commit])
 
     @property
     def devs(self):
