@@ -58,6 +58,22 @@ class DevFileMapping(nx.Graph):
     def files(self):
         return self._files
 
+    def add_dev(self, dev: str):
+        self.add_node(dev, type="dev")
+        self._devs.add(dev)
+
+    def remove_dev(self, dev: str):
+        self.remove_node(dev)
+        self._devs.remove(dev)
+
+    def add_file(self, file: str):
+        self.add_node(file, type="file")
+        self._files.add(file)
+
+    def remove_file(self, file: str):
+        self.remove_node(file)
+        self._files.remove(file)
+
     @property
     def components(self):
         return self._files
