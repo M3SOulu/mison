@@ -164,21 +164,34 @@ class DevFileMapping(nx.Graph):
         :return: An updated `DevFileMapping` graph where all renamed files are mapped to their newest filenames.
         """
         files = self._files
-        rename_chain = dict()
+        file_to_chain = dict()
         commits = set()
         for u, v, data in self.edges.data(data="commits"):
             commits.update(data)
         commits = sorted(commits, key=lambda x: x.commit_date)
         for commit in commits:
-                for modified_file in commit.modified_files:
-                    if modified_file.modification_type == ModificationType.RENAME:
-                        rename_chain[modified_file.old_path] = modified_file.new_path
-                        if rename_chain.get(modified_file.new_path, None) == modified_file.old_path:
-                            del rename_chain[modified_file.new_path]
+            for modified_file in commit.modified_files:
+                if modified_file.modification_type == ModificationType.RENAME:
+                    old = modified_file.old_path
+                    new = modified_file.new_path
+
+                    if old in file_to_chain:
+                        # Continue an existing chain
+                        chain = file_to_chain[old]
+                        chain.append(new)
+
+                        # Update the mapping for the new file
+                        file_to_chain[new] = chain
+                    else:
+                        # Start a new chain
+                        chain = [old, new]
+                        file_to_chain[new] = chain
+                        file_to_chain[old] = chain  # Reference old name too
         def reduce(key):
-            while key in rename_chain:
-                key = rename_chain[key]
-            return key
+            if key in file_to_chain:
+                return file_to_chain[key][-1]
+            else:
+                return key
         new_files = set()
         for old_file in files:
             newest_filename = reduce(old_file)

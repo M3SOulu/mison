@@ -5,6 +5,38 @@
     "nodes": [
         {
             "type": "dev",
+            "id": "dmytro.hridin@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "dvlsg@users.noreply.github.com"
+        },
+        {
+            "type": "dev",
+            "id": "nish@microsoft.com"
+        },
+        {
+            "type": "dev",
+            "id": "beefsteak@live.cn"
+        },
+        {
+            "type": "dev",
+            "id": "rafsanulhasan@outlook.com"
+        },
+        {
+            "type": "dev",
+            "id": "oleh.savoskin@globallogic.com"
+        },
+        {
+            "type": "dev",
+            "id": "steve@kentsmiths.com"
+        },
+        {
+            "type": "dev",
+            "id": "cmilanf@hispamsx.org"
+        },
+        {
+            "type": "dev",
             "id": "jose.manuel.corral@gmail.com"
         },
         {
@@ -17,31 +49,7 @@
         },
         {
             "type": "dev",
-            "id": "jesus.abarca@wizeline.com"
-        },
-        {
-            "type": "dev",
-            "id": "dalars@microsoft.com"
-        },
-        {
-            "type": "dev",
-            "id": "dmytro.hridin@gmail.com"
-        },
-        {
-            "type": "dev",
-            "id": "davidbritch@users.noreply.github.com"
-        },
-        {
-            "type": "dev",
-            "id": "nish@microsoft.com"
-        },
-        {
-            "type": "dev",
-            "id": "aaa6263@sina.com"
-        },
-        {
-            "type": "dev",
-            "id": "oleh.savoskin@globallogic.com"
+            "id": "gajendra.babu@hotmail.com"
         },
         {
             "type": "dev",
@@ -53,59 +61,7 @@
         },
         {
             "type": "dev",
-            "id": "gajendra.babu@hotmail.com"
-        },
-        {
-            "type": "dev",
-            "id": "yangxiaodong1214@126.com"
-        },
-        {
-            "type": "dev",
-            "id": "jonijpn@gmail.com"
-        },
-        {
-            "type": "dev",
-            "id": "steve@kentsmiths.com"
-        },
-        {
-            "type": "dev",
-            "id": "jcorral@plainconcepts.com"
-        },
-        {
-            "type": "dev",
-            "id": "cmilanf@hispamsx.org"
-        },
-        {
-            "type": "dev",
-            "id": "darius.tehrani@microsoft.com"
-        },
-        {
-            "type": "dev",
-            "id": "leedumond@gmail.com"
-        },
-        {
-            "type": "dev",
-            "id": "etomas@gmail.com"
-        },
-        {
-            "type": "dev",
-            "id": "paulo.neto@farfetch.com"
-        },
-        {
-            "type": "dev",
-            "id": "beefsteak@live.cn"
-        },
-        {
-            "type": "dev",
-            "id": "mvelosop@gmail.com"
-        },
-        {
-            "type": "dev",
-            "id": "dvlsg@users.noreply.github.com"
-        },
-        {
-            "type": "dev",
-            "id": "rafsanulhasan@outlook.com"
+            "id": "jesus.abarca@wizeline.com"
         },
         {
             "type": "dev",
@@ -113,10 +69,119 @@
         },
         {
             "type": "dev",
+            "id": "davidbritch@users.noreply.github.com"
+        },
+        {
+            "type": "dev",
+            "id": "paulo.neto@farfetch.com"
+        },
+        {
+            "type": "dev",
+            "id": "aaa6263@sina.com"
+        },
+        {
+            "type": "dev",
             "id": "gababu@microsoft.com"
+        },
+        {
+            "type": "dev",
+            "id": "jonijpn@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "leedumond@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "dalars@microsoft.com"
+        },
+        {
+            "type": "dev",
+            "id": "yangxiaodong1214@126.com"
+        },
+        {
+            "type": "dev",
+            "id": "darius.tehrani@microsoft.com"
+        },
+        {
+            "type": "dev",
+            "id": "etomas@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "mvelosop@gmail.com"
+        },
+        {
+            "type": "dev",
+            "id": "jcorral@plainconcepts.com"
         }
     ],
     "edges": [
+        {
+            "weight": 3,
+            "source": "dmytro.hridin@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "dvlsg@users.noreply.github.com",
+            "target": "paulo.neto@farfetch.com"
+        },
+        {
+            "weight": 1,
+            "source": "nish@microsoft.com",
+            "target": "yangxiaodong1214@126.com"
+        },
+        {
+            "weight": 1,
+            "source": "nish@microsoft.com",
+            "target": "nnish@live.com"
+        },
+        {
+            "weight": 1,
+            "source": "nish@microsoft.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 2,
+            "source": "beefsteak@live.cn",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "beefsteak@live.cn",
+            "target": "jesus.abarca@wizeline.com"
+        },
+        {
+            "weight": 3,
+            "source": "rafsanulhasan@outlook.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
+            "weight": 4,
+            "source": "rafsanulhasan@outlook.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 4,
+            "source": "rafsanulhasan@outlook.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
+            "weight": 2,
+            "source": "rafsanulhasan@outlook.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 2,
+            "source": "steve@kentsmiths.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "nnish@live.com",
+            "target": "yangxiaodong1214@126.com"
+        },
         {
             "weight": 1,
             "source": "nnish@live.com",
@@ -124,13 +189,13 @@
         },
         {
             "weight": 1,
-            "source": "nnish@live.com",
-            "target": "nish@microsoft.com"
+            "source": "gajendra.babu@hotmail.com",
+            "target": "gababu@microsoft.com"
         },
         {
-            "weight": 1,
-            "source": "nnish@live.com",
-            "target": "yangxiaodong1214@126.com"
+            "weight": 2,
+            "source": "nanil@microsoft.com",
+            "target": "mvelosop@gmail.com"
         },
         {
             "weight": 1,
@@ -140,11 +205,36 @@
         {
             "weight": 1,
             "source": "jesus.abarca@wizeline.com",
-            "target": "beefsteak@live.cn"
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 18,
+            "source": "mateusz.karkula@comarch.com",
+            "target": "mvelosop@gmail.com"
         },
         {
             "weight": 1,
-            "source": "jesus.abarca@wizeline.com",
+            "source": "mateusz.karkula@comarch.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
+            "weight": 16,
+            "source": "mateusz.karkula@comarch.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 2,
+            "source": "davidbritch@users.noreply.github.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 1,
+            "source": "jonijpn@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 5,
+            "source": "leedumond@gmail.com",
             "target": "mvelosop@gmail.com"
         },
         {
@@ -158,69 +248,9 @@
             "target": "darius.tehrani@microsoft.com"
         },
         {
-            "weight": 3,
-            "source": "dmytro.hridin@gmail.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 2,
-            "source": "davidbritch@users.noreply.github.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 1,
-            "source": "nish@microsoft.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 1,
-            "source": "nish@microsoft.com",
-            "target": "yangxiaodong1214@126.com"
-        },
-        {
-            "weight": 2,
-            "source": "nanil@microsoft.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 1,
-            "source": "gajendra.babu@hotmail.com",
-            "target": "gababu@microsoft.com"
-        },
-        {
             "weight": 1,
             "source": "yangxiaodong1214@126.com",
             "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 1,
-            "source": "jonijpn@gmail.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 2,
-            "source": "steve@kentsmiths.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 37,
-            "source": "jcorral@plainconcepts.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 2,
-            "source": "jcorral@plainconcepts.com",
-            "target": "rafsanulhasan@outlook.com"
-        },
-        {
-            "weight": 16,
-            "source": "jcorral@plainconcepts.com",
-            "target": "mateusz.karkula@comarch.com"
-        },
-        {
-            "weight": 17,
-            "source": "jcorral@plainconcepts.com",
-            "target": "etomas@gmail.com"
         },
         {
             "weight": 1,
@@ -228,49 +258,19 @@
             "target": "mvelosop@gmail.com"
         },
         {
-            "weight": 1,
-            "source": "leedumond@gmail.com",
-            "target": "mateusz.karkula@comarch.com"
-        },
-        {
-            "weight": 5,
-            "source": "leedumond@gmail.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 4,
-            "source": "leedumond@gmail.com",
-            "target": "rafsanulhasan@outlook.com"
-        },
-        {
             "weight": 21,
             "source": "etomas@gmail.com",
             "target": "mvelosop@gmail.com"
         },
         {
-            "weight": 1,
-            "source": "paulo.neto@farfetch.com",
-            "target": "dvlsg@users.noreply.github.com"
+            "weight": 17,
+            "source": "etomas@gmail.com",
+            "target": "jcorral@plainconcepts.com"
         },
         {
-            "weight": 2,
-            "source": "beefsteak@live.cn",
-            "target": "mvelosop@gmail.com"
-        },
-        {
-            "weight": 4,
+            "weight": 37,
             "source": "mvelosop@gmail.com",
-            "target": "rafsanulhasan@outlook.com"
-        },
-        {
-            "weight": 18,
-            "source": "mvelosop@gmail.com",
-            "target": "mateusz.karkula@comarch.com"
-        },
-        {
-            "weight": 3,
-            "source": "rafsanulhasan@outlook.com",
-            "target": "mateusz.karkula@comarch.com"
+            "target": "jcorral@plainconcepts.com"
         }
     ]
 }

@@ -118,34 +118,14 @@
     ],
     "edges": [
         {
+            "weight": 0.6590910787754339,
+            "source": "aaa6263@sina.com",
+            "target": "mateusz.karkula@comarch.com"
+        },
+        {
             "weight": 0.9999999993719653,
             "source": "aaa6263@sina.com",
             "target": "jonijpn@gmail.com"
-        },
-        {
-            "weight": 0.9999999993719653,
-            "source": "aaa6263@sina.com",
-            "target": "oleh.savoskin@globallogic.com"
-        },
-        {
-            "weight": 0.7241016939585085,
-            "source": "aaa6263@sina.com",
-            "target": "jcorral@plainconcepts.com"
-        },
-        {
-            "weight": 0.8566422571929507,
-            "source": "aaa6263@sina.com",
-            "target": "beefsteak@live.cn"
-        },
-        {
-            "weight": 0.9999999995289739,
-            "source": "aaa6263@sina.com",
-            "target": "mairaw@microsoft.com"
-        },
-        {
-            "weight": 0.7724260578116069,
-            "source": "aaa6263@sina.com",
-            "target": "mvelosop@gmail.com"
         },
         {
             "weight": 0.9419750984374659,
@@ -153,14 +133,19 @@
             "target": "leedumond@gmail.com"
         },
         {
+            "weight": 0.8566422571929507,
+            "source": "aaa6263@sina.com",
+            "target": "beefsteak@live.cn"
+        },
+        {
             "weight": 0.6300195796015726,
             "source": "aaa6263@sina.com",
             "target": "rafsanulhasan@outlook.com"
         },
         {
-            "weight": 0.6590910787754339,
+            "weight": 0.9999999995289739,
             "source": "aaa6263@sina.com",
-            "target": "mateusz.karkula@comarch.com"
+            "target": "mairaw@microsoft.com"
         },
         {
             "weight": 0.7256409593249237,
@@ -168,34 +153,29 @@
             "target": "etomas@gmail.com"
         },
         {
-            "weight": 0.8566422571929507,
-            "source": "beefsteak@live.cn",
-            "target": "jonijpn@gmail.com"
-        },
-        {
-            "weight": 0.8566422571929507,
-            "source": "beefsteak@live.cn",
+            "weight": 0.9999999993719653,
+            "source": "aaa6263@sina.com",
             "target": "oleh.savoskin@globallogic.com"
         },
         {
-            "weight": 0.7327875452286866,
-            "source": "beefsteak@live.cn",
+            "weight": 0.7724260578116069,
+            "source": "aaa6263@sina.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 0.7241016939585085,
+            "source": "aaa6263@sina.com",
             "target": "jcorral@plainconcepts.com"
         },
         {
-            "weight": 0.5159108861901229,
+            "weight": 0.6669971051409413,
             "source": "beefsteak@live.cn",
-            "target": "jesus.abarca@wizeline.com"
+            "target": "mateusz.karkula@comarch.com"
         },
         {
-            "weight": 0.856642257327451,
+            "weight": 0.8566422571929507,
             "source": "beefsteak@live.cn",
-            "target": "mairaw@microsoft.com"
-        },
-        {
-            "weight": 0.7216921893506238,
-            "source": "beefsteak@live.cn",
-            "target": "mvelosop@gmail.com"
+            "target": "jonijpn@gmail.com"
         },
         {
             "weight": 0.8069356750518063,
@@ -208,9 +188,9 @@
             "target": "rafsanulhasan@outlook.com"
         },
         {
-            "weight": 0.6669971051409413,
+            "weight": 0.856642257327451,
             "source": "beefsteak@live.cn",
-            "target": "mateusz.karkula@comarch.com"
+            "target": "mairaw@microsoft.com"
         },
         {
             "weight": 0.7061626333878114,
@@ -218,19 +198,24 @@
             "target": "etomas@gmail.com"
         },
         {
-            "weight": 0.21804431401698646,
-            "source": "dmytro.hridin@gmail.com",
-            "target": "jcorral@plainconcepts.com"
+            "weight": 0.8566422571929507,
+            "source": "beefsteak@live.cn",
+            "target": "oleh.savoskin@globallogic.com"
         },
         {
-            "weight": 0.2492099294146161,
-            "source": "dmytro.hridin@gmail.com",
+            "weight": 0.7216921893506238,
+            "source": "beefsteak@live.cn",
             "target": "mvelosop@gmail.com"
         },
         {
-            "weight": 0.0850953598949803,
-            "source": "dmytro.hridin@gmail.com",
-            "target": "leedumond@gmail.com"
+            "weight": 0.5159108861901229,
+            "source": "beefsteak@live.cn",
+            "target": "jesus.abarca@wizeline.com"
+        },
+        {
+            "weight": 0.7327875452286866,
+            "source": "beefsteak@live.cn",
+            "target": "jcorral@plainconcepts.com"
         },
         {
             "weight": 0.1984680651148149,
@@ -238,9 +223,29 @@
             "target": "mateusz.karkula@comarch.com"
         },
         {
+            "weight": 0.0850953598949803,
+            "source": "dmytro.hridin@gmail.com",
+            "target": "leedumond@gmail.com"
+        },
+        {
             "weight": 0.16388086768620772,
             "source": "dmytro.hridin@gmail.com",
             "target": "etomas@gmail.com"
+        },
+        {
+            "weight": 0.2492099294146161,
+            "source": "dmytro.hridin@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 0.21804431401698646,
+            "source": "dmytro.hridin@gmail.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 0.98132386961495,
+            "source": "etomas@gmail.com",
+            "target": "mateusz.karkula@comarch.com"
         },
         {
             "weight": 0.7256409593249237,
@@ -253,31 +258,6 @@
             "target": "ratanparai@gmail.com"
         },
         {
-            "weight": 0.7256409593249237,
-            "source": "etomas@gmail.com",
-            "target": "oleh.savoskin@globallogic.com"
-        },
-        {
-            "weight": 0.9743970913621156,
-            "source": "etomas@gmail.com",
-            "target": "jcorral@plainconcepts.com"
-        },
-        {
-            "weight": 0.16388086767160107,
-            "source": "etomas@gmail.com",
-            "target": "jesus.abarca@wizeline.com"
-        },
-        {
-            "weight": 0.7256409594388555,
-            "source": "etomas@gmail.com",
-            "target": "mairaw@microsoft.com"
-        },
-        {
-            "weight": 0.9787708212050226,
-            "source": "etomas@gmail.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
             "weight": 0.8415478946705368,
             "source": "etomas@gmail.com",
             "target": "leedumond@gmail.com"
@@ -288,8 +268,33 @@
             "target": "rafsanulhasan@outlook.com"
         },
         {
-            "weight": 0.98132386961495,
+            "weight": 0.7256409594388555,
             "source": "etomas@gmail.com",
+            "target": "mairaw@microsoft.com"
+        },
+        {
+            "weight": 0.7256409593249237,
+            "source": "etomas@gmail.com",
+            "target": "oleh.savoskin@globallogic.com"
+        },
+        {
+            "weight": 0.9787708212050226,
+            "source": "etomas@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 0.16388086767160107,
+            "source": "etomas@gmail.com",
+            "target": "jesus.abarca@wizeline.com"
+        },
+        {
+            "weight": 0.9743970913621156,
+            "source": "etomas@gmail.com",
+            "target": "jcorral@plainconcepts.com"
+        },
+        {
+            "weight": 0.9730248855325628,
+            "source": "jcorral@plainconcepts.com",
             "target": "mateusz.karkula@comarch.com"
         },
         {
@@ -303,26 +308,6 @@
             "target": "ratanparai@gmail.com"
         },
         {
-            "weight": 0.7241016939585085,
-            "source": "jcorral@plainconcepts.com",
-            "target": "oleh.savoskin@globallogic.com"
-        },
-        {
-            "weight": 0.21804431399755222,
-            "source": "jcorral@plainconcepts.com",
-            "target": "jesus.abarca@wizeline.com"
-        },
-        {
-            "weight": 0.7241016940721988,
-            "source": "jcorral@plainconcepts.com",
-            "target": "mairaw@microsoft.com"
-        },
-        {
-            "weight": 0.9851448256820744,
-            "source": "jcorral@plainconcepts.com",
-            "target": "mvelosop@gmail.com"
-        },
-        {
             "weight": 0.8717684360643406,
             "source": "jcorral@plainconcepts.com",
             "target": "leedumond@gmail.com"
@@ -333,8 +318,28 @@
             "target": "rafsanulhasan@outlook.com"
         },
         {
-            "weight": 0.9730248855325628,
+            "weight": 0.7241016940721988,
             "source": "jcorral@plainconcepts.com",
+            "target": "mairaw@microsoft.com"
+        },
+        {
+            "weight": 0.7241016939585085,
+            "source": "jcorral@plainconcepts.com",
+            "target": "oleh.savoskin@globallogic.com"
+        },
+        {
+            "weight": 0.9851448256820744,
+            "source": "jcorral@plainconcepts.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 0.21804431399755222,
+            "source": "jcorral@plainconcepts.com",
+            "target": "jesus.abarca@wizeline.com"
+        },
+        {
+            "weight": 0.19846806509712553,
+            "source": "jesus.abarca@wizeline.com",
             "target": "mateusz.karkula@comarch.com"
         },
         {
@@ -343,24 +348,9 @@
             "target": "mvelosop@gmail.com"
         },
         {
-            "weight": 0.19846806509712553,
-            "source": "jesus.abarca@wizeline.com",
+            "weight": 0.6590910787754339,
+            "source": "jonijpn@gmail.com",
             "target": "mateusz.karkula@comarch.com"
-        },
-        {
-            "weight": 0.9999999993719653,
-            "source": "jonijpn@gmail.com",
-            "target": "oleh.savoskin@globallogic.com"
-        },
-        {
-            "weight": 0.9999999995289739,
-            "source": "jonijpn@gmail.com",
-            "target": "mairaw@microsoft.com"
-        },
-        {
-            "weight": 0.7724260578116069,
-            "source": "jonijpn@gmail.com",
-            "target": "mvelosop@gmail.com"
         },
         {
             "weight": 0.9419750984374659,
@@ -373,8 +363,23 @@
             "target": "rafsanulhasan@outlook.com"
         },
         {
-            "weight": 0.6590910787754339,
+            "weight": 0.9999999995289739,
             "source": "jonijpn@gmail.com",
+            "target": "mairaw@microsoft.com"
+        },
+        {
+            "weight": 0.9999999993719653,
+            "source": "jonijpn@gmail.com",
+            "target": "oleh.savoskin@globallogic.com"
+        },
+        {
+            "weight": 0.7724260578116069,
+            "source": "jonijpn@gmail.com",
+            "target": "mvelosop@gmail.com"
+        },
+        {
+            "weight": 0.793500144747545,
+            "source": "leedumond@gmail.com",
             "target": "mateusz.karkula@comarch.com"
         },
         {
@@ -383,9 +388,9 @@
             "target": "ratanparai@gmail.com"
         },
         {
-            "weight": 0.9419750984374659,
+            "weight": 0.662762887445721,
             "source": "leedumond@gmail.com",
-            "target": "oleh.savoskin@globallogic.com"
+            "target": "rafsanulhasan@outlook.com"
         },
         {
             "weight": 0.941975098585364,
@@ -393,19 +398,24 @@
             "target": "mairaw@microsoft.com"
         },
         {
+            "weight": 0.9419750984374659,
+            "source": "leedumond@gmail.com",
+            "target": "oleh.savoskin@globallogic.com"
+        },
+        {
             "weight": 0.9042277677232666,
             "source": "leedumond@gmail.com",
             "target": "mvelosop@gmail.com"
         },
         {
-            "weight": 0.662762887445721,
-            "source": "leedumond@gmail.com",
-            "target": "rafsanulhasan@outlook.com"
+            "weight": 0.6590910788789168,
+            "source": "mairaw@microsoft.com",
+            "target": "mateusz.karkula@comarch.com"
         },
         {
-            "weight": 0.793500144747545,
-            "source": "leedumond@gmail.com",
-            "target": "mateusz.karkula@comarch.com"
+            "weight": 0.6300195797004912,
+            "source": "mairaw@microsoft.com",
+            "target": "rafsanulhasan@outlook.com"
         },
         {
             "weight": 0.9999999995289739,
@@ -418,19 +428,14 @@
             "target": "mvelosop@gmail.com"
         },
         {
-            "weight": 0.6300195797004912,
-            "source": "mairaw@microsoft.com",
-            "target": "rafsanulhasan@outlook.com"
-        },
-        {
-            "weight": 0.6590910788789168,
-            "source": "mairaw@microsoft.com",
-            "target": "mateusz.karkula@comarch.com"
-        },
-        {
             "weight": 0.09212154543130074,
             "source": "mateusz.karkula@comarch.com",
             "target": "ratanparai@gmail.com"
+        },
+        {
+            "weight": 0.5768691095147934,
+            "source": "mateusz.karkula@comarch.com",
+            "target": "rafsanulhasan@outlook.com"
         },
         {
             "weight": 0.6590910787754339,
@@ -443,24 +448,19 @@
             "target": "mvelosop@gmail.com"
         },
         {
-            "weight": 0.5768691095147934,
-            "source": "mateusz.karkula@comarch.com",
-            "target": "rafsanulhasan@outlook.com"
-        },
-        {
             "weight": 0.053981220857381065,
             "source": "mvelosop@gmail.com",
             "target": "ratanparai@gmail.com"
         },
         {
-            "weight": 0.7724260578116069,
-            "source": "mvelosop@gmail.com",
-            "target": "oleh.savoskin@globallogic.com"
-        },
-        {
             "weight": 0.6570002716196567,
             "source": "mvelosop@gmail.com",
             "target": "rafsanulhasan@outlook.com"
+        },
+        {
+            "weight": 0.7724260578116069,
+            "source": "mvelosop@gmail.com",
+            "target": "oleh.savoskin@globallogic.com"
         },
         {
             "weight": 0.6300195796015726,
