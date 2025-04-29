@@ -187,30 +187,23 @@ class DevFileMapping(nx.Graph):
                         chain = [old, new]
                         file_to_chain[new] = chain
                         file_to_chain[old] = chain  # Reference old name too
-        def reduce(key):
-            if key in file_to_chain:
-                return file_to_chain[key][-1]
-            else:
-                return key
-        new_files = set()
-        for old_file in files:
-            newest_filename = reduce(old_file)
-            new_files.add(newest_filename)
-            if newest_filename == old_file:
-                print(f"{old_file} is the newest filename")
-                continue
-            print(f"Mapping {old_file} to {newest_filename}")
-            if newest_filename not in self:
-                self.add_node(newest_filename, old_paths=[old_file])
-            else:
-                if "old_paths" in self.nodes[newest_filename]:
-                    self.nodes[newest_filename]["old_paths"] += [old_file]
+        for chain in file_to_chain.values():
+            newest_filename = chain[-1]
+            for old_file in chain[:-2]:
+                print(f"Mapping {old_file} to {newest_filename}")
+                if newest_filename not in self:
+                    self.add_node(newest_filename, old_paths=[old_file])
+                    self._files.add(newest_filename)
                 else:
-                    self.nodes[newest_filename]["old_paths"] = [old_file]
-            for _, dev, data in self.edges(old_file, data=True):
-                self.add_edge(newest_filename, dev, **data)
-            self.remove_node(old_file)
-        self._files = new_files
+                    if "old_paths" in self.nodes[newest_filename]:
+                        self.nodes[newest_filename]["old_paths"] += [old_file]
+                    else:
+                        self.nodes[newest_filename]["old_paths"] = [old_file]
+                for _, dev, data in self.edges(old_file, data=True):
+                    self.add_edge(newest_filename, dev, **data)
+                if old_file in self:
+                    self.remove_node(old_file)
+                    self._files.remove(old_file)
 
     def quick_clean_devs(self):
         """
