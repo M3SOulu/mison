@@ -46,7 +46,7 @@ def main_commit(args):
     elif args.backend == 'github':
         data = github_mine_commits(repo=args.repo, github_token=args.github_token, per_page=args.per_page)
     elif args.backend == 'git':
-        data = git_mine_commits(repo_path=args.repo, start_commit=args.start_commit, skip_merge_commits=args.keep_merge_commits)
+        data = git_mine_commits(repo=args.repo, start_commit=args.start_commit, skip_merge_commits=args.keep_merge_commits)
     with open(args.commit_json, 'w') as f:
         json.dump(data, f, cls=CommitJSONEncoder, indent=4)
 

@@ -119,7 +119,7 @@ class CommitJSONDecoder(JSONDecoder):
         return obj
 
 
-def git_mine_commits(repo_path: str, start_commit: str = None,
+def git_mine_commits(repo: str, start_commit: str = None,
                      skip_merge_commits=True) -> List[Commit]:
     """
     Traverse the commit graph from a starting commit hash.
@@ -128,13 +128,13 @@ def git_mine_commits(repo_path: str, start_commit: str = None,
     - Skips merge commits (multiple parents) but still enqueues their parents
     - For each normal commit, extracts file modifications with additions/deletions
     """
-    repo = Repo(repo_path)
+    repo_obj = Repo(repo)
     commits: List[Commit] = []
     visited = set()
     if start_commit is None:
-        start_commit = repo.head.commit
+        start_commit = repo_obj.head.commit
     else:
-        start_commit = repo.commit(start_commit)
+        start_commit = repo_obj.commit(start_commit)
     queue = deque([start_commit])
 
     while queue:
@@ -154,7 +154,7 @@ def git_mine_commits(repo_path: str, start_commit: str = None,
 
         # --- ✅ get file stats directly from Git (binary-safe)
         result = subprocess.run(
-            ["git", "-C", repo_path, "show", "--numstat", "--format=", commit.hexsha],
+            ["git", "-C", repo, "show", "--numstat", "--format=", commit.hexsha],
             capture_output=True, text=True, check=True
         )
         numstat = {}
