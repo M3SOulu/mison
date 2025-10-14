@@ -1,4 +1,4 @@
-from .miner import pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
+from .miner import git_mine_commits, pydriller_mine_commits, github_mine_commits, CommitJSONEncoder, CommitJSONDecoder
 from .networks import DevFileMapping, DevComponentMapping
 from .networks.collaboration import CountCollaboration, CosineCollaboration
 from .networks.coupling import OrganizationalCoupling, LogicalCoupling
@@ -45,6 +45,8 @@ def main_commit(args):
         data = pydriller_mine_commits(repo=args.repo, **pydriller_kwargs)
     elif args.backend == 'github':
         data = github_mine_commits(repo=args.repo, github_token=args.github_token, per_page=args.per_page)
+    elif args.backend == 'git':
+        data = git_mine_commits(repo_path=args.repo, start_commit=args.start_commit)
     with open(args.commit_json, 'w') as f:
         json.dump(data, f, cls=CommitJSONEncoder, indent=4)
 
@@ -103,9 +105,14 @@ def main():
     # Common commit parameters
     commit = argparse.ArgumentParser(description='Mine commits of a repository with PyDriller', add_help=False)
     commit.add_argument('--repo', type=str, required=True, help='Path to the repository (local path or URL)')
-    commit.add_argument('--backend', choices=['pydriller', 'github'], required=True, help='Available backends for commit mining')
+    commit.add_argument('--backend', choices=['git', 'pydriller', 'github'], required=True, help='Available backends for commit mining')
     commit.add_argument('--commit_json', type=str, required=True,
                             help='Output path for the json file of mined commits')
+
+    # Parameters for git miner
+    git = commit.add_argument_group('Git backend parameters', 'Parameters for mining commits with GitPython backend')
+    git.add_argument('--start_commit', required=True, type=str,
+                     help="Start traversing history from this commit towards its parents recursively")
 
     # Filters for PyDriller
     pydriller = commit.add_argument_group('PyDriller backend parameters', 'Parameters for mining commits with PyDriller backend')
