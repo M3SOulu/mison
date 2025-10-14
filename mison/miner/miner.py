@@ -1,15 +1,27 @@
 import os
+from enum import Enum
 from pathlib import Path
 from datetime import datetime
 from dataclasses import dataclass
 from json import JSONEncoder, JSONDecoder
 from typing import List
+from collections import deque
 
-from pydriller import Repository, ModificationType
+from git import Repo, NULL_TREE
+from pydriller import Repository
 import requests
 
-__all__ = ['pydriller_mine_commits', 'github_mine_commits', 'Commit', 'ModifiedFile',
+__all__ = ['git_mine_commits', 'pydriller_mine_commits', 'github_mine_commits', 'Commit', 'ModifiedFile',
            'CommitJSONEncoder', 'CommitJSONDecoder']
+
+
+class ModificationType(Enum):
+    ADD = 1
+    COPY = 2
+    RENAME = 3
+    DELETE = 4
+    MODIFY = 5
+    UNKNOWN = 6
 
 
 @dataclass
@@ -104,6 +116,98 @@ class CommitJSONDecoder(JSONDecoder):
         elif isinstance(obj, list):
             return [self.object_hook(item) for item in obj]
         return obj
+
+
+def git_mine_commits(repo_path: str, start_commit: str) -> List[Commit]:
+    """
+    Traverse the commit graph from a starting commit hash.
+
+    - Uses a queue (BFS)
+    - Skips merge commits (multiple parents) but still enqueues their parents
+    - For each normal commit, extracts file modifications with additions/deletions
+    """
+    repo = Repo(repo_path)
+    commits: List[Commit] = []
+    visited = set()
+    queue = deque([repo.commit(start_commit)])
+
+    while queue:
+        commit = queue.popleft()
+        print(f"Processing {commit.hexsha}")
+        if commit.hexsha in visited: continue
+        visited.add(commit.hexsha)
+
+        # Enqueue parent commits
+        for parent in commit.parents:
+            queue.append(parent)
+
+        # Skip merge commits (more than one parent)
+        if len(commit.parents) > 1: continue
+
+        modified_files: List[ModifiedFile] = []
+
+        # Diff against parent or NULL_TREE for the root commit
+        if commit.parents:
+            parent = commit.parents[0]
+        diffs = parent.diff(commit, create_patch=True) if commit.parents else commit.diff(NULL_TREE, create_patch=True)
+
+        for diff in diffs:
+            additions = deletions = 0
+            if diff.renamed:
+                mod_type = ModificationType.RENAME
+
+            elif diff.new_file:
+                mod_type = ModificationType.ADD
+                try:
+                    new_blob = repo.git.show(f"{commit.hexsha}:{diff.b_path}")
+                    additions = len(new_blob.splitlines())
+                except Exception:
+                    pass
+
+            elif diff.deleted_file:
+                mod_type = ModificationType.DELETE
+                try:
+                    old_blob = repo.git.show(f"{parent.hexsha}:{diff.a_path}")
+                    deletions = len(old_blob.splitlines())
+                except Exception:
+                    pass
+
+            else:
+                mod_type = ModificationType.MODIFY
+                try:
+                    patch_lines = diff.diff.decode("utf-8", errors="ignore").splitlines()
+                    for line in patch_lines:
+                        if line.startswith("+") and not line.startswith("+++"):
+                            additions += 1
+                        elif line.startswith("-") and not line.startswith("---"):
+                            deletions += 1
+                except Exception:
+                    pass  # skip binary or malformed diffs
+
+            modified_files.append(
+                ModifiedFile(
+                    new_path=diff.b_path,
+                    old_path=diff.a_path,
+                    modification_type=mod_type,
+                    additions=additions,
+                    deletions=deletions,
+                )
+            )
+
+        commits.append(
+            Commit(
+                sha=commit.hexsha,
+                author_name=commit.author.name,
+                author_email=commit.author.email,
+                committer_name=commit.committer.name,
+                committer_email=commit.committer.email,
+                commit_date=commit.committed_datetime,
+                modified_files=modified_files,
+            )
+        )
+
+
+    return commits
 
 
 def pydriller_mine_commits(repo, **kwargs) -> List[Commit]:
