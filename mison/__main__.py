@@ -111,7 +111,7 @@ def main():
 
     # Parameters for git miner
     git = commit.add_argument_group('Git backend parameters', 'Parameters for mining commits with GitPython backend')
-    git.add_argument('--start_commit', required=True, type=str,
+    git.add_argument('--start_commit', required=False, type=str,
                      help="Start traversing history from this commit towards its parents recursively")
 
     # Filters for PyDriller

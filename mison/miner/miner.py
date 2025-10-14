@@ -119,7 +119,7 @@ class CommitJSONDecoder(JSONDecoder):
         return obj
 
 
-def git_mine_commits(repo_path: str, start_commit: str) -> List[Commit]:
+def git_mine_commits(repo_path: str, start_commit: str = None) -> List[Commit]:
     """
     Traverse the commit graph from a starting commit hash.
 
@@ -130,7 +130,11 @@ def git_mine_commits(repo_path: str, start_commit: str) -> List[Commit]:
     repo = Repo(repo_path)
     commits: List[Commit] = []
     visited = set()
-    queue = deque([repo.commit(start_commit)])
+    if start_commit is None:
+        start_commit = repo.head.commit
+    else:
+        start_commit = repo.commit(start_commit)
+    queue = deque([start_commit])
 
     while queue:
         commit = queue.popleft()
