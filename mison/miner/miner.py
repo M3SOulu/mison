@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from json import JSONEncoder, JSONDecoder
 from typing import List
 from collections import deque
+import subprocess
 
 from git import Repo, NULL_TREE
 from pydriller import Repository
@@ -146,43 +147,42 @@ def git_mine_commits(repo_path: str, start_commit: str) -> List[Commit]:
 
         modified_files: List[ModifiedFile] = []
 
-        # Diff against parent or NULL_TREE for the root commit
+        # --- ✅ get file stats directly from Git (binary-safe)
+        result = subprocess.run(
+            ["git", "-C", repo_path, "show", "--numstat", "--format=", commit.hexsha],
+            capture_output=True, text=True, check=True
+        )
+        numstat = {}
+        for line in result.stdout.splitlines():
+            parts = line.split("\t")
+            if len(parts) != 3:
+                continue
+            added, deleted, path = parts
+            if added == "-" or deleted == "-":  # binary file
+                numstat[path] = (0, 0)
+            else:
+                numstat[path] = (int(added), int(deleted))
+        # ---
+
+        # Diff against parent or NULL_TREE for change types
         if commit.parents:
             parent = commit.parents[0]
-        diffs = parent.diff(commit, create_patch=True) if commit.parents else commit.diff(NULL_TREE, create_patch=True)
+            diffs = parent.diff(commit, create_patch=False)
+        else:
+            diffs = commit.diff(NULL_TREE, create_patch=False)
 
         for diff in diffs:
-            additions = deletions = 0
+            # default additions/deletions = 0; override with numstat if available
+            additions, deletions = numstat.get(diff.b_path or diff.a_path, (0, 0))
+
             if diff.renamed:
                 mod_type = ModificationType.RENAME
-
             elif diff.new_file:
                 mod_type = ModificationType.ADD
-                try:
-                    new_blob = repo.git.show(f"{commit.hexsha}:{diff.b_path}")
-                    additions = len(new_blob.splitlines())
-                except Exception:
-                    pass
-
             elif diff.deleted_file:
                 mod_type = ModificationType.DELETE
-                try:
-                    old_blob = repo.git.show(f"{parent.hexsha}:{diff.a_path}")
-                    deletions = len(old_blob.splitlines())
-                except Exception:
-                    pass
-
             else:
                 mod_type = ModificationType.MODIFY
-                try:
-                    patch_lines = diff.diff.decode("utf-8", errors="ignore").splitlines()
-                    for line in patch_lines:
-                        if line.startswith("+") and not line.startswith("+++"):
-                            additions += 1
-                        elif line.startswith("-") and not line.startswith("---"):
-                            deletions += 1
-                except Exception:
-                    pass  # skip binary or malformed diffs
 
             modified_files.append(
                 ModifiedFile(
@@ -205,7 +205,6 @@ def git_mine_commits(repo_path: str, start_commit: str) -> List[Commit]:
                 modified_files=modified_files,
             )
         )
-
 
     return commits
 
