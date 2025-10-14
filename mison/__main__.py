@@ -46,7 +46,7 @@ def main_commit(args):
     elif args.backend == 'github':
         data = github_mine_commits(repo=args.repo, github_token=args.github_token, per_page=args.per_page)
     elif args.backend == 'git':
-        data = git_mine_commits(repo_path=args.repo, start_commit=args.start_commit)
+        data = git_mine_commits(repo_path=args.repo, start_commit=args.start_commit, skip_merge_commits=args.keep_merge_commits)
     with open(args.commit_json, 'w') as f:
         json.dump(data, f, cls=CommitJSONEncoder, indent=4)
 
@@ -113,6 +113,8 @@ def main():
     git = commit.add_argument_group('Git backend parameters', 'Parameters for mining commits with GitPython backend')
     git.add_argument('--start_commit', required=False, type=str,
                      help="Start traversing history from this commit towards its parents recursively")
+    git.add_argument('--keep_merge_commits', action='store_false',
+                     help="If set, git miner will not ignore merge commits (commits with more than 1 parent)")
 
     # Filters for PyDriller
     pydriller = commit.add_argument_group('PyDriller backend parameters', 'Parameters for mining commits with PyDriller backend')

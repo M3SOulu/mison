@@ -119,7 +119,8 @@ class CommitJSONDecoder(JSONDecoder):
         return obj
 
 
-def git_mine_commits(repo_path: str, start_commit: str = None) -> List[Commit]:
+def git_mine_commits(repo_path: str, start_commit: str = None,
+                     skip_merge_commits=True) -> List[Commit]:
     """
     Traverse the commit graph from a starting commit hash.
 
@@ -147,7 +148,7 @@ def git_mine_commits(repo_path: str, start_commit: str = None) -> List[Commit]:
             queue.append(parent)
 
         # Skip merge commits (more than one parent)
-        if len(commit.parents) > 1: continue
+        if skip_merge_commits and len(commit.parents) > 1: continue
 
         modified_files: List[ModifiedFile] = []
 
